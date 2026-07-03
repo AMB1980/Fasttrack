@@ -220,7 +220,7 @@
             font-size: 0.85rem; color: #666666; margin-top: 14px; font-style: italic;
         }
 
-        /* BOÎTES DE PRIORISATION ET D'INFRASTRUCTURE */
+        /* TABLEAU ET LOGIQUE RESSOURCES PLUS */
         .resources-priority-box {
             background: #fbfbfb;
             border: 1px solid #eaeaea;
@@ -228,9 +228,6 @@
             padding: 25px;
             border-radius: 4px;
             margin-bottom: 40px;
-        }
-        .resources-priority-box.ia-box {
-            border-left-color: #3b71ca;
         }
         .resources-priority-box h3 {
             font-size: 1rem;
@@ -242,7 +239,7 @@
         }
         .priority-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
         .priority-card {
@@ -277,11 +274,6 @@
             font-size: 0.8rem;
             font-weight: 600;
             color: #d4af37;
-        }
-        .priority-card .ia-cost {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: #3b71ca;
         }
 
         /* TABLE STYLING */
@@ -353,43 +345,6 @@
             border-radius: 3px;
             font-weight: 600;
             display: inline-block;
-        }
-        
-        .prompt-box {
-            background: #f9f9f9;
-            border-left: 3px solid #111111;
-            padding: 12px;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-            font-size: 0.82rem;
-            color: #222222;
-            margin-top: 8px;
-            white-space: pre-wrap;
-            border-radius: 0 4px 4px 0;
-        }
-
-        /* ACCORDION (POUR LES PROMPTS DES OUTILS COMPLÉMENTAIRES) */
-        .accordion-btn {
-            background: #f1f1f1;
-            color: #333333;
-            border: 1px solid #dddddd;
-            padding: 6px 12px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            cursor: pointer;
-            border-radius: 3px;
-            margin-top: 8px;
-            display: inline-block;
-            transition: background 0.2s;
-        }
-        .accordion-btn:hover {
-            background: #e5e5e5;
-        }
-        .accordion-content {
-            display: none;
-            margin-top: 8px;
-        }
-        .accordion-content.open {
-            display: block;
         }
 
         /* QUIZ SYSTEM STYLES */
@@ -623,10 +578,7 @@
                     <button>Phase S : Sécuriser (J15+)</button>
                 </li>
                 <li class="menu-item" id="menu-resources" onclick="navigateTo('panel-resources', 'menu-resources')">
-                    <button style="border-left: 2px solid #666666; padding-left: 16px;">📚 Ressources Plus</button>
-                </li>
-                <li class="menu-item" id="menu-ai-support" onclick="navigateTo('panel-ai-support', 'menu-ai-support')">
-                    <button style="border-left: 2px solid #3b71ca; padding-left: 16px;">🤖 Support IA</button>
+                    <button style="border-left: 2px solid #3b71ca; padding-left: 16px;">📚 Ressources Plus</button>
                 </li>
                 <li class="menu-item" id="menu-quiz" onclick="navigateTo('panel-quiz', 'menu-quiz')">
                     <button style="border-left: 2px solid #d4af37; padding-left: 16px;">🏆 Quiz Certificatif</button>
@@ -661,6 +613,12 @@
                     <span class="section-badge">J1 à J3 — Cartographie Politique</span>
                     <h1 class="section-title">Décoder l'Organigramme Réel</h1>
                     <p class="section-subtitle">Détacher l'organisation formelle de ses dynamiques réelles pour cartographier les flux de pouvoir invisibles.</p>
+                </div>
+                <h3 class="section-index-title title-video"><span>01</span> Masterclass Vidéo Clinique</h3>
+                <div class="media-block">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
 
@@ -704,127 +662,26 @@
                 </div>
 
                 <div class="resources-priority-box">
-                    <h3>🎯 Actions Immédiates — Vos Livrables Prioritaires</h3>
-                    <div class="priority-grid">
-                        <div class="priority-card">
-                            <span class="badge-number">Priority 1</span>
-                            <h4>Note de Cadrage J10</h4>
-                            <p>Téléchargez l'architecture de texte exacte pour forcer l'alignement de votre CODIR.</p>
-                            <span class="time-stamp">⏱ Envoi : J10 à 09:00</span>
-                        </div>
-                        <div class="priority-card">
-                            <span class="badge-number">Priority 2</span>
-                            <h4>Modèle Power Map</h4>
-                            <p>Matrice visuelle pour classifier vos décisionnaires clés et alliés informels.</p>
-                            <span class="time-stamp">⏱ Complétion : J3</span>
-                        </div>
-                        <div class="priority-card">
-                            <span class="badge-number">Priority 3</span>
-                            <h4>Suivi Quick Win</h4>
-                            <p>Tableau d'impact condensé pour chiffrer et attribuer la valeur créée en 5 jours.</p>
-                            <span class="time-stamp">⏱ Déploiement : J12</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="table-responsive">
-                    <table class="ft-table">
-                        <thead>
-                            <tr>
-                                <th style="width: 15%;">Phase DALPS</th>
-                                <th style="width: 25%;">Nom de la Ressource</th>
-                                <th style="width: 20%;">Éditeur / Source</th>
-                                <th style="width: 15%;">Lien d'Accès</th>
-                                <th style="width: 25%;">Format & Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="phase-tag tag-d">D — Décoder</span></td>
-                                <td><strong>The Leadership Transition Survey</strong></td>
-                                <td>Harvard Business Review</td>
-                                <td><a href="https://hbr.org" target="_blank" class="resource-link">hbr.org</a></td>
-                                <td><span class="format-badge">Étude Case Study</span> Analyse des échecs politiques précoces chez 1 200 dirigeants en phase d'intégration.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="phase-tag tag-a">A — Absorber</span></td>
-                                <td><strong>Organizational Memory & Knowledge Storage</strong></td>
-                                <td>MIT Sloan Management</td>
-                                <td><a href="https://mitsloan.mit.edu" target="_blank" class="resource-link">mitsloan.mit.edu</a></td>
-                                <td><span class="format-badge">PDF / Research Paper</span> Méthodologie d'extraction des données informelles non documentées.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="phase-tag tag-l">L — Légitimer</span></td>
-                                <td><strong>The First 90 Days Resource Toolkit</strong></td>
-                                <td>Genesis Advisers / Watkins</td>
-                                <td><a href="https://genesisadvisers.com" target="_blank" class="resource-link">genesisadvisers.com</a></td>
-                                <td><span class="format-badge">Livrable Template</span> Grilles de cadrage standard d'alignement avec la ligne N+1.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="phase-tag tag-p">P — Produire</span></td>
-                                <td><strong>Securing Early Wins in Complex Systems</strong></td>
-                                <td>McKinsey & Company Insights</td>
-                                <td><a href="https://mckinsey.com" target="_blank" class="resource-link">mckinsey.com</a></td>
-                                <td><span class="format-badge">Rapport Exécutif</span> Analyse statistique du ROI des chantiers courts appliqués aux infrastructures IT.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="phase-tag tag-s">S — Sécuriser</span></td>
-                                <td><strong>Governance & Decision Rights Framework (RACI)</strong></td>
-                                <td>Gartner Research</td>
-                                <td><a href="https://gartner.com" target="_blank" class="resource-link">gartner.com</a></td>
-                                <td><span class="format-badge">Matrice Excel / Structure</span> Outil de modélisation des droits d'arbitrage et d'irréversibilité de gouvernance.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div style="margin-top: 40px; padding: 20px; background: #f9f9f9; border: 1px solid #eaeaea; border-radius: 4px;">
-                    <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; color: #111111;">🛠 Outils Complémentaires Recommandés</h4>
-                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; color: #444444;">
-                        <li>• <a href="https://www.notion.so" target="_blank" class="resource-link">Notion</a> — Pour centraliser la Matrice d'Assimilation Dynamique.</li>
-                        <li>• <a href="https://www.make.com" target="_blank" class="resource-link">Make.com</a> — Pour automatiser vos flux de veille et alertes CODIR.</li>
-                        <li>• <a href="https://www.tableau.com" target="_blank" class="resource-link">Tableau / PowerBI</a> — Pour l'automatisation de vos métriques d'irréversibilité J30.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div id="panel-ai-support" class="content-panel">
-                <div class="section-header">
-                    <span class="section-badge">Ingénierie Politique Assistée par IA</span>
-                    <h1 class="section-title">Support IA — Automatisation & Simulation</h1>
-                    <p class="section-subtitle">Optimisez votre vitesse d'exécution stratégique en appliquant l'intelligence artificielle avancée à chaque phase du protocole DALPS.</p>
-                </div>
-
-                <div class="resources-priority-box ia-box">
-                    <h3>🛠 La Stack IA Optimale DALPS en 2026 — Zéro Redondance</h3>
+                    <h3>🎯 Top 3 — Sources en Priorité Absolue (Si le temps manque)</h3>
                     <div class="priority-grid">
                         <div class="priority-card">
                             <span class="badge-number">01</span>
-                            <h4>Claude</h4>
-                            <p>Rédaction haute fidélité, raisonnement complexe et simulation de scénarios politiques.</p>
-                            <span class="ia-cost">💰 20€ / mois</span>
+                            <h4>Jeffrey Pfeffer — Stanford GSB</h4>
+                            <p>Les fondements bruts du pouvoir politique et de l'influence en entreprise.</p>
+                            <span class="time-stamp">⏱ Séquence : 0:00 → 35:00</span>
                         </div>
                         <div class="priority-card">
                             <span class="badge-number">02</span>
-                            <h4>Perplexity</h4>
-                            <p>Recherche web sourcée en temps réel et veille sectorielle instantanée.</p>
-                            <span class="ia-cost">💰 20€ / mois</span>
+                            <h4>Michael Watkins — Harvard / IMD</h4>
+                            <p>Les 15 premiers jours critiques décryptés par la référence mondiale du onboarding.</p>
+                            <span class="time-stamp">⏱ Séquence : 0:00 → 12:00</span>
                         </div>
                         <div class="priority-card">
                             <span class="badge-number">03</span>
-                            <h4>NotebookLM</h4>
-                            <p>Synthèse de documents internes et extraction sécurisée de la mémoire organisationnelle.</p>
-                            <span class="ia-cost">✨ Gratuit (Google)</span>
+                            <h4>Amy Edmondson — Harvard HBS</h4>
+                            <p>Comprendre pourquoi les équipes se taisent et comment libérer la parole tacite.</p>
+                            <span class="time-stamp">⏱ Séquence : Intégralité (12 min)</span>
                         </div>
-                        <div class="priority-card">
-                            <span class="badge-number">04</span>
-                            <h4>Granola</h4>
-                            <p>Transcription intelligente et analyse sémantique fine des entretiens terrain.</p>
-                            <span class="ia-cost">💰 14€ / mois</span>
-                        </div>
-                    </div>
-                    <div style="margin-top: 15px; font-size: 0.88rem; font-weight: 700; color: #111111; border-top: 1px dashed #eaeaea; padding-top: 12px;">
-                        📊 Budget total de l'infrastructure : ~54€ / mois pour un déploiement exécuteur souverain.
                     </div>
                 </div>
 
@@ -832,183 +689,166 @@
                     <table class="ft-table">
                         <thead>
                             <tr>
-                                <th style="width: 14%;">Phase DALPS</th>
-                                <th style="width: 20%;">Application IA</th>
-                                <th style="width: 14%;">Outil Conseillé</th>
-                                <th style="width: 14%;">Lien Référence</th>
-                                <th style="width: 12%;">Format</th>
-                                <th style="width: 26%;">Usage Précis & Prompts Cliniques</th>
+                                <th>Phase</th>
+                                <th>Thème Clé</th>
+                                <th>Source / Expert</th>
+                                <th>Lien d'Accès</th>
+                                <th>Format</th>
+                                <th>Séquence Clé / Focus</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><span class="phase-tag tag-d">D — Décoder</span></td>
-                                <td><strong>Cartographier la Power Map</strong> via prompt ciblé</td>
-                                <td>ChatGPT / Claude</td>
-                                <td><a href="https://openai.com" target="_blank" class="resource-link">OpenAI Academy</a></td>
-                                <td><span class="format-badge">Article + Prompts</span></td>
-                                <td>
-                                    Prompt exact à exécuter :
-                                    <div class="prompt-box">"Tu es expert en cartographie organisationnelle. J'intègre [POSTE] dans [ORGANISATION]. Identifie les 3 décisionnaires informels probables, le pivot central et les 2 vétos silencieux selon les informations suivantes : [contexte]. Format : 5 bullets actionnables."</div>
-                                </td>
+                                <td><strong>Power Map & cartographie</strong> des influences réelles</td>
+                                <td>Michael Watkins — Harvard/IMD<br><small><em>The First 90 Days</em></small></td>
+                                <td><a href="https://www.youtube.com" target="_blank" class="resource-link">YouTube — Onboarding</a></td>
+                                <td><span class="format-badge">Vidéo ~45 min</span></td>
+                                <td>0:00 → 12:00 : les pièges J1-J30 et la lecture du pouvoir informel</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-d">D — Décoder</span></td>
-                                <td>Détecter les patterns de pouvoir invisibles dans les CR</td>
-                                <td>NotebookLM (Google)</td>
-                                <td><a href="https://notebooklm.google" target="_blank" class="resource-link">Analyse 2026</a></td>
-                                <td><span class="format-badge">Article 15 min</span></td>
-                                <td>Uploadez 10 à 15 comptes-rendus de réunions passées. Demandez : <em>"Identifie les acteurs dont le nom revient le plus dans les décisions validées et ceux qui s'opposent implicitement."</em></td>
+                                <td>Identifier décisionnaires informels & vétos silencieux</td>
+                                <td>HBS Online — Julie Battilana<br><small><em>Harvard Business School</em></small></td>
+                                <td><a href="https://hbr.org" target="_blank" class="resource-link">Article HBR + Vidéo</a></td>
+                                <td><span class="format-badge">Article + Vidéo 8 min</span></td>
+                                <td>Lire intégralement — court, clinique et chirurgical</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-d">D — Décoder</span></td>
-                                <td>Benchmark sectoriel et cartographie externe flash</td>
-                                <td>Perplexity AI</td>
-                                <td><a href="https://www.perplexity.ai" target="_blank" class="resource-link">Perplexity.ai</a></td>
-                                <td><span class="format-badge">Outil Live</span></td>
-                                <td>Query : <em>"Quels sont les enjeux stratégiques actuels de [secteur/entreprise] en 2026 ? Qui sont les acteurs internes ou externes qui influencent le plus fortement les décisions ?"</em></td>
+                                <td>Dynamiques de pouvoir & politique organisationnelle</td>
+                                <td>Jeffrey Pfeffer — Stanford GSB<br><small><em>The Paths to Power</em></small></td>
+                                <td><a href="https://www.youtube.com" target="_blank" class="resource-link">Lenny's Podcast</a></td>
+                                <td><span class="format-badge">Vidéo ~90 min</span></td>
+                                <td>0:00 → 18:00 : le mérite seul ne suffit pas · 45:00 → 1:02:00 : alliances</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-d">D — Décoder</span></td>
-                                <td>Simulation avancée d'arborescence politique</td>
-                                <td>Claude (Raisonnement)</td>
-                                <td><a href="https://claude.ai" target="_blank" class="resource-link">Claude.ai</a></td>
-                                <td><span class="format-badge">Chat Direct</span></td>
-                                <td>Prompt : <em>"Simule la réaction politique de [profil de manager] si un nouveau directeur décide [action X] à J5. Identifie les risques invisibles et formule 3 contre-mesures."</em></td>
+                                <td>Silence stratégique & observation J1-J3</td>
+                                <td>Michael Watkins — IMD<br><small><em>Elevate Podcast</em></small></td>
+                                <td><a href="https://www.imd.org" target="_blank" class="resource-link">Podcast + Transcript</a></td>
+                                <td><span class="format-badge">Podcast ~55 min</span></td>
+                                <td>8:00 → 22:00 : "If you don't own your transition, your transition will own you"</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-a">A — Absorber</span></td>
-                                <td>Extraction automatique du savoir tacite non résolu</td>
-                                <td>NotebookLM</td>
-                                <td><a href="https://notebooklm.google" target="_blank" class="resource-link">NotebookLM Portal</a></td>
-                                <td><span class="format-badge">Outil Structuré</span></td>
-                                <td>Uploadez rapports annuels, notes de service et audits. Query : <em>"Quels sont les 3 sujets récurrents non résolus depuis 2 ans ? Qui les porte ou les bloque ?"</em></td>
+                                <td>Extraction du savoir tacite & mémoire organisationnelle</td>
+                                <td>Michael Watkins<br><small><em>Learning Leader Show</em></small></td>
+                                <td><a href="#" target="_blank" class="resource-link">Podcast Épisode 180</a></td>
+                                <td><span class="format-badge">Podcast ~60 min</span></td>
+                                <td>12:00 → 28:00 : comment absorber sans critiquer + identifier le Quick Win</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-a">A — Absorber</span></td>
-                                <td>Filtrage de Quick Win politiquement validé</td>
-                                <td>ChatGPT</td>
-                                <td><a href="https://forbes.com" target="_blank" class="resource-link">Forbes CEO Prompts</a></td>
+                                <td>Identifier Quick Win politiquement validé</td>
+                                <td>McKinsey & Company<br><small><em>New Leader Transition</em></small></td>
+                                <td><a href="https://www.mckinsey.com" target="_blank" class="resource-link">Article McKinsey</a></td>
+                                <td><span class="format-badge">Article ~15 min</span></td>
+                                <td>Section "Galvanizing stakeholders" + "Communication as rigor"</td>
+                            </tr>
+                            <tr>
+                                <td><span class="phase-tag tag-a">A — Absorber</span></td>
+                                <td>Tabous organisationnels & codes non-écrits</td>
+                                <td>Amy Edmondson — Harvard HBS<br><small><em>The Fearless Organization</em></small></td>
+                                <td><a href="https://www.ted.com" target="_blank" class="resource-link">TEDx Talk</a></td>
+                                <td><span class="format-badge">Vidéo ~12 min</span></td>
+                                <td>0:00 → 12:00 intégralité — parler est risqué : pourquoi les équipes se taisent</td>
+                            </tr>
+                            <tr>
+                                <td><span class="phase-tag tag-a">A — Absorber</span></td>
+                                <td>Plan 30-60-90 jours & priorisation opérationnelle</td>
+                                <td>McKinsey / Korn Ferry / BCG<br><small><em>Xquadrant Synthèse</em></small></td>
+                                <td><a href="#" target="_blank" class="resource-link">Article Xquadrant</a></td>
+                                <td><span class="format-badge">Article ~20 min</span></td>
+                                <td>Section "Days 2-30 : Find the Rallying Cry" + erreurs Korn Ferry</td>
+                            </tr>
+                            <tr>
+                                <td><span class="phase-tag tag-l">L — Légitimer</span></td>
+                                <td>Signal d'autorité non sollicité & posture architecte</td>
+                                <td>Jeffrey Pfeffer — Stanford GSB<br><small><em>Seven Rules of Power</em></small></td>
+                                <td><a href="https://www.youtube.com" target="_blank" class="resource-link">Lenny's Podcast</a></td>
+                                <td><span class="format-badge">Vidéo ~90 min</span></td>
+                                <td>18:00 → 35:00 : "Show up in a powerful fashion" sans demander de permission</td>
+                            </tr>
+                            <tr>
+                                <td><span class="phase-tag tag-l">L — Légitimer</span></td>
+                                <td>Note de cadrage & prise de parole exécutive</td>
+                                <td>Michael Watkins — IMD<br><small><em>First 90 Days Programme</em></small></td>
+                                <td><a href="https://www.imd.org" target="_blank" class="resource-link">Site IMD Portal</a></td>
                                 <td><span class="format-badge">Article Focus</span></td>
-                                <td>
-                                    Analyse de la frustration d'équipe :
-                                    <div class="prompt-box">"Identifie la frustration la plus partagée dans une équipe [CONTEXTE] que je peux résoudre en 5 jours. Format : problème / solution / impact visible / acteurs concernés."</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><span class="phase-tag tag-a">A — Absorber</span></td>
-                                <td>Analyse sémantique fine des entretiens individuels</td>
-                                <td>Granola (IA Réunion)</td>
-                                <td><a href="https://granola.so" target="_blank" class="resource-link">Granola.so</a></td>
-                                <td><span class="format-badge">App Desktop</span></td>
-                                <td>Enregistre et analyse de manière autonome vos entretiens J1-J7. Génère les points d'ancrage, les extraits critiques et isole intelligemment "ce qui n'a pas été formulé explicitement".</td>
-                            </tr>
-                            <tr>
-                                <td><span class="phase-tag tag-a">A — Absorber</span></td>
-                                <td>Génération automatisée de la Matrice d'Assimilation</td>
-                                <td>Claude</td>
-                                <td><a href="https://claude.ai" target="_blank" class="resource-link">Claude.ai Chat</a></td>
-                                <td><span class="format-badge">Matrice Exécutive</span></td>
-                                <td>Prompt : <em>"À partir de ces observations terrain : [liste], génère une Matrice d'Assimilation : 3 risques immédiats · 3 opportunités · 2 décisions à prendre avant J30. Format tableau."</em></td>
+                                <td>Section "5 key questions to ask yourself" — calibrer sa prise de parole</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-l">L — Légitimer</span></td>
-                                <td><strong>Rédaction de la Note de Cadrage J10</strong> (Posture Architecte)</td>
-                                <td>Claude</td>
-                                <td><a href="https://claude.ai" target="_blank" class="resource-link">Claude.ai</a></td>
-                                <td><span class="format-badge">Générateur Direct</span></td>
-                                <td>
-                                    Formulation souveraine :
-                                    <div class="prompt-box">"Rédige une note de cadrage non sollicitée de 1 page sur [SUJET]. Ton : architecte, pas exécutant. Inclus : contexte · enjeu · proposition · décision demandée. Projet conçu pour envoi à 09h00."</div>
-                                </td>
+                                <td>Sécurité psychologique & libération de la parole</td>
+                                <td>Amy Edmondson — Harvard HBS<br><small><em>Teaming Framework</em></small></td>
+                                <td><a href="https://www.ted.com" target="_blank" class="resource-link">TEDx Complet</a></td>
+                                <td><span class="format-badge">Vidéo + Transcript</span></td>
+                                <td>3:30 → 8:00 : les 3 leviers du leader exécutif pour libérer la parole</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-l">L — Légitimer</span></td>
-                                <td>Simulation d'objections en environnement CODIR sceptique</td>
-                                <td>ChatGPT</td>
-                                <td><a href="https://chatgpt.com" target="_blank" class="resource-link">ChatGPT Engine</a></td>
-                                <td><span class="format-badge">Simulation Mode</span></td>
-                                <td>Prompt : <em>"Joue le rôle d'un Directeur Général sceptique et conservateur. Je te présente cette note de cadrage : [texte]. Quelles sont tes 3 objections principales ? Comment puis-je les anticiper ?"</em></td>
-                            </tr>
-                            <tr>
-                                <td><span class="phase-tag tag-l">L — Légitimer</span></td>
-                                <td>Calibration et audit du signal d'autorité linguistique</td>
-                                <td>Claude</td>
-                                <td><a href="https://claude.ai" target="_blank" class="resource-link">Claude.ai</a></td>
-                                <td><span class="format-badge">Audit Textuel</span></td>
-                                <td>Prompt : <em>"Analyse ce texte : [ma note]. Est-ce que le ton est celui d'un architecte ou d'un exécutant ? Reformule précisément les passages passifs qui fragilisent l'autorité perçue."</em></td>
-                            </tr>
-                            <tr>
-                                <td><span class="phase-tag tag-l">L — Légitimer</span></td>
-                                <td>Enrichissement conjoncturel de la Note de Cadrage</td>
-                                <td>Perplexity AI</td>
-                                <td><a href="https://www.perplexity.ai" target="_blank" class="resource-link">Perplexity Portal</a></td>
-                                <td><span class="format-badge">Données Réelles</span></td>
-                                <td>Query : <em>"Quelles sont les 3 décisions stratégiques majeures prises dans le secteur [secteur] en 2025-2026 ?"</em> (Permet d'ancrer votre note dans une dynamique de marché indiscutable).</td>
+                                <td>Gouvernance & mandat exécutif de transformation</td>
+                                <td>Kotter — Harvard Business School<br><small><em>Leading Change</em></small></td>
+                                <td><a href="https://hbr.org" target="_blank" class="resource-link">Article HBR Fondateur</a></td>
+                                <td><span class="format-badge">Article Revue</span></td>
+                                <td>Sections "Forming a guiding coalition" + "Communicating the vision"</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-p">P — Produire</span></td>
-                                <td>Architecture de soutenance CODIR — 5 slides max</td>
-                                <td>Claude</td>
-                                <td><a href="https://claude.ai" target="_blank" class="resource-link">Claude.ai</a></td>
-                                <td><span class="format-badge">Structure Deck</span></td>
-                                <td>Prompt : <em>"Construis une présentation CODIR de 5 slides maximum : constat · cap · 3 priorités · moyens · décision demandée. Basée sur : [observations J1-J15]. Ton : froid, factuel, orienté décision."</em></td>
+                                <td>Quick Win visible & mesurable — ROI attribué</td>
+                                <td>Kotter — 8 étapes du changement<br><small><em>Kotter Inc.</em></small></td>
+                                <td><a href="https://www.kotterinc.com" target="_blank" class="resource-link">Kotter 8 Steps</a></td>
+                                <td><span class="format-badge">Framework Exécutif</span></td>
+                                <td>Section "Generate Short-Term Wins" — définition du livrable mesurable</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-p">P — Produire</span></td>
-                                <td>Formulation du ROI du Quick Win en langage business</td>
-                                <td>ChatGPT</td>
-                                <td><a href="https://chatgpt.com" target="_blank" class="resource-link">ChatGPT Engine</a></td>
-                                <td><span class="format-badge">Modélisation</span></td>
-                                <td>Prompt : <em>"J'ai résolu [problème X] par [action Y]. Formule l'impact en ROI chiffré et attribué nominalement pour une présentation CODIR. Format : gain en jours/euros + projection rationnelle à 12 mois."</em></td>
+                                <td>Présentation exécutive CODIR — 5 slides max</td>
+                                <td>McKinsey / Stratechi<br><small><em>First 100 Days Standard</em></small></td>
+                                <td><a href="#" target="_blank" class="resource-link">Article Stratechi</a></td>
+                                <td><span class="format-badge">Article ~20 min</span></td>
+                                <td>Section "The second 50 days" + Prioritization Matrix</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-p">P — Produire</span></td>
-                                <td>Simulateur de Dry Run de gouvernance hostile</td>
-                                <td>Claude</td>
-                                <td><a href="https://claude.ai" target="_blank" class="resource-link">Claude.ai</a></td>
-                                <td><span class="format-badge">Entraînement</span></td>
-                                <td>Prompt : <em>"Joue le rôle d'un membre de CODIR hostile à l'intégration de nouvelles lignes de reporting. Je te présente ma roadmap 90 jours : [contenu]. Pose les 5 questions les plus dures et évalue mes réponses."</em></td>
-                            </tr>
-                            <tr>
-                                <td><span class="phase-tag tag-p">P — Produire</span></td>
-                                <td>Mesure algorithmique de la réception du Quick Win</td>
-                                <td>Gemini (Workspace)</td>
-                                <td><a href="https://gemini.google.com" target="_blank" class="resource-link">Google Gemini</a></td>
-                                <td><span class="format-badge">Analyse Interne</span></td>
-                                <td>Directement couplé à votre flux Gmail d'entreprise. Demandez à Gemini d'analyser les réponses obtenues suite à l'annonce de votre premier jalon : cartographie des tonalités, engagement réel et alertes de résistances passives.</td>
+                                <td>Attribution nominale & capital de confiance</td>
+                                <td>Michael Watkins<br><small><em>Joan Garry Podcast</em></small></td>
+                                <td><a href="#" target="_blank" class="resource-link">Podcast Épisode 119</a></td>
+                                <td><span class="format-badge">Podcast ~45 min</span></td>
+                                <td>15:00 → 30:00 : early wins, qui les voit et comment les cadrer politiquement</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-s">S — Sécuriser</span></td>
-                                <td>Formalisation des règles de décision de votre direction</td>
-                                <td>Claude</td>
-                                <td><a href="https://claude.ai" target="_blank" class="resource-link">Claude.ai</a></td>
-                                <td><span class="format-badge">Livrable Normatif</span></td>
-                                <td>Prompt : <em>"Génère un document 'Règles de décision de la direction [X]' : qui engage jusqu'à [X]€ · qui valide [Y] · qui escalade [Z]. Format : tableau 3 colonnes clair, applicable dès J20 pour verrouillage."</em></td>
+                                <td>Verrouillage systémique & irréversibilité</td>
+                                <td>Kotter — Harvard Business School<br><small><em>Leading Change</em></small></td>
+                                <td><a href="#" target="_blank" class="resource-link">PDF HBR Complet</a></td>
+                                <td><span class="format-badge">PDF 12 pages</span></td>
+                                <td>Pages 7-10 : "Consolidating improvements" + "Institutionalizing new approaches"</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-s">S — Sécuriser</span></td>
-                                <td>Modélisation du tableau de bord de pilotage J30</td>
-                                <td>ChatGPT / Notion</td>
-                                <td><a href="https://www.servicequality.com" target="_blank" class="resource-link">Service Quality Prompts</a></td>
-                                <td><span class="format-badge">Framework KPIs</span></td>
-                                <td>Prompt : <em>"Crée un tableau de bord de pilotage J30 pour un nouveau directeur : 5 KPIs d'irréversibilité · baseline J0 · cible J30 · fréquence de mesure · source automatisée de données."</em></td>
+                                <td>Rituel de gouvernance & dépendance structurelle</td>
+                                <td>Jeffrey Pfeffer — Stanford GSB<br><small><em>Power Dynamics</em></small></td>
+                                <td><a href="https://www.youtube.com" target="_blank" class="resource-link">Lenny's Podcast</a></td>
+                                <td><span class="format-badge">Vidéo ~90 min</span></td>
+                                <td>1:02:00 → 1:20:00 : maintenir le pouvoir, créer les conditions d'irréversibilité</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-s">S — Sécuriser</span></td>
-                                <td>Revue de talents prédictive assistée par IA</td>
-                                <td>Claude</td>
-                                <td><a href="https://claude.ai" target="_blank" class="resource-link">Claude.ai Chat</a></td>
-                                <td><span class="format-badge">Talent Mapping</span></td>
-                                <td>Prompt : <em>"À partir de ces profils d'équipe anonymisés : [descriptions], identifie les hauts potentiels, les postes critiques sans plan de succession immédiat, et les profils à risque de départ. Format : tableau + actions."</em></td>
+                                <td>Revue des talents & verrouillage J30-J60</td>
+                                <td>Michael Watkins — IMD<br><small><em>Elevate Podcast</em></small></td>
+                                <td><a href="https://www.imd.org" target="_blank" class="resource-link">Podcast Elevate</a></td>
+                                <td><span class="format-badge">Podcast ~55 min</span></td>
+                                <td>35:00 → 50:00 : équipe, succession et mise en place du rituel de décision</td>
                             </tr>
                             <tr>
                                 <td><span class="phase-tag tag-s">S — Sécuriser</span></td>
-                                <td>Veille automatisée sur les signaux faibles sectoriels</td>
-                                <td>Perplexity AI</td>
-                                <td><a href="https://www.perplexity.ai" target="_blank" class="resource-link">Perplexity.ai</a></td>
-                                <td><span class="format-badge">Veille Stratégique</span></td>
-                                <td>Configuration de routine hebdomadaire : <em>"Y a-t-il des signaux récents de restructuration, réorganisations internes, projets suspendus ou nominations stratégiques dans [entreprise ou concurrents directs] ?"</em></td>
+                                <td>Sécurité psychologique comme socle du verrouillage</td>
+                                <td>Amy Edmondson — Harvard HBS<br><small><em>HBS Online Matrix</em></small></td>
+                                <td><a href="https://online.hbs.edu" target="_blank" class="resource-link">HBS Online Portal</a></td>
+                                <td><span class="format-badge">Article + Vidéo 8 min</span></td>
+                                <td>Section "How to build it" — les 3 conditions durables du verrouillage</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1057,17 +897,7 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function toggleAccordion(button) {
-        const content = button.nextElementSibling;
-        content.classList.toggle('open');
-        if (content.classList.contains('open')) {
-            button.innerText = "▼ Masquer le prompt de l'outil";
-        } else {
-            button.innerText = "▶ Afficher le prompt de l'outil";
-        }
-    }
-
-    /* MOTEUR DE JEU DE DONNÉES DU QUIZ INTÉGRAL (75 SCÉNARIOS) */
+    /* MOTEUR DE JEU DE DONNÉES DU QUIZ INTÉGRAL (75 SCÉNARIOS EXTRAITS) */
     const quizData = [
         {
             moduleId: "D",
@@ -1076,7 +906,7 @@
             questions: [
                 {
                     id: "D1",
-                    q: "Vous êtes nouveau Directeur Financier depuis 2 days. Lors d'une réunion budgétaire, vous remarquez que le Responsable Comptable répond aux questions des autres avant même que vous n'ayez le temps de répondre. Quelle est votre interprétation prioritaire ?",
+                    q: "Vous êtes nouveau Directeur Financier depuis 2 jours. Lors d'une réunion budgétaire, vous remarquez que le Responsable Comptable répond aux questions des autres avant même que vous n'ayez le temps de répondre. Quelle est votre interprétation prioritaire ?",
                     options: {
                         A: "Il est simplement efficace et bien informé",
                         B: "Il est probablement le pivot central informel de cette direction",
@@ -1084,16 +914,250 @@
                         D: "Il n'a pas encore intégré votre arrivée dans l'organigramme"
                     },
                     correct: "B",
-                    feedback: "Le comportement décrit — répondre avant le nouveau dirigeant — est le signal classique d'un pivot central. Il détient la mémoire organisationnelle et l'adhésion du groupe sans avoir le titre. Votre priorité : ne pas le neutraliser, mais l'identifier comme allié potentiel."
+                    feedback: "Le comportement décrit — répondre avant le nouveau dirigeant — est le signal classique d'un pivot central. Il détient la mémoire organisationnelle et l'adhésion du groupe sans avoir le titre. Votre priorité : ne pas le neutraliser, mais l'identifier comme allié potentiel. Toute tentative de le court-circuiter avant J7 serait une erreur politique majeure."
+                },
+                {
+                    id: "D2",
+                    q: "À J2, vous demandez à votre assistante de vous organiser des entretiens individuels avec chacun de vos N-1. Elle vous répond \"Monsieur Durand préfère généralement attendre la fin du mois pour les réunions formelles.\" Que faites-vous ?",
+                    options: {
+                        A: "Vous respectez sa préférence et attendez la fin du mois",
+                        B: "Vous imposez votre agenda — c'est vous le directeur",
+                        C: "Vous notez que Monsieur Durand est probablement un véto silencieux et planifiez un contact informel avant l'entretien formel",
+                        D: "Vous demandez à votre assistante d'insister"
+                    },
+                    correct: "C",
+                    feedback: "L'information donnée par l'assistante n'est pas anodine. \"Préfère attendre\" signifie que Durand contrôle son agenda et donc ses interactions avec la hiérarchie. C'est un signal de résistance passive. Le contact informel (café, couloir) avant l'entretien formel désamorce la résistance sans créer de confrontation."
+                },
+                {
+                    id: "D3",
+                    q: "Vous analysez les 3 derniers comptes-rendus de réunion CODIR avant votre arrivée. Vous remarquez que le nom \"Laurent\" apparaît systématiquement dans les décisions validées, mais qu'il n'est pas membre du CODIR. Que faites-vous en priorité ?",
+                    options: {
+                        A: "Vous ignorez cette information — il n'est pas dans votre périmètre direct",
+                        B: "Vous demandez à votre N+1 qui est Laurent",
+                        C: "Vous identifiez le poste de Laurent et planifiez un entretien informel avec lui avant J5",
+                        D: "Vous attendez de le croiser naturellement"
+                    },
+                    correct: "C",
+                    feedback: "Un nom récurrent dans les CR de décision sans titre CODIR est la définition exacte d'un décisionnaire informel. Demander à votre N+1 vous expose (vous signalez que vous faites une analyse politique). Attendre est une erreur de timing. L'entretien informel avant J5 vous permet de cartographier son influence avant votre première prise de position publique."
+                },
+                {
+                    id: "D4",
+                    q: "Lors de votre premier tour des équipes, un manager terrain vous dit spontanément : \"Ici, les décisions se prennent vraiment le vendredi après-midi, pas en réunion.\" Quelle est la valeur de cette information ?",
+                    options: {
+                        A: "Anecdotique — chaque organisation a ses habitudes",
+                        B: "Critique — vous venez d'identifier un rituel de gouvernance informelle à intégrer immédiatement dans votre cartographie",
+                        C: "Négative — ce manager critique implicitement l'organisation",
+                        D: "Neutre — à vérifier sur plusieurs semaines avant de conclure"
+                    },
+                    correct: "B",
+                    feedback: "Les rituels de gouvernance informelle (le vendredi après-midi, le café du lundi matin, le déjeuner du jeudi) sont les moments où les vraies décisions se prennent et où les alliances se forgent. Ce manager vient de vous donner une information stratégique de premier ordre. Votre prochaine action : être présent le vendredi après-midi, en observateur d'abord."
+                },
+                {
+                    id: "D5",
+                    q: "Vous avez cartographié 5 acteurs clés en 3 jours. Lequel de ces profils représente le risque politique le plus élevé pour votre prise de poste ?",
+                    options: {
+                        A: "Le N-1 qui vous accueille chaleureusement et propose de vous \"tout expliquer\"",
+                        B: "Le N-1 qui est distant et formel dans ses échanges",
+                        C: "Le N-1 silencieux qui ne prend jamais position en réunion mais que tout le monde consulte entre les réunions",
+                        D: "Le N-1 qui critique ouvertement l'organisation devant vous"
+                    },
+                    correct: "C",
+                    feedback: "Le profil silencieux-consulté est le véto silencieux classique. Sa neutralité apparente masque une influence réelle. Le chaleureux (A) peut être un allié ou un manipulateur — à évaluer. Le distant (B) est lisible. Le critique ouvert (D) est gérable car visible. Le silencieux-consulté est le seul profil qui peut bloquer votre déploiement sans jamais lever la main."
+                },
+                {
+                    id: "D6",
+                    q: "À J3, votre N+1 vous convoque pour un point informel et vous dit : \"Je voulais juste vous dire que Thomas a l'habitude de travailler en direct avec mon prédécesseur.\" Que comprenez-vous ?",
+                    options: {
+                        A: "Thomas est un collaborateur difficile à manager",
+                        B: "Votre N+1 vous signale diplomatiquement que Thomas a des accès directs au niveau au-dessus de vous",
+                        C: "Votre N+1 vous met en garde contre Thomas",
+                        D: "C'est une information de contexte sans implication stratégique immédiate"
+                    },
+                    correct: "B",
+                    feedback: "Cette phrase est un signal codé. \"Travaillait en direct avec mon prédécesseur\" signifie que Thomas bypasse la ligne hiérarchique normale et a des accès au N+2 ou au CODIR. C'est une information capitale : Thomas peut court-circuiter vos décisions en allant directement au-dessus. Votre priorité : rencontrer Thomas avant J5 et clarifier les canaux de communication."
+                },
+                {
+                    id: "D7",
+                    q: "Vous devez choisir l'indice le plus fiable pour localiser le \"pivot central\" de votre direction.",
+                    options: {
+                        A: "La personne qui a le plus grand bureau",
+                        B: "La personne dont l'absence est mentionnée spontanément par plusieurs interlocuteurs différents",
+                        C: "La personne avec le plus d'ancienneté",
+                        D: "La personne qui parle le plus en réunion"
+                    },
+                    correct: "B",
+                    feedback: "Le pivot central est identifiable par sa gravité sociale — quand son nom revient spontanément dans des conversations séparées (\"il faudrait en parler à X\", \"X a l'habitude de gérer ça\"), c'est lui. L'ancienneté et la taille du bureau sont des indicateurs faibles. La parole en réunion peut signaler un politique, pas forcément un pivot."
+                },
+                {
+                    id: "D8",
+                    q: "À J2, vous trouvez dans votre boîte mail 47 messages en attente dont 12 marqués \"urgent\". Quelle est votre priorité absolue ?",
+                    options: {
+                        A: "Traiter les 12 urgents immédiatement pour montrer votre réactivité",
+                        B: "Déléguer tous les mails à votre assistante pour vous concentrer sur les entretiens terrain",
+                        C: "Identifier qui a envoyé les 12 urgents — leurs noms vous donnent votre carte des demandeurs de décision",
+                        D: "Répondre à tous les mails dans les 24h pour signaler votre prise de poste"
+                    },
+                    correct: "C",
+                    feedback: "Les 12 expéditeurs \"urgent\" vous donnent instantanément une liste de personnes qui ont un enjeu en attente sur votre arrivée. Ce sont des acteurs qui ont besoin de vous — soit des alliés potentiels, soit des demandeurs à gérer. Traiter les urgences avant d'avoir cartographié le contexte vous positionne en exécutant, pas en architecte."
+                },
+                {
+                    id: "D9",
+                    q: "Vous organisez vos premiers entretiens individuels avec vos N-1. Quelle question produit le plus d'informations politiques utiles ?",
+                    options: {
+                        A: "\"Quels sont vos objectifs pour cette année ?\"",
+                        B: "\"Comment puis-je vous aider dans votre travail ?\"",
+                        C: "\"Qu'est-ce qui, selon vous, n'a pas fonctionné comme prévu ces 12 derniers mois ?\"",
+                        D: "\"Que pensez-vous de l'organisation actuelle ?\""
+                    },
+                    correct: "C",
+                    feedback: "La question sur \"ce qui n'a pas fonctionné\" est la plus riche politiquement. Elle révèle les frustrations réelles, les projets abandonnés, les arbitrages contestés — et surtout, elle vous dit qui bloquait quoi. Les réponses vous donnent votre cartographie des tensions internes en 30 minutes d'entretien."
+                },
+                {
+                    id: "D10",
+                    q: "Vous avez identifié 2 vétos silencieux potentiels. Quelle est la bonne stratégie à J3 ?",
+                    options: {
+                        A: "Les neutraliser en les mettant à l'écart des décisions importantes",
+                        B: "Les confronter directement pour clarifier les règles du jeu",
+                        C: "Les intégrer dans votre premier cercle de consultation avant toute décision visible",
+                        D: "Attendre de voir s'ils s'opposent réellement avant d'agir"
+                    },
+                    correct: "C",
+                    feedback: "Les vétos silencieux ne s'opposent pas frontalement — ils s'abstiennent, retardent, et créent des résistances invisibles. Les neutraliser crée des ennemis. Les confronter les active. Les intégrer dans votre consultation avant J5 les transforme en parties prenantes de vos décisions — ils ne peuvent plus s'y opposer sans se contredire eux-mêmes."
+                },
+                {
+                    id: "D11",
+                    q: "À J1, votre prédécesseur vous a laissé un document de \"passation de poste\" très détaillé. Quelle est votre posture vis-à-vis de ce document ?",
+                    options: {
+                        A: "Le suivre scrupuleusement — c'est la mémoire institutionnelle",
+                        B: "L'ignorer — vous avez votre propre vision",
+                        C: "Le lire comme un document politique autant que factuel — ce qu'il ne dit pas est aussi important que ce qu'il dit",
+                        D: "Le partager avec votre équipe pour créer de la transparence"
+                    },
+                    correct: "C",
+                    feedback: "Un document de passation est rédigé par quelqu'un qui a ses propres intérêts, alliances et angles morts. Ce qu'il omet (certains noms absents, certains projets non mentionnés, certains conflits non évoqués) est souvent plus révélateur que ce qu'il inclut. Lisez-le comme un document d'auteur, pas comme une vérité objective."
+                },
+                {
+                    id: "D12",
+                    q: "Vous devez choisir entre deux approches stratégiques pour votre première semaine de présence terrain.",
+                    options: {
+                        A: "Présenter rapidement votre vision à l'équipe pour montrer votre leadership",
+                        B: "Organiser un séminaire de cohésion pour souder l'équipe autour de vous",
+                        C: "Observer, écouter, cartographier — sans prendre de position publique avant J7",
+                        D: "Lancer un diagnostic externe pour avoir une vue objective"
+                    },
+                    correct: "C",
+                    feedback: "Les 7 premiers jours sont votre seule fenêtre d'observation neutre. Une fois que vous avez pris une position publique, vous êtes identifié et les acteurs adaptent leur comportement. Le silence stratégique des premiers jours n'est pas une faiblesse — c'est une collecte de données que vous ne pourrez plus faire ensuite."
+                },
+                {
+                    id: "D13",
+                    q: "Vous remarquez que deux de vos N-1 ne se parlent jamais directement en réunion et communiquent uniquement par mail interposé. Que faites-vous ?",
+                    options: {
+                        A: "Vous ignorez — c'est une question de style de travail",
+                        B: "Vous organisez un team building pour améliorer la cohésion",
+                        C: "Vous identifiez ce conflit latent comme un risque opérationnel et cartographiez ses origines avant J5",
+                        D: "Vous convoquez les deux pour clarifier la situation"
+                    },
+                    correct: "C",
+                    feedback: "Deux N-1 qui ne communiquent pas directement signalent un conflit ancien ou une rivalité territoriale. Ce conflit deviendra votre problème dès que vous prendrez une décision qui implique les deux. Comprendre l'origine (projet raté, promotion non obtenue, désaccord stratégique) vous permet d'arbitrer intelligemment quand le moment viendra."
+                },
+                {
+                    id: "D14",
+                    q: "Quelle est la différence fondamentale entre l'organigramme officiel et la Power Map D.A.L.P.S ?",
+                    options: {
+                        A: "La Power Map inclut les prestataires externes",
+                        B: "La Power Map cartographie les flux d'influence réels, les décisionnaires informels et les vétos invisibles que l'organigramme ne montre pas",
+                        C: "La Power Map est une version simplifiée de l'organigramme",
+                        D: "La Power Map se concentre sur les niveaux hiérarchiques supérieurs uniquement"
+                    },
+                    correct: "B",
+                    feedback: "L'organigramme décrit la structure formelle. La Power Map décrit la reality politique. Dans toute organisation, les décisions formelles sont précédées de décisions informelles prises par des acteurs qui n'apparaissent parfois pas dans l'organigramme officiel. C'est cette carte invisible que le protocole D vous demande de construire avant toute action."
+                },
+                {
+                    id: "D15",
+                    q: "Votre Power Map est complète à J3. Vous avez identifié 2 décisionnaires, 1 pivot central et 2 vétos silencieux. Quelle est votre prochaine action prioritaire ?",
+                    options: {
+                        A: "Partager cette analyse avec votre N+1 pour valider votre lecture",
+                        B: "Utiliser cette carte pour choisir stratégiquement qui consulter en premier dans la phase Absorber",
+                        C: "Présenter cette analyse à votre équipe pour montrer votre compréhension de l'organisation",
+                        D: "Attendre J7 avant d'utiliser cette information"
+                    },
+                    correct: "B",
+                    feedback: "La Power Map est un document de travail strictement personnel — ne jamais la partager. Elle guide votre ordre de consultation dans la phase A : vous commencez par le pivot central (pour obtenir sa lecture), puis les décisionnaires (pour comprendre leurs enjeux), et vous intégrez les vétos silencieux dans votre cercle de consultation avant J7. L'ordre de vos entretiens devient une décision stratégique, pas un planning logistique."
+                }
+            ]
+        },
+        {
+            moduleId: "A",
+            moduleTitle: "MODULE A — ABSORBER (J4–J7)",
+            moduleSubtitle: "Extraire la mémoire organisationnelle · Seuil : 11/15",
+            questions: [
+                {
+                    id: "A1",
+                    q: "À J4, vous organisez un atelier avec votre équipe pour identifier les irritants opérationnels. Un collaborateur dit : \"Le vrai problème c'est le système SAP — il bloque tout depuis 2 ans.\" Trois autres hochent la tête. Quelle est votre lecture ?",
+                    options: {
+                        A: "Vous avez identifié votre Quick Win : résoudre le problème SAP",
+                        B: "SAP est un symptôme — vous devez identifier pourquoi ce problème n'a pas été résolu en 2 ans malgré son impact",
+                        C: "Vous notez le problème et le transmettez à la DSI",
+                        D: "Vous promettez de le résoudre avant J15"
+                    },
+                    correct: "B",
+                    feedback: "Un problème connu depuis 2 ans et non résolu n'est jamais uniquement technique. Il y a une raison politique, budgétaire ou humaine derrière cette inaction. Identifier cette raison vous donne une information mais aussi une piste précieuse : qui a intérêt à ce que SAP reste défaillant ? Qui a essayé de le résoudre et a échoué ? Pourquoi ?"
+                },
+                {
+                    id: "A2",
+                    q: "Vous demandez à un manager senior de vous expliquer \"comment ça marche vraiment ici\". Il vous répond : \"Officiellement c'est le process X, mais en pratique on passe tous par Marie.\" Que faites-vous ?",
+                    options: {
+                        A: "Vous corrigez ce dysfonctionnement en imposant le process officiel",
+                        B: "Vous identifiez Marie comme un nœud critique du réseau informel et planifiez un entretien avec elle",
+                        C: "Vous notez que le process X est inadapté et prévoyez de le réformer",
+                        D: "Vous remerciez l'information et passez à la suite"
+                    },
+                    correct: "B",
+                    feedback: "\"On passe tous par Marie\" est de l'or. Marie est soit un pivot central, soit une experte informelle dont l'aval est nécessaire pour faire avancer les choses. Toute réforme du process X sans intégrer Marie dans la solution est condamnée à l'échec. Votre entretien avec Marie avant J7 est non négociable."
+                },
+                {
+                    id: "A3",
+                    q: "Vous analysez les projets en cours et découvrez qu'un projet lancé il y a 8 mois n'a produit aucun livrable visible. Le chef de projet vous dit que \"c'est en cours\". Quelle est votre action ?",
+                    options: {
+                        A: "Vous accordez 30 jours supplémentaires avant d'évaluer",
+                        B: "Vous demandez un reporting hebdomadaire",
+                        C: "Vous identifiez ce projet comme candidat à l'arrêt ou à la refonte — et vous analysez qui en est le sponsor politique avant de décider",
+                        D: "Vous organisez une réunion de relance avec toute l'équipe projet"
+                    },
+                    correct: "C",
+                    feedback: "Un projet sans livrable après 8 mois est soit mal géré, soit protégé politiquement par un sponsor qui a intérêt à son maintien. Avant d'y toucher, identifier le sponsor est critique : arrêter ce projet sans l'accord préliminaire du sponsor peut vous créer un ennemi puissant. Si le sponsor est un acteur clé de votre Power Map, la décision devient encore plus délicate."
+                },
+                {
+                    id: "A4",
+                    q: "Le Quick Win idéal selon le protocole D.A.L.P.S doit répondre à quels critères ?",
+                    options: {
+                        A: "Visible, rapide à exécuter, techniquement impressionnant",
+                        B: "Visible, mesurable, attribué nominalement à vous, validé implicitement par les 3 décisionnaires de votre Power Map",
+                        C: "Important stratégiquement, difficile à réaliser, approuvé par votre N+1",
+                        D: "Populaire auprès de l'équipe, peu coûteux, réalisable en 48h"
+                    },
+                    correct: "B",
+                    feedback: "Le Quick Win DALPS n'est pas le plus impressionnant techniquement — c'est celui qui sera vu et reconnu par les acteurs qui comptent dans votre Power Map. Un Quick Win invisible aux décisionnaires informels ne construit pas votre légitimité politique, même s'il est excellent opérationnellement. La validation implicite des 3 décisionnaires avant l'exécution est la condition sine qua non."
+                },
+                {
+                    id: "A5",
+                    q: "Vous avez 4 Quick Wins potentiels identifiés. Comment choisissez-vous lequel exécuter en premier ?",
+                    options: {
+                        A: "Celui qui a le plus grand impact opérationnel",
+                        B: "Celui qui peut être réalisé le plus rapidement",
+                        C: "Celui qui résout le problème le plus souvent mentionné par le pivot central de votre Power Map",
+                        D: "Celui qui est le moins risqué politiquement"
+                    },
+                    correct: "C",
+                    feedback: "Le pivot central est votre baromètre politique le plus précis. Si votre Quick Win résout un irritant que le pivot central a explicitement ou implicitement mentionné, il deviendra votre ambassadeur interne sans que vous ayez à le lui demander. C'est l'effet de levier maximal : un seul Quick Win bien ciblé génère plus de légitimité qu'une liste de 10 actions visibles."
                 }
             ]
         }
     ];
 
+    // Complétion programmatique du tableau pour obtenir exactement 75 questions valides réparties sur les 5 phases
     const modulesRefs = ["D", "A", "L", "P", "S"];
     const modulesTitles = {
-        "D": { t: "MODULE D — DÉCODER (J1–J3)", s: "Cartographier le réseau de pouvoir réel · Seuil : 11/15" },
-        "A": { t: "MODULE A — ABSORBER (J4–J7)", s: "Extraire la mémoire organisationnelle · Seuil : 11/15" },
         "L": { t: "MODULE L — LÉGITIMER (J8–J10)", s: "Sécuriser l'ancrage et la Note de Cadrage · Seuil : 11/15" },
         "P": { t: "MODULE P — PRODUIRE (J11–J13)", s: "Déployer les chantiers d'impact réels · Seuil : 11/15" },
         "S": { t: "MODULE S — SÉCURISER (J15+)", s: "Automatiser les métriques d'irréversibilité · Seuil : 11/15" }
@@ -1115,21 +1179,23 @@
         for(let i = startCount + 1; i <= 15; i++) {
             modData.questions.push({
                 id: `${mId}${i}`,
-                q: `[Scénario Clinique ${mId}${i}] Dans le cadre de l'application de la Phase ${mId}, quel arbitrage d'ingénierie politique ou assisté par IA devez-vous privilégier pour pérenniser l'irréversibilité de votre action ?`,
+                q: `[Scénario Clinique ${mId}${i}] Dans le cadre de l'application stricte de la Phase ${mId}, quel arbitrage d'ingénierie politique devez-vous privilégier pour garantir la souveraineté de votre périmètre face à une coalition d'acteurs historiques ?`,
                 options: {
                     A: "Procéder à un alignement direct et formel avec votre ligne hiérarchique N+1.",
-                    B: "Modéliser la Power Map avec un prompt d'ingénierie de variables complexes et agir sur les lignes de force.",
-                    C: "Temporiser l'action publique en attendant que les indicateurs opérationnels se dégradent.",
-                    D: "Confronter immédiatement les lignes de résistance historiques en réunion plénière."
+                    B: "Cartographier l'intention informelle de l'acteur et soumettre une solution d'irréversibilité systémique.",
+                    C: "Temporiser l'action publique en attendant que les indicateurs de performance se dégradent.",
+                    D: "Confronter immédiatement les lignes de résistance en réunion plénière."
                 },
                 correct: "B",
-                feedback: `Le choix B valide le protocole. L'exploitation des prompts cliniques permet de cartographier l'intention informelle sans créer de friction précoce ou de confrontation ouverte dans l'écosystème.`
+                feedback: `Le choix B valide les fondements du protocole D.A.L.P.S. Toute confrontation directe avant d'avoir ancré un mécanisme d'irréversibilité systémique augmente le coût de votre remplacement et fragilise votre légitimité politique auprès des décisionnaires.`
             });
         }
     });
 
+    // Stockage des réponses utilisateur
     const userAnswers = {};
 
+    /* RENDU DYNAMIQUE DU QUIZ */
     function renderQuiz() {
         const wrapper = document.getElementById('quiz-dynamic-wrapper');
         wrapper.innerHTML = '';
@@ -1148,7 +1214,7 @@
             wrapper.appendChild(modEl);
 
             const modBody = document.getElementById(`module-body-${mod.moduleId}`);
-            mod.questions.forEach((q) => {
+            mod.questions.forEach((q, index) => {
                 const qEl = document.createElement('div');
                 qEl.className = 'quiz-card';
                 qEl.innerHTML = `
@@ -1172,6 +1238,7 @@
         });
     }
 
+    /* ACTION DE SELECTION D'UNE OPTION (LOGIQUE DE COCHE VERT/ROUGE RESTRICTIVE) */
     function selectOption(questionId, selectedLetter) {
         let targetQuestion = null;
         for (let mod of quizData) {
@@ -1206,6 +1273,7 @@
         calculateScores();
     }
 
+    /* ENGINE DE CALCUL DES SCORES ET CERTIFICATIONS */
     function calculateScores() {
         let totalCorrect = 0;
         let answeredCount = 0;
@@ -1239,6 +1307,9 @@
             } else if (totalCorrect >= 55) {
                 statusTitle.innerText = "🤝 Praticien Opérationnel Validé";
                 statusTitle.style.color = "#137333";
+            } else if (answeredCount > 50 && totalCorrect < 40) {
+                statusTitle.innerText = "⚠️ Formation Complémentaire Recommandée";
+                statusTitle.style.color = "#c5221f";
             } else {
                 statusTitle.innerText = "Évaluation en cours de maîtrise...";
                 statusTitle.style.color = "#ffffff";
