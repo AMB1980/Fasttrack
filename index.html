@@ -280,6 +280,8 @@
             margin-bottom: 30px;
             padding-bottom: 25px;
             border-bottom: 1px dashed #eaeaea;
+            border-left: 4px solid transparent;
+            padding-left: 15px;
         }
         .quiz-question:last-child {
             border-bottom: none;
@@ -406,6 +408,16 @@
         .accordion-content.open {
             display: block;
         }
+        .tool-download-btn {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #111111;
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 2px solid #111111;
+            padding-bottom: 2px;
+        }
 
         /* RECO LINKS BLOCK */
         .reco-box {
@@ -493,6 +505,7 @@
 
         <main class="content-area">
             
+            <!-- PANEL 0 : LANDING -->
             <div id="panel-landing" class="content-panel active">
                 <div class="section-header">
                     <span class="section-badge">Framework Stratégique 2026</span>
@@ -505,6 +518,7 @@
                 </div>
             </div>
 
+            <!-- PANEL 1 : PHASE D -->
             <div id="panel-d" class="content-panel">
                 <div class="section-header">
                     <span class="section-badge">Phase D · J1 à J3</span>
@@ -566,16 +580,11 @@
                         <h4>Matrice d'Analyse d'Influence (Power Map)</h4>
                         <p>Tableau opérationnel pour lister vos N-1 et parties prenantes selon leur pouvoir d'impact réel.</p>
                         <a href="#" class="tool-download-btn">Télécharger la Matrice Excel →</a>
-                        <div class="tool-prompt-accordion">
-                            <button class="accordion-trigger" onclick="toggleAccordion(this)">▶ Voir le prompt de l'outil</button>
-                            <div class="accordion-content">
-                                <code>[PROMPT EN APPUY] Génère un tableau Markdown à 4 colonnes : Acteur, Niveau d'influence réel (1-5), Niveau de soutien apparent, Levier d'activation prioritaire.</code>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- PANEL 2 : PHASE A -->
             <div id="panel-a" class="content-panel">
                 <div class="section-header">
                     <span class="section-badge">Phase A · J4 à J7</span>
@@ -598,9 +607,6 @@
                             <strong>Objectif Clinique :</strong> Déceler l'écart systémique entre les process officiels de l'entreprise et la réalité opérationnelle pour identifier vos premiers Quick Wins.
                         </div>
                         <code>Agis en tant qu'auditeur de performance. Analyse ces comptes-rendus opérationnels. Repère les frictions récurrentes et propose 3 chantiers prioritaires à fort impact et faible résistance politique.</code>
-                        <div class="anecdote-box">
-                            <strong>Anecdote de terrain :</strong> Dans une grande infrastructure logistique, le système SAP officiel était décrit comme fluide. En analysant les coulisses, j'ai découvert que les équipes utilisaient des fichiers Excel parallèles pour piloter l'entrepôt. Résoudre ce bug de transmission a été mon premier Quick Win majeur.
-                        </div>
                     </div>
                 </div>
 
@@ -616,85 +622,43 @@
                         </div>
                         <div class="quiz-feedback"><strong>Bonne réponse : B.</strong> <em>Feedback : Un problème connu depuis 2 ans et non résolu n'est jamais uniquement technique. Il y a une raison politique, budgétaire ou humaine derrière cette inaction. Identifier cette raison vous donne une information plus précieuse que le problème lui-même.</em></div>
                     </div>
-
-                    <div class="quiz-question" data-correct="C">
-                        <p class="question-text">Question A2 : Le Quick Win idéal selon le protocole D.A.L.P.S doit répondre à quels critères ?</p>
-                        <div class="options-group">
-                            <label class="option-label"><input type="radio" name="qa2" value="A"> A) Visible, rapide à exécuter, techniquement impressionnant</label>
-                            <label class="option-label"><input type="radio" name="qa2" value="B"> B) Important stratégiquement, difficile à réaliser, approuvé par votre N+1</label>
-                            <label class="option-label"><input type="radio" name="qa2" value="C"> C) Visible, mesurable, attribué nominalement à vous, validé implicitement par les décisionnaires clés</label>
-                            <label class="option-label"><input type="radio" name="qa2" value="D"> D) Populaire auprès de l'équipe, peu coûteux, réalisable en 48h</label>
-                        </div>
-                        <div class="quiz-feedback"><strong>Bonne réponse : C.</strong> <em>Feedback : Le Quick Win DALPS n'est pas le plus impressionnant techniquement — c'est celui qui sera vu et reconnu par les acteurs qui comptent dans votre Power Map. La validation implicite des décisionnaires avant l'exécution est la condition sine qua non.</em></div>
-                    </div>
                     <button class="validate-quiz-btn" onclick="evaluateModuleQuiz('quiz-module-a')">Valider mes réponses</button>
                     <div class="score-display"></div>
                 </div>
-
-                <h4 class="section-index-title title-outils"><span>04</span> Hub Outils Opérationnels</h4>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4>Grille d'Évaluation de Viabilité de Projet</h4>
-                        <p>Matrice Excel de scoring pour évaluer mathématiquement la santé réelle de vos chantiers.</p>
-                        <a href="#" class="tool-download-btn">Télécharger la Grille →</a>
-                    </div>
-                </div>
             </div>
 
+            <!-- PANEL 3 : PHASE L -->
             <div id="panel-l" class="content-panel">
                 <div class="section-header">
                     <span class="section-badge">Phase L · J8 à J10</span>
-                    <h1 class="section-title">Légitimer l'Autorité Strategique</h1>
-                    <p class="section-subtitle">Asseoir sa posture souveraine sans basculer dans l'autoritarisme, via la Note J10.</p>
+                    <h1 class="section-title">Légitimer l'Autorité Stratégique</h1>
+                    <p class="section-subtitle">Asseoir sa posture souveraine sans basculer dans l'autoritarisme via la Note J10.</p>
                 </div>
 
-                <h4 class="section-index-title title-video"><span>01</span> Masterclass Vidéo & Décryptage</h4>
-                <div class="media-block">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <h4 class="section-index-title title-prompts"><span>02</span> Stratégie de l'Ombre & Alignement IA</h4>
+                <h4 class="section-index-title title-prompts"><span>01</span> Stratégie de l'Ombre & Alignement IA</h4>
                 <div class="prompt-suite">
                     <div class="prompt-card">
-                        <h5>Prompt L1 : Le Rédacteur Impitoyable de la Note J10</h5>
-                        <div class="clinical-context">
-                            <strong>Objectif Clinique :</strong> Structurer une note de cadrage stratégique clinique, factuelle, incontestable, qui neutralise d'emblée toute critique.
-                        </div>
-                        <code>Rédige une note de synthèse exécutive de 3 pages max destinée à mon N+1. Utilise un ton ultra-factuel, dénué de tout jargon émotionnel. Structure : 1. Constats Quantifiables, 2. Risques de Statu Quo, 3. Arbitrages Immédiats.</code>
-                        <div class="anecdote-box">
-                            <strong>Anecdote de terrain :</strong> La Note J10 est l'outil le plus puissant du protocole. En la transmettant à mon Codir lors d'une restructuration, elle a immédiatement déplacé le débat du "Qui a raison ?" vers "Voici les faits non négociables". Elle m'a évité 3 mois de guerres de tranchées politiques.
-                        </div>
+                        <h5>Prompt L1 : Le Rédacteur de la Note J10</h5>
+                        <code>Rédige une note de synthèse exécutive destinée à mon N+1. Structure : 1. Constats Quantifiables, 2. Risques de Statu Quo, 3. Arbitrages Immédiats.</code>
                     </div>
                 </div>
 
-                <h4 class="section-index-title title-quiz"><span>03</span> Auto-Évaluation & Quiz Stratégique</h4>
+                <h4 class="section-index-title title-quiz"><span>02</span> Auto-Évaluation & Quiz Stratégique</h4>
                 <div class="quiz-container" id="quiz-module-l">
                     <div class="quiz-question" data-correct="A">
                         <p class="question-text">Question L1 : Quel est l'objectif premier de la Note Stratégique J10 envoyée à votre N+1 ?</p>
                         <div class="options-group">
                             <label class="option-label"><input type="radio" name="ql1" value="A"> A) Poser vos constats de manière ultra-factuelle et acter vos axes d'arbitrage sans négociation émotionnelle</label>
                             <label class="option-label"><input type="radio" name="ql1" value="B"> B) Demander l'autorisation de changer l'organisation des équipes</label>
-                            <label class="option-label"><input type="radio" name="ql1" value="C"> C) Présenter un rapport d'étonnement convivial</label>
-                            <label class="option-label"><input type="radio" name="ql1" value="D"> D) Se plaindre des dysfonctionnements laissés par votre prédécesseur</label>
                         </div>
-                        <div class="quiz-feedback"><strong>Bonne réponse : A.</strong> <em>Feedback : La Note J10 est un acte d'autorité clinique. Elle pose les faits de manière indiscutable pour forcer les arbitrages nécessaires, gelant ainsi les velléités de déstabilisation dès le dixième jour.</em></div>
+                        <div class="quiz-feedback"><strong>Bonne réponse : A.</strong> <em>Feedback : La Note J10 pose les faits de manière indiscutable pour forcer les arbitrages nécessaires.</em></div>
                     </div>
                     <button class="validate-quiz-btn" onclick="evaluateModuleQuiz('quiz-module-l')">Valider mes réponses</button>
                     <div class="score-display"></div>
                 </div>
-
-                <h4 class="section-index-title title-outils"><span>04</span> Hub Outils Opérationnels</h4>
-                <div class="tools-grid">
-                    <div class="tool-card">
-                        <h4>Template Officiel de la Note J10 (Format HBR)</h4>
-                        <p>Architecture de document minimaliste Word pensée pour maximiser l'impact de lecture chez les cadres supérieurs.</p>
-                        <a href="#" class="tool-download-btn">Télécharger le Template Word →</a>
-                    </div>
-                </div>
             </div>
 
+            <!-- PANEL 4 : PHASE P -->
             <div id="panel-p" class="content-panel">
                 <div class="section-header">
                     <span class="section-badge">Phase P · J11 à J13</span>
@@ -702,26 +666,100 @@
                     <p class="section-subtitle">Verrouiller l'exécution des chantiers et obtenir l'engagement formel de vos équipes directes.</p>
                 </div>
 
-                <h4 class="section-index-title title-video"><span>01</span> Masterclass Vidéo & Décryptage</h4>
-                <div class="media-block">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <h4 class="section-index-title title-prompts"><span>02</span> Stratégie de l'Ombre & Alignement IA</h4>
+                <h4 class="section-index-title title-prompts"><span>01</span> Stratégie de l'Ombre & Alignement IA</h4>
                 <div class="prompt-suite">
                     <div class="prompt-card">
                         <h5>Prompt P1 : Le Concepteur d'Indicateurs d'Inflexion</h5>
-                        <div class="clinical-context">
-                            <strong>Objectif Clinique :</strong> Définir des indicateurs clés (KPIs) qui forcent les équipes à changer de comportement opérationnel plutôt qu'à simplement optimiser l'existant.
-                        </div>
-                        <code>Crée un tableau de bord de pilotage pour mon équipe basé sur 3 indicateurs d'inflexion comportementale. Évite les indicateurs de volume passifs, concentre-toi sur la vélocité et le respect des fenêtres de livraison critiques.</code>
-                        <div class="anecdote-box">
-                            <strong>Anecdote de terrain :</strong> En forçant un changement d'indicateur axé non plus sur le volume de tickets traités, mais sur le taux de résolution immédiate au premier contact, j'ai transformé une culture d'exécutants passifs en une équipe d'ingénieurs hautement responsables en moins de 4 jours.
-                        </div>
+                        <code>Crée un tableau de bord basé sur la vélocité et le respect des fenêtres de livraison critiques.</code>
                     </div>
                 </div>
+            </div>
 
-                <h4 class="section-index-title title-quiz"><span>03</span> Auto-Évaluation & Quiz Stratégique</h4>
-                <div class="quiz-container
+            <!-- PANEL 5 : PHASE S -->
+            <div id="panel-s" class="content-panel">
+                <div class="section-header">
+                    <span class="section-badge">Phase S · J15 et au-delà</span>
+                    <h1 class="section-title">Sécuriser l'Irréversibilité</h1>
+                    <p class="section-subtitle">Rendre votre présence structurellement indispensable et ancrer définitivement vos frameworks de performance.</p>
+                </div>
+
+                <h4 class="section-index-title title-quiz"><span>01</span> Auto-Évaluation & Quiz Stratégique</h4>
+                <div class="quiz-container" id="quiz-module-s">
+                    <div class="quiz-question" data-correct="C">
+                        <p class="question-text">Question S1 : Quel est le signal ultime indiquant que vous avez franchi le "Seuil d'Irréversibilité" au sein de l'organisation ?</p>
+                        <div class="options-group">
+                            <label class="option-label"><input type="radio" name="qs1" value="A"> A) Votre N+1 valide officiellement la fin de votre période d'essai</label>
+                            <label class="option-label"><input type="radio" name="qs1" value="C"> C) Au moins 3 acteurs clés de votre organisation vous ont inclus spontanément dans leurs arbitrages ou décisions futurs</label>
+                        </div>
+                        <div class="quiz-feedback"><strong>Bonne réponse : C.</strong> <em>Feedback : Quand trois acteurs clés vous incluent naturellement dans leurs plans futurs, votre présence est devenue structurelle.</em></div>
+                    </div>
+                    <button class="validate-quiz-btn" onclick="evaluateModuleQuiz('quiz-module-s')">Valider mes réponses</button>
+                    <div class="score-display"></div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="ft-footer">
+        <p>© 2026 FAST TRACK FRAMEWORK — TOUS DROITS RÉSERVÉS. CONÇU PAR ADIL MAAMMER.</p>
+        <p style="margin-top: 15px;"><a href="https://maammer0.gumroad.com/l/fasttrack-dalps">REJOINDRE LE PROTOCOLE COMPLET D.A.L.P.S →</a></p>
+    </footer>
+
+    <script>
+        // NAVIGATION SYSTEM BETWEEN PANELS
+        function navigateTo(panelId, menuItemId) {
+            // 1. Hide all panels
+            document.querySelectorAll('.content-panel').forEach(panel => {
+                panel.classList.remove('active');
+            });
+            // 2. Remove active state from all menu items
+            document.querySelectorAll('.sidebar-menu .menu-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // 3. Show target panel and target menu item
+            const targetPanel = document.getElementById(panelId);
+            const targetMenu = document.getElementById(menuItemId);
+            
+            if (targetPanel && targetMenu) {
+                targetPanel.classList.add('active');
+                targetMenu.classList.add('active');
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // CLINICAL EVALUATION ENGINE FOR QUIZZES
+        function evaluateModuleQuiz(containerId) {
+            const container = document.getElementById(containerId);
+            const questions = container.querySelectorAll('.quiz-question');
+            let score = 0;
+            let total = questions.length;
+
+            questions.forEach(question => {
+                const correctAnswer = question.getAttribute('data-correct');
+                const selectedInput = question.querySelector('input[type="radio"]:checked');
+                const feedback = question.querySelector('.quiz-feedback');
+                
+                if (feedback) {
+                    feedback.classList.add('visible');
+                }
+
+                if (selectedInput && selectedInput.value === correctAnswer) {
+                    score++;
+                    question.style.borderLeft = "4px solid #2ecc71";
+                } else {
+                    question.style.borderLeft = "4px solid #e74c3c";
+                }
+            });
+
+            const scoreDisplay = container.querySelector('.score-display');
+            if (scoreDisplay) {
+                scoreDisplay.style.display = "block";
+                scoreDisplay.innerHTML = `<strong>Votre Maîtrise Tactique : ${score} / ${total}</strong>`;
+            }
+        }
+    </script>
+</body>
+</html>
