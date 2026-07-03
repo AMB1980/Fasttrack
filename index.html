@@ -3,1179 +3,725 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DALPS Executive Transition Academy</title>
+    <title>Fast Track D.A.L.P.S — Portail Exécutif Privé</title>
     <style>
-        /* ==========================================================================
-           CHARTE GRAPHIQUE PRIVÉE (Japandi / Apple / HBR Style Aesthetic)
-           ========================================================================== */
-        :root {
-            --bg-color: #F9F9F7;
-            --text-color: #111111;
-            --accent-color: #C5A880;
-            --border-color: #E5E5E0;
-            --white: #FFFFFF;
-            --max-width: 1100px;
-        }
-
+        /* CHARTE GRAPHIQUE UNIQUE FAST TRACK (HBR / BOUTIQUE-HÔTEL AESTHETIC) */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
-            font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
+            background-color: #ffffff;
+            color: #111111;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
-            padding-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: var(--border-color);
-            margin: 40px 0;
+        /* TOP NAVIGATION BAR — FAST TRACK SIGNATURE */
+        .ft-navbar {
+            background-color: #111111;
+            color: #ffffff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222222;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .ft-navbar .brand {
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+        .ft-navbar .brand span {
+            color: #d4af37;
+        }
+        .ft-navbar .meta-info {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #888888;
+            font-weight: 600;
         }
 
-        /* ==========================================================================
-           STRUCTURE & CONFIGURATION DES ESPACES BLANCS
-           ========================================================================== */
-        .academy-container {
-            max-width: var(--max-width);
+        /* MAIN LAYOUT WITH SIDEBAR */
+        .page-container {
+            display: flex;
+            max-width: 1400px;
+            width: 100%;
             margin: 0 auto;
-            padding: 40px 24px;
+            flex: 1;
         }
 
-        header {
-            padding: 60px 0 40px 0;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 60px;
+        /* SIDEBAR NAVIGATION */
+        .sidebar {
+            width: 320px;
+            background: #ffffff;
+            border-right: 1px solid #eaeaea;
+            padding: 50px 25px;
+            position: sticky;
+            top: 67px;
+            height: calc(100vh - 67px);
+            overflow-y: auto;
         }
-
-        .academy-logo {
-            font-size: 0.9rem;
+        .sidebar-title {
+            font-size: 0.7rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.2em;
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-bottom: 16px;
+            color: #999999;
+            margin-bottom: 25px;
+            padding-left: 15px;
         }
-
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-
-        .academy-subtitle {
-            font-size: 1.1rem;
-            color: #555555;
-            max-width: 600px;
-        }
-
-        /* BARRE DE NAVIGATION COMMUNE */
-        .dalps-nav {
+        .sidebar-menu {
+            list-style: none;
             display: flex;
+            flex-direction: column;
             gap: 8px;
-            margin-bottom: 60px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 16px;
-            overflow-x: auto;
-            scrollbar-width: none;
         }
-        .dalps-nav::-webkit-scrollbar {
-            display: none;
-        }
-
-        .nav-item {
+        .menu-item button {
+            width: 100%;
+            text-align: left;
             background: none;
             border: none;
-            padding: 12px 24px;
-            font-size: 0.95rem;
-            color: #777777;
+            padding: 14px 18px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #555555;
             cursor: pointer;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-            font-weight: 500;
+            border-radius: 4px;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .menu-item button:hover {
+            background: #fafafa;
+            color: #000000;
+        }
+        .menu-item.active button {
+            background: #111111;
+            color: #ffffff;
+            font-weight: 700;
         }
 
-        .nav-item:hover {
-            color: var(--text-color);
+        /* MAIN CONTENT AREA */
+        .content-area {
+            flex: 1;
+            padding: 60px 50px;
+            background: #ffffff;
         }
-
-        .nav-item.active {
-            color: var(--text-color);
-            border-bottom: 2px solid var(--accent-color);
-        }
-
-        /* CONTENEURS DES PANELS PANELS DE PHASES */
-        .dalps-panel {
+        .content-panel {
             display: none;
         }
-
-        .dalps-panel.active {
+        .content-panel.active {
             display: block;
-            animation: fadeIn 0.4s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ==========================================================================
-           COMPOSANTS PREMIUM RÉUTILISABLES
-           ========================================================================== */
-        
-        /* 00 BLOC HERO DE PHASE */
-        .phase-hero {
-            background-color: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 48px;
-            margin-bottom: 60px;
-        }
-
-        .phase-badge {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-bottom: 16px;
-            display: inline-block;
-        }
-
-        .phase-title {
-            font-size: 2rem;
-            font-weight: 400;
-            margin-bottom: 24px;
-            letter-spacing: -0.01em;
-        }
-
-        .hero-meta-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 32px;
-            margin-top: 32px;
-        }
-
-        .hero-objectives h4, .hero-metrics h4 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 16px;
-            color: #555555;
-        }
-
-        .objective-list {
-            list-style: none;
-        }
-
-        .objective-list li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 12px;
-            font-size: 1rem;
-        }
-
-        .objective-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        .metric-box {
-            margin-bottom: 20px;
-        }
-
-        .metric-label {
-            font-size: 0.85rem;
-            color: #777777;
-        }
-
-        .metric-value {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--text-color);
-        }
-
-        /* EN-TÊTE DE SECTION STANDARDISEE */
+        /* HEADER BLOCKS */
         .section-header {
-            margin-bottom: 32px;
-            margin-top: 60px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 20px;
         }
-
-        .section-number {
-            font-size: 0.8rem;
-            font-weight: bold;
+        .section-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #d4af37;
             letter-spacing: 0.15em;
-            color: var(--accent-color);
+            text-transform: uppercase;
+            margin-bottom: 10px;
             display: block;
-            margin-bottom: 4px;
         }
-
         .section-title {
-            font-size: 1.5rem;
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            color: #111111;
+            line-height: 1.1;
+        }
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: #555555;
+            margin-top: 10px;
             font-weight: 400;
-            letter-spacing: -0.01em;
+            max-width: 800px;
         }
 
-        /* 01 FORMAT CONTENEUR VIDÉO MASTERCLASS */
-        .video-wrapper {
+        /* TYPOGRAPHIE ET BLOCS TEXTE */
+        .text-block {
+            font-size: 1.05rem;
+            line-height: 1.65;
+            color: #222222;
+            margin-bottom: 35px;
+        }
+        .text-block p { margin-bottom: 15px; }
+
+        /* STRUCTURE DE SECTION DYNAMIQUE */
+        .section-index-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #111111;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #d4af37;
+        }
+        
+        .section-index-title span {
+            font-size: 0.9rem;
+            font-weight: 700;
+            background: #111111;
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 3px;
+        }
+        .title-video span { background: #d4af37; color: #111111; }
+        .title-prompts span { background: #111111; color: #ffffff; }
+        .title-quiz span { background: #6e6e6e; color: #ffffff; }
+        .title-outils span { background: #f1f1f1; color: #111111; border: 1px solid #ccc; }
+
+        /* VIDEO BLOCKS */
+        .media-block {
+            margin: 20px 0 40px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
-            background: #000;
-            margin-bottom: 24px;
-            border: 1px solid var(--border-color);
+            overflow: hidden;
+            background: #111111;
+            border-radius: 4px;
         }
-
-        .video-wrapper iframe {
+        .video-container iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%; border: 0;
         }
 
-        .video-context-card {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 32px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 60px;
+        /* PROMPTS SUITE & CARDS */
+        .prompt-suite {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 40px;
         }
-
-        .context-block h5 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 8px;
-            color: #555555;
+        .prompt-card {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-left: 4px solid #111111;
+            padding: 25px;
+            border-radius: 0 4px 4px 0;
         }
-
-        .context-block p {
+        .prompt-card h5 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .clinical-context {
+            background: #fafafa;
+            border: 1px solid #f0f0f0;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 4px;
             font-size: 0.95rem;
+            line-height: 1.6;
             color: #333333;
         }
-
-        /* GRILLES ET CARTES SÉLECTION PROMPTS & COMPANIONS */
-        .premium-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 24px;
-            margin-bottom: 60px;
+        .anecdote-box {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+            font-style: italic;
+            color: #444444;
+            font-size: 0.9rem;
+            background-color: #fdfdfd;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .prompt-card code {
+            font-family: "SFMono-Regular", Consolas, monospace;
+            font-size: 0.92rem;
+            color: #111111;
+            display: block;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            background: #f4f6f8;
+            padding: 15px 18px;
+            border-radius: 4px;
+            border: 1px solid #e1e4e6;
         }
 
-        .premium-card {
-            background-color: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 32px;
+        /* QUIZ ARCHITECTURE CSS */
+        .quiz-container {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 4px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        .quiz-question {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #eaeaea;
+        }
+        .quiz-question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .options-group {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            transition: border-color 0.2s ease;
+            gap: 10px;
+            margin-bottom: 15px;
         }
-
-        .premium-card:hover {
-            border-color: var(--accent-color);
-        }
-
-        .card-meta-top {
+        .option-label {
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 16px;
-            border-bottom: 1px solid var(--bg-color);
-            padding-bottom: 12px;
-        }
-
-        .card-tag {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        .card-badge-right {
-            font-size: 0.75rem;
-            color: #777777;
-            background: var(--bg-color);
-            padding: 2px 8px;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 16px;
-            color: var(--text-color);
-        }
-
-        .card-body-text {
+            align-items: flex-start;
+            gap: 12px;
+            background: #fafafa;
+            border: 1px solid #eaeaea;
+            padding: 14px 18px;
+            border-radius: 4px;
+            cursor: pointer;
             font-size: 0.95rem;
-            color: #444444;
-            margin-bottom: 20px;
-            flex-grow: 1;
+            transition: all 0.2s;
         }
-
-        .card-detail-group {
-            margin-bottom: 16px;
-            font-size: 0.9rem;
+        .option-label:hover {
+            background: #f1f1f1;
+            border-color: #999;
         }
-
-        .card-detail-label {
-            font-weight: bold;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: #666666;
-            display: block;
-            margin-bottom: 2px;
+        .option-label input {
+            margin-top: 3px;
         }
-
-        /* TEXTAREA EMBARQUÉS POUR LES PROMPTS */
-        .prompt-container {
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            padding: 16px;
-            margin-top: 16px;
-            margin-bottom: 16px;
-            position: relative;
-        }
-
-        .prompt-text {
-            font-family: "Courier New", Courier, monospace;
-            font-size: 0.9rem;
+        .quiz-feedback {
+            display: none;
+            background: #f4f6f8;
+            border-left: 4px solid #d4af37;
+            padding: 15px 20px;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-top: 15px;
             color: #222222;
-            white-space: pre-wrap;
-            word-break: break-word;
         }
-
-        /* COMPOSANTS BOUTONS & ACTIONS */
-        .btn {
-            background-color: transparent;
-            border: 1px solid var(--text-color);
-            color: var(--text-color);
+        .quiz-feedback.visible {
+            display: block;
+        }
+        .validate-quiz-btn {
+            background: #111111;
+            color: #ffffff;
+            border: none;
             padding: 12px 24px;
             font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 4px;
             cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: 500;
+            transition: background 0.2s;
         }
-
-        .btn:hover {
-            background-color: var(--text-color);
-            color: var(--white);
+        .validate-quiz-btn:hover {
+            background: #d4af37;
+            color: #111111;
         }
-
-        .btn-accent {
-            border-color: var(--accent-color);
-            color: var(--text-color);
-        }
-
-        .btn-accent:hover {
-            background-color: var(--accent-color);
-            color: var(--white);
-        }
-
-        .btn-full {
-            display: block;
-            width: 100%;
-        }
-
-        .btn-sm {
-            padding: 6px 14px;
-            font-size: 0.8rem;
-        }
-
-        /* BOÎTE DE LANCEMENT DU QUIZ PAR PHASE */
-        .quiz-executive-box {
-            background-color: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 48px;
-            margin-top: 40px;
-        }
-
-        .quiz-meta-horizontal {
-            display: flex;
-            gap: 40px;
-            margin: 24px 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px 0;
-        }
-
-        /* SYSTEME DE FENÊTRE MODALE DU QUIZ ACTIF */
-        .quiz-modal {
+        .score-display {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-top: 20px;
+            color: #111111;
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(249, 249, 247, 0.98);
-            z-index: 1000;
-            overflow-y: auto;
-            padding: 40px 24px;
         }
 
-        .quiz-modal-content {
-            max-width: 700px;
-            margin: 40px auto;
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 48px;
-            position: relative;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #777777;
-        }
-
-        .quiz-progress-bar {
-            height: 2px;
-            background: var(--border-color);
-            margin-bottom: 32px;
-            width: 100%;
-            position: relative;
-        }
-
-        .quiz-progress-fill {
-            height: 100%;
-            background: var(--accent-color);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        .options-vertical {
+        /* HUB OUTILS */
+        .tools-grid {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin: 24px 0;
+            gap: 25px;
+            margin-bottom: 40px;
         }
-
-        .option-btn {
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            padding: 16px 24px;
-            text-align: left;
-            font-size: 0.95rem;
+        .tool-card {
+            background: #fafafa;
+            border: 1px solid #eaeaea;
+            border-top: 3px solid #111111;
+            padding: 25px;
+            border-radius: 4px;
+        }
+        .tool-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #111111;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .tool-card p {
+            font-size: 0.92rem;
+            color: #555555;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .tool-prompt-accordion {
+            margin-top: 15px;
+            border-top: 1px solid #eaeaea;
+            padding-top: 15px;
+        }
+        .accordion-trigger {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #666666;
+            background: none;
+            border: none;
             cursor: pointer;
-            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-transform: uppercase;
         }
-
-        .option-btn:hover {
-            border-color: var(--text-color);
-            background: var(--bg-color);
-        }
-
-        .option-btn.selected-correct {
-            background: #F0F7F4;
-            border-color: #4A7C59;
-            color: #1E3F20;
-        }
-
-        .option-btn.selected-incorrect {
-            background: #FFF5F5;
-            border-color: #C94A4A;
-            color: #5C1E1E;
-        }
-
-        .quiz-feedback {
-            margin-top: 24px;
-            padding: 24px;
-            background: var(--bg-color);
-            border-left: 3px solid var(--accent-color);
+        .accordion-content {
             display: none;
+            margin-top: 10px;
+        }
+        .accordion-content.open {
+            display: block;
         }
 
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            .phase-hero { padding: 24px; }
-            .hero-meta-grid { grid-template-columns: 1fr; gap: 24px; }
-            .video-context-card { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
-            .premium-grid { grid-template-columns: 1fr; }
-            .quiz-executive-box { padding: 24px; }
-            .quiz-meta-horizontal { flex-direction: column; gap: 16px; }
-            .quiz-modal-content { padding: 24px; }
+        /* RECO LINKS BLOCK */
+        .reco-box {
+            background: #f4f6f8;
+            border: 1px dashed #d4af37;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
+        .reco-box h4 {
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .reco-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            list-style: none;
+        }
+        .reco-links li a {
+            font-size: 0.88rem;
+            color: #111111;
+            font-weight: 600;
+            text-decoration: none;
+            background: #ffffff;
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        /* FOOTER */
+        .ft-footer {
+            background: #111111;
+            color: #666666;
+            padding: 50px 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            border-top: 1px solid #222222;
+            letter-spacing: 0.05em;
+            margin-top: auto;
+        }
+        .ft-footer a { color: #ffffff; text-decoration: none; font-weight: 600; }
+        .ft-footer a:hover { color: #d4af37; }
+
+        @media (max-width: 992px) {
+            .page-container { flex-direction: column; }
+            .sidebar { width: 100%; height: auto; position: relative; top: 0; padding: 25px 20px; border-right: none; border-bottom: 1px solid #eaeaea; }
+            .content-area { padding: 40px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="academy-container">
-        
-        <header role="banner">
-            <div class="academy-logo">DALPS Executive Academy</div>
-            <h1>Transition de Direction Intégrale</h1>
-            <p class="academy-subtitle">Framework d'ingénierie de positionnement et de déploiement stratégique pour dirigeants.</p>
-        </header>
+    <nav class="ft-navbar">
+        <div class="brand">FAST TRACK <span>D.A.L.P.S</span></div>
+        <div class="meta-info">Édition Internationale 2026 — Accès Dirigeant</div>
+    </nav>
 
-        <nav class="dalps-nav" role="navigation" aria-label="Phases D.A.L.P.S">
-            <button class="nav-item active" onclick="switchPhase('panel-d', this)">D — Décoder</button>
-            <button class="nav-item" onclick="switchPhase('panel-a', this)">A — Absorber</button>
-            <button class="nav-item" onclick="switchPhase('panel-l', this)">L — Légitimer</button>
-            <button class="nav-item" onclick="switchPhase('panel-p', this)">P — Produire</button>
-            <button class="nav-item" onclick="switchPhase('panel-s', this)">S — Sécuriser</button>
-        </nav>
+    <div class="page-container">
+        <aside class="sidebar">
+            <h3 class="sidebar-title">Menu du Protocole</h3>
+            <ul class="sidebar-menu">
+                <li class="menu-item active" id="menu-landing" onclick="navigateTo('panel-landing', 'menu-landing')">
+                    <button>Présentation & Vision</button>
+                </li>
+                <li class="menu-item" id="menu-d" onclick="navigateTo('panel-d', 'menu-d')">
+                    <button>Phase D : Décoder (J1-J3)</button>
+                </li>
+                <li class="menu-item" id="menu-a" onclick="navigateTo('panel-a', 'menu-a')">
+                    <button>Phase A : Absorber (J4-J7)</button>
+                </li>
+                <li class="menu-item" id="menu-l" onclick="navigateTo('panel-l', 'menu-l')">
+                    <button>Phase L : Légitimer (J8-J10)</button>
+                </li>
+                <li class="menu-item" id="menu-p" onclick="navigateTo('panel-p', 'menu-p')">
+                    <button>Phase P : Produire (J11-J13)</button>
+                </li>
+                <li class="menu-item" id="menu-s" onclick="navigateTo('panel-s', 'menu-s')">
+                    <button>Phase S : Sécuriser (J15+)</button>
+                </li>
+            </ul>
+        </aside>
 
-        <div id="panel-d" class="dalps-panel active">
-            <section class="phase-hero">
-                <span class="phase-badge">Phase Fondatrice (J1-J3)</span>
-                <h2 class="phase-title">Décoder la cartographie politique et organisationnelle</h2>
-                <div class="hero-meta-grid">
-                    <div class="hero-objectives">
-                        <h4>Objectifs d'apprentissage</h4>
-                        <ul class="objective-list">
-                            <li>Cartographier la Power Map officieuse de l'organisation.</li>
-                            <li>Identifier les décisionnaires réels, les pivots centraux et les vétos silencieux.</li>
-                            <li>Décrypter les patterns d'influence via l'analyse sémantique des historiques.</li>
-                        </ul>
-                    </div>
-                    <div class="hero-metrics">
-                        <h4>Métriques de Phase</h4>
-                        <div class="metric-box">
-                            <span class="metric-label">Temps estimé</span>
-                            <div class="metric-value">35 minutes</div>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-label">Compétences clés</span>
-                            <div class="metric-value">Intelligence Politique, Diagnostic Tactique</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">01</span><h3 class="section-title">Masterclass Executive</h3></div>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Masterclass Phase D" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="video-context-card">
-                    <div class="context-block"><h5>Résumé exécutif</h5><p>Cette session pose les bases fondamentales du décodage d'une structure opaque à votre arrivée. Distinguez l'organigramme officiel des lignes de pouvoir réelles.</p></div>
-                    <div class="context-block"><h5>Pourquoi regarder</h5><p>Éviter l'erreur classique des premiers jours : s'allier publiquement avec un acteur en perte de vitesse ou sous-estimer un contre-pouvoir discret.</p></div>
-                    <div class="context-block"><h5>Quand appliquer</h5><p>Dès la phase d'onboarding, idéalement entre le Jour 1 et le Jour 3 de votre prise de fonction effective.</p></div>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">02</span><h3 class="section-title">DALPS AI Companion</h3></div>
-                <div class="premium-grid">
-                    <div class="premium-card">
-                        <div>
-                            <div class="card-meta-top"><span class="card-tag">ChatGPT / Claude</span><span class="card-badge-right">Prompt Exact</span></div>
-                            <h4 class="card-title">Cartographier la Power Map</h4>
-                            <p class="card-body-text">Identifier décisionnaires, pivot central, vétos silencieux à partir d'observations terrain.</p>
-                            <div class="prompt-container">
-                                <div class="prompt-text" id="ai-d-p1">Tu es expert en cartographie organisationnelle. J'intègre [POSTE] dans [ORGANISATION]. Identifie les 3 décisionnaires informels probables, le pivot central et les 2 vétos silencieux selon les informations suivantes : [contexte]. Format : 5 bullets actionnables.</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-full btn-sm" onclick="copyPrompt('ai-d-p1', this)">Copier le prompt</button>
-                    </div>
-
-                    <div class="premium-card">
-                        <div>
-                            <div class="card-meta-top"><span class="card-tag">NotebookLM (Google)</span><span class="card-badge-right">Analyse Corporelle</span></div>
-                            <h4 class="card-title">Détection des Patterns de Pouvoir</h4>
-                            <p class="card-body-text">Analyser les comptes-rendus de réunion pour détecter l'historique des blocages implicites.</p>
-                            <div class="card-detail-group"><span class="card-detail-label">Usage recommandé</span><span>Charger 10 à 15 CR de réunion complexes et demander : "Identifie les acteurs dont la validation est structurellement obligatoire hors de la hiérarchie officielle."</span></div>
-                        </div>
-                        <a href="https://notebooklm.google/" target="_blank" class="btn btn-full btn-sm">Accéder à l'outil officiel</a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">03</span><h3 class="section-title">Validation des Acquis</h3></div>
-                <div class="quiz-executive-box">
-                    <span class="card-tag">Quiz Évaluation Élite</span>
-                    <h4 class="card-title" style="font-size: 1.8rem; margin-top: 8px;">Diagnostic de Validation Politique — Phase D</h4>
-                    <p class="card-body-text">Évaluez votre capacité à déceler les structures de pouvoir informelles avant le passage à la phase d'assimilation active.</p>
-                    <div class="quiz-meta-horizontal">
-                        <div><span class="card-detail-label">Temps estimé</span><strong>12 minutes</strong></div>
-                        <div><span class="card-detail-label">Questions</span><strong>15 questions stratégiques</strong></div>
-                        <div><span class="card-detail-label">Score recommandé</span><strong>85% de réussite</strong></div>
-                    </div>
-                    <button class="btn btn-accent" onclick="openQuiz('panel-d')">Commencer le Quiz Phase D</button>
-                </div>
-            </section>
-        </div>
-
-        <div id="panel-a" class="dalps-panel">
-            <section class="phase-hero">
-                <span class="phase-badge">Phase d'Assimilation (J4-J7)</span>
-                <h2 class="phase-title">Absorber la mémoire organisationnelle et identifier le Quick Win</h2>
-                <div class="hero-meta-grid">
-                    <div class="hero-objectives">
-                        <h4>Objectifs d'apprentissage</h4>
-                        <ul class="objective-list">
-                            <li>Ingérer de gros volumes de données internes sans saturation cognitive.</li>
-                            <li>Isoler les frustrations d'équipe partagées pour concevoir un Quick Win en 5 jours.</li>
-                            <li>Structurer une Matrice d'Assimilation listant risques majeurs et opportunités.</li>
-                        </ul>
-                    </div>
-                    <div class="hero-metrics">
-                        <h4>Métriques de Phase</h4>
-                        <div class="metric-box">
-                            <span class="metric-label">Temps estimé</span>
-                            <div class="metric-value">40 minutes</div>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-label">Compétences clés</span>
-                            <div class="metric-value">Synthèse Stratégique, Captation d'Opportunités</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">01</span><h3 class="section-title">Masterclass Executive</h3></div>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Masterclass Phase A" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">02</span><h3 class="section-title">DALPS AI Companion</h3></div>
-                <div class="premium-grid">
-                    <div class="premium-card">
-                        <div>
-                            <div class="card-meta-top"><span class="card-tag">ChatGPT / Claude</span><span class="card-badge-right">Prompt Exact</span></div>
-                            <h4 class="card-title">Ingénierie du Quick Win</h4>
-                            <p class="card-body-text">Isoler la frustration la plus partagée de l'équipe pour concevoir une action d'éclat immédiate et visible sans budget lourd.</p>
-                            <div class="prompt-container">
-                                <div class="prompt-text" id="ai-a-p2">Identifie la frustration la plus partagée dans une équipe [CONTIENT LE CONTEXTE] que je peux résoudre en 5 jours. Format cible : problème / solution / impact visible / acteurs concernés.</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-full btn-sm" onclick="copyPrompt('ai-a-p2', this)">Copier le prompt</button>
-                    </div>
-
-                    <div class="premium-card">
-                        <div>
-                            <div class="card-meta-top"><span class="card-tag">Claude</span><span class="card-badge-right">Matrice</span></div>
-                            <h4 class="card-title">Génération de la Matrice d'Assimilation</h4>
-                            <p class="card-body-text">Structurer automatiquement l'ensemble de vos notes brutes en un plan d'action hiérarchisé avant J30.</p>
-                            <div class="prompt-container">
-                                <div class="prompt-text" id="ai-a-p4">À partir de ces observations terrain brutes : [liste], génère une Matrice d'Assimilation complète : 3 risques immédiats · 3 opportunités d'impact · 2 décisions à prendre avant J30. Format tableau.</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-full btn-sm" onclick="copyPrompt('ai-a-p4', this)">Copier le prompt</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">03</span><h3 class="section-title">Validation des Acquis</h3></div>
-                <div class="quiz-executive-box">
-                    <span class="card-tag">Quiz Évaluation Élite</span>
-                    <h4 class="card-title" style="font-size: 1.8rem; margin-top: 8px;">Validation des Capacités d'Assimilation — Phase A</h4>
-                    <p class="card-body-text">Vérifiez votre aptitude à catégoriser les signaux faibles et à valider l'impact de votre Quick Win tactique.</p>
-                    <div class="quiz-meta-horizontal">
-                        <div><span class="card-detail-label">Temps estimé</span><strong>15 minutes</strong></div>
-                        <div><span class="card-detail-label">Questions</span><strong>15 questions stratégiques</strong></div>
-                        <div><span class="card-detail-label">Score recommandé</span><strong>85% de réussite</strong></div>
-                    </div>
-                    <button class="btn btn-accent" onclick="openQuiz('panel-a')">Commencer le Quiz Phase A</button>
-                </div>
-            </section>
-        </div>
-
-        <div id="panel-l" class="dalps-panel">
-            <section class="phase-hero">
-                <span class="phase-badge">Phase de Positionnement (J8-J14)</span>
-                <h2 class="phase-title">Asseoir son autorité et calibrer sa posture d'architecte</h2>
-                <div class="hero-meta-grid">
-                    <div class="hero-objectives">
-                        <h4>Objectifs d'apprentissage</h4>
-                        <ul class="objective-list">
-                            <li>Rédiger et déployer la Note de Cadrage non sollicitée à J10 avec une posture d'architecte.</li>
-                            <li>Anticiper et simuler les objections politiques de votre N+1 ou des membres du CODIR.</li>
-                            <li>Calibrer précisément votre niveau d'autorité rhétorique et textuelle.</li>
-                        </ul>
-                    </div>
-                    <div class="hero-metrics">
-                        <h4>Métriques de Phase</h4>
-                        <div class="metric-box">
-                            <span class="metric-label">Temps estimé</span>
-                            <div class="metric-value">45 minutes</div>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-label">Compétences clés</span>
-                            <div class="metric-value">Rhétorique de Direction, Alignement de Posture</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">01</span><h3 class="section-title">DALPS AI Companion</h3></div>
-                <div class="premium-grid">
-                    <div class="premium-card">
-                        <div>
-                            <div class="card-meta-top"><span class="card-tag">Claude</span><span class="card-badge-right">Note de Cadrage</span></div>
-                            <h4 class="card-title">Rédaction Critique Note J10</h4>
-                            <p class="card-body-text">Formuler une note d'orientation stratégique d'une page adoptant la posture d'un architecte constructeur, non d'un exécutant.</p>
-                            <div class="prompt-container">
-                                <div class="prompt-text" id="ai-l-p1">Rédige une note de cadrage non sollicitée de 1 page max sur [SUJET]. Ton attendu : architecte visionnaire, pas exécutant passif. Inclus : contexte · enjeu business · proposition globale · décision demandée. Envoyée à 09h00.</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-full btn-sm" onclick="copyPrompt('ai-l-p1', this)">Copier le prompt</button>
-                    </div>
-
-                    <div class="premium-card">
-                        <div>
-                            <div class="card-meta-top"><span class="card-tag">ChatGPT</span><span class="card-badge-right">Contre-pouvoir</span></div>
-                            <h4 class="card-title">Simulateur d'Objections CODIR / DG</h4>
-                            <p class="card-body-text">Soumettre votre proposition stratégique à un contradicteur virtuel simulant le scepticisme de vos supérieurs.</p>
-                            <div class="prompt-container">
-                                <div class="prompt-text" id="ai-l-p2">Joue le rôle d'un Directeur Général sceptique et conservateur. Je te présente cette note de cadrage : [insérer le texte]. Quelles sont tes 3 objections majeures ? Comment puis-je les anticiper ?</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-full btn-sm" onclick="copyPrompt('ai-l-p2', this)">Copier le prompt</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">02</span><h3 class="section-title">Validation des Acquis</h3></div>
-                <div class="quiz-executive-box">
-                    <span class="card-tag">Quiz Évaluation Élite</span>
-                    <h4 class="card-title" style="font-size: 1.8rem; margin-top: 8px;">Alignement Posture Architecte — Phase L</h4>
-                    <p class="card-body-text">Validez la structure argumentative de vos livrables de cadrage et testez votre capacité de résistance face aux objections CODIR.</p>
-                    <div class="quiz-meta-horizontal">
-                        <div><span class="card-detail-label">Temps estimé</span><strong>10 minutes</strong></div>
-                        <div><span class="card-detail-label">Questions</span><strong>15 questions stratégiques</strong></div>
-                        <div><span class="card-detail-label">Score recommandé</span><strong>90% de réussite</strong></div>
-                    </div>
-                    <button class="btn btn-accent" onclick="openQuiz('panel-l')">Commencer le Quiz Phase L</button>
-                </div>
-            </section>
-        </div>
-
-        <div id="panel-p" class="dalps-panel">
-            <section class="phase-hero">
-                <span class="phase-badge">Phase d'Exécution Haute Performance (J15-J21)</span>
-                <h2 class="phase-title">Délivrer la feuille de route stratégique et acter l'impact financier</h2>
-                <div class="hero-meta-grid">
-                    <div class="hero-objectives">
-                        <h4>Objectifs d'apprentissage</h4>
-                        <ul class="objective-list">
-                            <li>Structurer des présentations CODIR percutantes limitées strictement à 5 slides clés.</li>
-                            <li>Traduire le Quick Win initial en ROI financier tangible et chiffré pour l'entreprise.</li>
-                            <li>Mener un Dry Run d'évaluation face à une audience CODIR simulée hostile.</li>
-                        </ul>
-                    </div>
-                    <div class="hero-metrics">
-                        <h4>Métriques de Phase</h4>
-                        <div class="metric-box">
-                            <span class="metric-label">Temps estimé</span>
-                            <div class="metric-value">50 minutes</div>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-label">Compétences clés</span>
-                            <div class="metric-value">Modélisation Financière, Soutenance Stratégique CODIR</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">01</span><h3 class="section-title">DALPS AI Companion</h3></div>
-                <div class="premium-grid">
-                    <div class="premium-card">
-                        <div>
-                            <div class="card-meta-top"><span class="card-tag">Claude</span><span class="card-badge-right">Présentation CODIR</span></div>
-                            <h4 class="card-title">Architecture Pitch 5 Slides</h4>
-                            <p class="card-body-text">Concevoir une structure narrative rigide axée uniquement sur les besoins d'arbitrage et la vision macro.</p>
-                            <div class="prompt-container">
-                                <div class="prompt-text" id="ai-p-p1">Construis une présentation CODIR de 5 slides maximum : constat · cap · 3 priorités · moyens · décision demandée. Basée sur : [mes observations J1-J15]. Ton : froid, factuel, orienté décision.</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-full btn-sm" onclick="copyPrompt('ai-p-p1', this)">Copier le prompt</button>
-                    </div>
-
-                    <div class="premium-card">
-                        <div>
-                            <div class="card-meta-top"><span class="card-tag">ChatGPT</span><span class="card-badge-right">Valorisation Financial</span></div>
-                            <h4 class="card-title">Calculateur d'Impact ROI Quick Win</h4>
-                            <p class="card-body-text">Convertir une action de terrain réussie en gains chiffrés solides (Euros, ETP, jours d'exploitation).</p>
-                            <div class="prompt-container">
-                                <div class="prompt-text" id="ai-p-p2">J'ai résolu [problème X] en [action Y]. Formule l'impact en ROI chiffré et attribué nominalement pour une présentation CODIR. Format : gain en jours/euros + projection 12 mois.</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-full btn-sm" onclick="copyPrompt('ai-p-p2', this)">Copier le prompt</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">02</span><h3 class="section-title">Validation des Acquis</h3></div>
-                <div class="quiz-executive-box">
-                    <span class="card-tag">Quiz Évaluation Élite</span>
-                    <h4 class="card-title" style="font-size: 1.8rem; margin-top: 8px;">Soutenance et Structure d'Impact — Phase P</h4>
-                    <p class="card-body-text">Valisez l'étanchéité financière et politique de votre feuille de route avant sa présentation officielle devant le comité exécutif.</p>
-                    <div class="quiz-meta-horizontal">
-                        <div><span class="card-detail-label">Temps estimé</span><strong>15 minutes</strong></div>
-                        <div><span class="card-detail-label">Questions</span><strong>15 questions stratégiques</strong></div>
-                        <div><span class="card-detail-label">Score recommandé</span>mathbf{85% de réussite</strong></div>
-                    </div>
-                    <button class="btn btn-accent" onclick="openQuiz('panel-p')">Commencer le Quiz Phase P</button>
-                </div>
-            </section>
-        </div>
-
-        <div id="panel-s" class="dalps-panel">
-            <section class="phase-hero">
-                <span class="phase-badge">Phase de Pérennisation (J22-J30)</span>
-                <h2 class="phase-title">Ancrer la gouvernance et sécuriser les risques systémiques</h2>
-                <div class="hero-meta-grid">
-                    <div class="hero-objectives">
-                        <h4>Objectifs d'apprentissage</h4>
-                        <ul class="objective-list">
-                            <li>Formaliser des règles de décision claires et une gouvernance pérenne à J30.</li>
-                            <li>Concevoir un tableau de bord de pilotage d'activité automatisé contenant 5 KPIs cibles.</li>
-                            <li>Mener une revue des talents assistée par IA pour identifier risques de départ et hauts potentiels.</li>
-                        </ul>
-                    </div>
-                    <div class="hero-metrics">
-                        <h4>Métriques de Phase</h4>
-                        <div class="metric-box">
-                            <span class="metric-label">Temps estimé</span>
-                            <div class="metric-value">40 minutes</div>
-                        </div>
-                        <div class="metric-box">
-                            <span class="metric-label">Compétences clés</span>
-                            <div class="metric-value">Gouvernance, Risk Management, Talent Strategy</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">01</span><h3 class="section-title">DALPS AI Companion</h3></div>
-                <div class="premium-grid">
-                    <div class="premium-card">
-                        <div>
-                            <div class="card-meta-top"><span class="card-tag">Claude</span><span class="card-badge-right">Gouvernance</span></div>
-                            <h4 class="card-title">Règles de Décision Claires</h4>
-                            <p class="card-body-text">Formaliser les matrices d'arbitrage de la direction pour fixer les seuils de responsabilité et d'escalade.</p>
-                            <div class="prompt-container">
-                                <div class="prompt-text" id="ai-s-p1">Génère un document 'Règles de décision de la direction [X]' : qui engage jusqu'à [X]€ · qui valide [Y] · qui escalade [Z]. Format : tableau 3 colonnes, applicable dès J20.</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-full btn-sm" onclick="copyPrompt('ai-s-p1', this)">Copier le prompt</button>
-                    </div>
-
-                    <div class="premium-card">
-                        <div>
-                            <div class="card-meta-top"><span class="card-tag">Claude</span><span class="card-badge-right">Talent Matrix</span></div>
-                            <h4 class="card-title">Revue des Talents Assistée par IA</h4>
-                            <p class="card-body-text">Identifier objectivement les compétences clés, postes critiques isolés sans succession et profils à risque.</p>
-                            <div class="prompt-container">
-                                <div class="prompt-text" id="ai-s-p3">À partir de ces profils d'équipe : [descriptions], identifie les hauts potentiels, les postes critiques sans succession, et les profils à risque de départ. Format : tableau avec recommandation d'action.</div>
-                            </div>
-                        </div>
-                        <button class="btn btn-full btn-sm" onclick="copyPrompt('ai-s-p3', this)">Copier le prompt</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section-container">
-                <div class="section-header"><span class="section-number">02</span><h3 class="section-title">Validation des Acquis</h3></div>
-                <div class="quiz-executive-box">
-                    <span class="card-tag">Quiz Évaluation Élite</span>
-                    <h4 class="card-title" style="font-size: 1.8rem; margin-top: 8px;">Pérennisation et Robustesse Systémique — Phase S</h4>
-                    <p class="card-body-text">Mesurez la viabilité opérationnelle de votre gouvernance et validez vos plans de contingence face aux risques d'attrition.</p>
-                    <div class="quiz-meta-horizontal">
-                        <div><span class="card-detail-label">Temps estimé</span><strong>15 minutes</strong></div>
-                        <div><span class="card-detail-label">Questions</span><strong>15 questions stratégiques</strong></div>
-                        <div><span class="card-detail-label">Score recommandé</span><strong>85% de réussite</strong></div>
-                    </div>
-                    <button class="btn btn-accent" onclick="openQuiz('panel-s')">Commencer le Quiz Phase S</button>
-                </div>
-            </section>
-        </div>
-
-    </div>
-
-    <div id="executive-quiz-modal" class="quiz-modal" role="dialog" aria-modal="true" aria-labelledby="modal-quiz-title">
-        <div class="quiz-modal-content">
-            <button class="close-modal" onclick="closeQuiz()" aria-label="Fermer">&times;</button>
-            <span class="card-tag" id="modal-quiz-phase-badge">Phase Fondatrice</span>
-            <h3 id="modal-quiz-title" style="font-size: 1.6rem; margin-top: 8px; margin-bottom: 24px;">Questionnaire Évaluatif</h3>
+        <main class="content-area">
             
-            <div class="quiz-progress-bar">
-                <div id="quiz-progress-fill" class="quiz-progress-fill"></div>
+            <div id="panel-landing" class="content-panel active">
+                <div class="section-header">
+                    <span class="section-badge">Framework Stratégique 2026</span>
+                    <h1 class="section-title">Prenez les commandes de votre nouveau poste</h1>
+                    <p class="section-subtitle">Le plan d'action quotidien exact pour maîtriser votre nouvel environnement et sécuriser votre place dès J1.</p>
+                </div>
+                <div class="text-block">
+                    <p><strong>Nouveau Poste. 15 Jours. Trajectoire Claire.</strong> Prise de poste, période d'essai, promotion ou mutation : prenez les commandes de manière souveraine avant que votre légitimité ne soit subtilement questionnée par les réseaux d'influence en place.</p>
+                    <p>Ce portail rassemble vos matrices de ralliement, vos masterclasses vidéo de haut niveau ainsi que vos architectures de prompts d'ingénierie politique.</p>
+                </div>
             </div>
 
-            <div id="quiz-question-container">
+            <div id="panel-d" class="content-panel">
+                <div class="section-header">
+                    <span class="section-badge">Phase D · J1 à J3</span>
+                    <h1 class="section-title">Décoder l'Écosystème Politique</h1>
+                    <p class="section-subtitle">Cartographier les réseaux de pouvoir invisibles et identifier les acteurs d'influence réels de l'organisation.</p>
                 </div>
 
-            <div id="quiz-navigation-controls" style="margin-top: 32px; display: flex; justify-content: space-between; align-items: center;">
-                <span id="quiz-counter-text" style="font-size: 0.9rem; color: #666666;">Question 1 sur 15</span>
-                <button id="quiz-next-btn" class="btn btn-sm" onclick="nextQuestion()" style="display: none;">Question Suivante</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const ALL_PHASES_QUIZ_DATA = {
-            "panel-d": [
-                {
-                    q: "Vous êtes nouveau Directeur Financier depuis 2 jours. Lors d'une réunion budgétaire, vous remarquez que le Responsable Comptable répond aux questions des autres avant même que vous n'ayez le temps de répondre. Quelle est votre interprétation prioritaire ?",
-                    options: [
-                        "Il est simplement efficace et bien informé.",
-                        "Il est probablement le pivot central informel de cette direction.",
-                        "Il cherche à vous déstabiliser publiquement devant l'équipe.",
-                        "Il n'a pas encore intégré votre arrivée dans la ligne hiérarchique."
-                    ],
-                    correct: 1,
-                    feedback: "Le comportement décrit est le signal classique d'un pivot central. Il détient la mémoire organisationnelle et l'adhésion du groupe sans avoir le titre officiel. Votre priorité absolue : l'identifier comme un allié potentiel."
-                },
-                {
-                    q: "À J2, vous demandez à votre assistante d'organiser des entretiens individuels avec vos N-1. Elle vous répond : 'Monsieur Durand préfère généralement attendre la fin du mois pour les réunions formelles.' Que faites-vous ?",
-                    options: [
-                        "Vous respectez sa préférence et attendez la fin du mois.",
-                        "Vous imposez un rendez-vous obligatoire sous 24h en marquant votre autorité hiérarchique.",
-                        "Vous allez le voir de manière informelle à son bureau pour lever la barrière sans formalisme.",
-                        "Vous remplacez l'entretien par une demande de rapport d'activité écrit."
-                    ],
-                    correct: 2,
-                    feedback: "Face à une résistance passive précoce (véto silencieux potentiel), briser le formalisme par un contact direct et informel permet de désamorcer le jeu politique sans entrer en conflit ouvert à J2."
-                },
-                { q: "Lors de vos 3 premiers jours, un responsable d'équipe vous demande un arbitrage budgétaire urgent non planifié. Quelle est la posture DALPS adéquate ?", options: ["Valider immédiatement pour prouver votre réactivité opérationnelle.", "Refuser catégoriquement en invoquant le respect strict des processus.", "Geler temporairement la décision, analyser la légitimité du demandeur dans la Power Map et identifier les vétos silencieux cachés.", "Déléguer la décision à votre adjoint direct."], correct: 2, feedback: "Tout arbitrage prématuré en phase D sans cartographie des forces invisibles détruit votre posture d'architecte." },
-                { q: "Comment isolez-vous de manière optimale le 'pivot central' invisible au cours de vos entretiens d'onboarding ?", options: ["En analysant uniquement la liste officielle des signataires de budgets CODIR.", "En repérant l'acteur dont le nom est cité spontanément par ses pairs comme facilitateur ou point de blocage réel des dossiers.", "En interrogeant directement la direction des ressources humaines.", "En observant qui arrive le plus tôt le matin."], correct: 1, feedback: "Le pivot central détient l'autorité tacite de réalisation des projets, souvent déconnecté de l'autorité statutaire pure." },
-                { q: "Un acteur clé affiche une validation publique totale mais omet de vous transmettre les documents stratégiques requis. Quel signal identifiez-vous ?", options: ["Une surcharge de travail passagère sans importance.", "Un véto silencieux actif visant à ralentir votre phase de décodage.", "Un manque de rigueur de son assistante de direction.", "Un problème technique sur son outil de messagerie."], correct: 1, feedback: "La rétention passive d'information constitue l'arme principale des vétos silencieux." },
-                { q: "Quelle métrique détermine la fiabilité de votre Power Map au terme de la première semaine ?", options: ["Le recoupement d'au moins 3 sources distinctes sur l'historique des prises de décision complexes.", "La validation de l'organigramme par le secrétariat général.", "Le sentiment de sympathie éprouvé lors des déjeuners.", "Le nombre de profils LinkedIn consultés."], correct: 0, feedback: "Une cartographie politique fiable exige un recoupement structurel objectif des faits observés." },
-                { q: "L'analyse sémantique automatique des comptes-rendus d'entreprise passés sert prioritairement à :", options: ["Vérifier le taux de présence des différents membres du top management.", "Détecter les récurrences de blocages de projets attribués nominalement à un même département.", "Archiver les données pour un audit réglementaire futur.", "Corriger la mise en page des archives."], correct: 1, feedback: "Les structures narratives de CR révèlent les lignes de fracture historiques de l'organisation." },
-                { q: "Quel piège guette le dirigeant voulant aller trop vite en Phase D ?", options: ["Too much listening to frontline teams.", "Confondre l'organigramme officiel et les flux réels d'influence opérationnelle.", "Passer trop de temps en entretiens individuels.", "Modifier trop tardivement les mots de passe des systèmes."], correct: 1, feedback: "L'organigramme officiel est un écran de fumée politique ; la Power Map est la réalité terrain." },
-                { q: "En phase de décodage, que recherche-t-on prioritairement dans l'écosystème externe via Perplexity ?", options: ["Les données financières publiques des concurrents directs.", "Les signaux de réorganisation récents ou les nominations stratégiques récentes influençant votre entreprise.", "Le cours de bourse quotidien.", "Le nombre de recrutements en cours chez les sous-traitants."], correct: 1, feedback: "Les tensions externes dictent très souvent les comportements politiques internes." },
-                { q: "Si un membre influent du CODIR évite systématiquement de planifier un entretien avec vous, vous devez :", options: ["Interpréter cela comme un véto de position et utiliser un canal transverse ou un allié pour décoder sa posture.", "Forcer un rendez-vous à la première occasion publique.", "Attendre la fin des 30 premiers jours.", "Rapporter le comportement au Directeur Général."], correct: 0, feedback: "L'évitement systématique traduit un positionnement politique qui nécessite un décodage indirect immédiat." },
-                { q: "Une Power Map robuste doit inclure en priorité :", options: ["Les photos de l'ensemble de l'équipe de direction.", "L'identification claire des décideurs réels, des pivots, des neutres et des opposants potentiels.", "Les coordonnées personnelles des membres clés.", "Les fiches de postes officielles."], correct: 1, feedback: "La structure doit segmenter fonctionnellement l'influence réelle par rapport aux objectifs fixés." },
-                { q: "Quelle attitude adopter face à un collaborateur qui critique ouvertement la direction précédente dès le premier jour ?", options: ["Prendre ses propos comme vérité absolue.", "Consigner les faits de façon neutre et identifier si son discours sert un agenda politique d'influence spécifique.", "Le recadrer immédiatement de façon agressive.", "En informer la ligne hiérarchique supérieure."], correct: 1, feedback: "Les critiques précoces sont souvent des marqueurs d'influence ou de positionnement stratégique à décoder." },
-                { q: "Le diagnostic initial de l'infrastructure ou de l'activité doit s'effectuer :", options: ["En lisant uniquement les documentations d'architecture fournies.", "En croisant l'état documenté, les ressentis utilisateurs et les dettes non avouées.", "En mandatant un cabinet externe dès le Jour 2.", "En se fiant aux rapports des prestataires actuels."], correct: 1, feedback: "La dette non avouée constitue un levier de risque politique majeur pour le nouveau dirigeant." },
-                { q: "L'analyse des flux de communication internes (qui parle à qui) permet de valider :", options: ["L'efficacité du serveur de messagerie.", "Les circuits courts de décision qui court-circuitent la ligne managériale officielle.", "Le respect des horaires de travail.", "La qualité de l'onboarding RH."], correct: 1, feedback: "Les circuits courts représentent les véritables autoroutes de la performance ou du blocage." },
-                { q: "Votre objectif final en fin de Phase D est :", options: ["Avoir rédigé un nouveau règlement intérieur.", "Disposer d'une grille de lecture froide, objective et validée des rapports de force de l'entreprise.", "Avoir changé la composition de votre équipe immédiate.", "Avoir organisé la première réunion d'équipe."], correct: 1, feedback: "Pas d'action d'impact sans vision claire. La pertinence de la lecture conditionne l'efficacité future." }
-            ],
-            "panel-a": [
-                {
-                    q: "Une Matrice d'Assimilation efficace se construit à partir de :",
-                    options: [
-                        "La vision idéale à 5 ans formulée par la maison mère.",
-                        "Le tri sélectif et structuré de l'ensemble des frustrations, risques opérationnels et dettes techniques collectés sur le terrain.",
-                        "Les modèles standardisés téléchargeables en ligne.",
-                        "L'historique des entretiens annuels d'évaluation."
-                    ],
-                    correct: 1,
-                    feedback: "L'assimilation DALPS consiste à transformer la matière brute du terrain en axes d'arbitrage immédiats."
-                },
-                { q: "Un Quick Win pertinent doit être exécutable en combien de temps maximum ?", options: ["24 heures", "5 jours ouvrés", "1 mois", "Un trimestre complet"], correct: 1, feedback: "Un Quick Win doit apporter un impact visible et incontestable en moins de 5 jours pour poser votre efficacité." },
-                { q: "Pour ingérer 50 documents de procédure en 2 heures, quel outil IA optimisera le processus ?", options: ["Perplexity", "NotebookLM", "Granola", "ChatGPT standard sans fichiers"], correct: 1, feedback: "NotebookLM est taillé pour la synthèse croisée et l'ancrage de documents internes denses." },
-                { q: "Le risque majeur lors de la phase d'absorption est :", options: ["La saturation cognitive et la perte d'objectivité stratégique face à la masse de détails.", "Ne pas lire assez de documents.", "Manquer de rendez-vous informels.", "Valider trop vite la feuille de route annuelle."], correct: 0, feedback: "Le leader doit utiliser l'IA et des frameworks rigides pour structurer et filtrer la donnée entrante." },
-                { q: "Un entretien d'assimilation réussi doit durer au maximum :", options: ["15 minutes", "45 minutes", "3 heures", "Une demi-journée d'immersion"], correct: 1, feedback: "45 minutes permettent d'aller à l'essentiel sans diluer le temps exécutif précieux." },
-                { q: "Lors de la collecte de données, comment gérez-vous deux versions contradictoires d'un même incident technique ?", options: ["Prendre le parti du manager le plus ancien.", "Consigner la contradiction comme un fait politique et chercher la donnée de log objective.", "Ignorer l'incident.", "Trancher au hasard pour avancer."], correct: 1, feedback: "La divergence de récits est en soi une donnée d'analyse politique de premier ordre." },
-                { q: "Le choix de votre Quick Win doit se baser en priorité sur :", options: ["Son faible coût financier et sa visibilité maximale auprès des équipes de premier niveau.", "La complexité technologique résolue.", "La demande expresse de votre N+1.", "L'impact sur l'image de marque externe."], correct: 0, feedback: "Le Quick Win soigne la frustration du terrain pour débloquer l'adhésion immédiate de la base." },
-                { q: "Dans NotebookLM, pour identifier les 'sujets non résolus depuis 2 ans', vous devez :", options: ["Chercher le mot 'échec' dans les fichiers.", "Formuler une query analytique croisant chronologiquement les décisions validées et les livrables réels.", "Demander un résumé linéaire.", "Créer un dictionnaire de synonymes."], correct: 1, feedback: "L'interrogation ciblée révèle les boucles d'inefficacité structurelles d'une organisation." },
-                { q: "La Matrice d'Assimilation doit être partagée avec :", options: ["L'intégralité de l'entreprise par email.", "Personne, c'est un document d'gouvernance à usage strictement personnel ou confidentiel N+1.", "Le représentant syndical.", "Les prestataires externes."], correct: 1, feedback: "Ce niveau de diagnostic constitue l'avantage stratégique confidentiel du dirigeant." },
-                { q: "Que devez-vous faire si aucun document de procédure n'est disponible à votre arrivée ?", options: ["Vous plaindre formellement à la DRH.", "Utiliser les entretiens terrain pour documenter à la volée la procédure réelle via une IA de transcription.", "Attendre la fin de la période d'essai.", "Recruter un consultant pour les rédiger."], correct: 1, feedback: "L'absence de structure est une opportunité unique pour l'architecte de fixer le cadre de référence." },
-                { q: "Un indicateur d'absorption d'équipe réussi est :", options: ["Le fait que tout le monde vous trouve sympathique.", "La formalisation de 3 risques immédiats documentés et sourcés avec précision.", "La diminution du nombre de réunions de cadrage.", "L'organisation d'un séminaire d'intégration."], correct: 1, feedback: "La clarté des risques identifiés valide la profondeur de l'assimilation." },
-                { q: "L'outil Granola sert principalement à :", options: ["Rédiger des posts pour les réseaux sociaux.", "Transcrire les réunions de diagnostic et isoler le tacite ou le non-dit.", "Suivre le budget prévisionnel.", "Planifier l'agenda de l'assistante."], correct: 1, feedback: "La capture de la matière brute orale évite les biais de mémorisation sélective." },
-                { q: "Face à une équipe hostile au changement durant la phase A, vous devez :", options: ["Imposer des sanctions dès le Jour 5.", "Écouter activement leurs frustrations pour y puiser la matière de votre Quick Win.", "Les ignorer et avancer avec les éléments moteurs.", "Changer immédiatement de méthodologie."], correct: 1, feedback: "L'énergie de la frustration doit être recyclée en levier d'action visible." },
-                { q: "Comment valider l'impact potentiel d'un Quick Win avant de le lancer ?", options: ["En demandant l'avis de tous les collaborateurs.", "En vérifiant qu'il résout une douleur quotidienne sans nécessiter de validation budgétaire lourde.", "En faisant une étude de marché.", "En attendant l'approbation du CODIR complet."], correct: 1, feedback: "L'autonomie d'exécution est la clé de la vélocité du Quick Win." },
-                { q: "La Phase A se clôture formellement lorsque :", options: ["La période d'intégration officielle se termine.", "La Matrice d'Assimilation et le Quick Win sont stabilisés et prêts pour la Note de Cadrage J10.", "Le premier budget annuel est voté.", "L'organigramme de la phase D est jeté."], correct: 1, feedback: "L'absorption structurelle fournit la matière première indispensable au positionnement d'autorité de la phase suivante." }
-            ],
-            "panel-l": [
-                { q: "Quel est l'objectif central de la Note de Cadrage non sollicitée envoyée à J10 ?", options: ["Demander des ressources supplémentaires de manière urgente.", "Fixer votre posture d'architecte visionnaire en formalisant les enjeux et décisions requises sans attendre d'ordres.", "Faire un compte-rendu d'ambiance des bureaux.", "Annoncer les dates de vos prochains congés."], correct: 1, feedback: "L'architecte fixe le cadre et les options stratégiques ; il n'attend pas qu'on lui dicte sa feuille de route." },
-                { q: "Pour envoyer votre Note de Cadrage, quelle est l'heure DALPS recommandée pour maximiser l'impact ?", options: ["17h30, juste avant la fin de journée.", "09h00 précises, pour saturer positivement l'espace d'attention décisionnel du matin.", "14h15, après le déjeuner.", "23h00, pour montrer que vous travaillez tard."], correct: 1, feedback: "L'envoi à l'ouverture de la journée impose votre sujet au centre de l'agenda exécutif." },
-                { q: "Le simulateur d'objections politiques de ChatGPT vous sert à :", options: ["Rédiger des réponses automatiques à vos emails.", "Anticiper la posture de blocage d'un DG sceptique et blinder vos contre-arguments avant toute rencontre physique.", "Évaluer la vitesse de frappe au clavier.", "Générer des blagues de bureau."], correct: 1, feedback: "La préparation froide des objections immunise le leader contre la déstabilisation en direct." },
-                { q: "Si la Note de Cadrage adopte un ton 'exécutant', quel en est le risque majeur ?", options: ["Être jugé trop compétent sur le plan technique.", "Se voir reléguer à un rôle de pur gestionnaire de tâches opérationnelles sans poids politique au CODIR.", "Passer pour un rebelle.", "Diminuer la charge de travail des équipes."], correct: 1, feedback: "Le ton définit la place que l'organisation vous accordera durablement dans la chaîne de valeur." },
-                { q: "Un indicateur d'autorité textuelle faible dans une note se repère par :", options: ["L'utilisation excessive de phrases courtes et factuelles.", "L'usage récurrent de formules conditionnelles, de modalisateurs de doute ou de justifications non demandées.", "L'absence de métaphores complexes.", "L'alignement à gauche du texte."], correct: 1, feedback: "L'affirmation d'architecte requiert des structures de phrases indicatives et affirmatives claires." },
-                { q: "Comment réagir si votre N+1 rejette initialement les conclusions de votre Note de Cadrage ?", options: ["Prendre le rejet de façon personnelle et se mettre en retrait.", "Activer les données macro-économiques mondiales sourcées via Perplexity pour prouver l'inéluctabilité des risques décrits.", "Modifier immédiatement vos conclusions pour lui plaire.", "Contester sa légitimité auprès de la DRH."], correct: 1, feedback: "La donnée factuelle macro-économique indiscutable brise la subjectivité des opinions politiques individuelles." },
-                { q: "Une Note de Cadrage DALPS doit impérativement tenir sur :", options: ["1 page A4 standard maximum, aérée et ultra-structurée.", "15 pages détaillées incluant les schémas techniques.", "Un simple message de quelques lignes sur Slack ou Teams.", "Une présentation PowerPoint de 40 slides."], correct: 0, feedback: "La concision extrême est la marque ultime de la clarté stratégique et du respect du temps exécutif." },
-                { q: "La section 'Décision demandée' d'une note d'architecte doit contenir :", options: ["Une demande floue d'orientation générale.", "Des options binaires claires ou un arbitrage net engageant la responsabilité du décideur.", "La liste des courses de l'équipe.", "Un résumé des chapitres précédents."], correct: 1, feedback: "Forcer la décision structurelle est le propre du positionnement de haut niveau." },
-                { q: "Pour asseoir sa légitimité sans mandat formalisé complet, le dirigeant doit :", options: ["Élever la voix lors des réunions importantes.", "Délivrer une clarté de diagnostic supérieure et un alignement parfait avec les enjeux business réels de l'entreprise.", "Promettre des augmentations de salaire généralisées.", "Multiplier les notes de service anecdotiques."], correct: 1, feedback: "La maîtrise absolue du diagnostic factuel confère une autorité naturelle indiscutable." },
-                { q: "L'analyse rhétorique par IA permet de traquer :", options: ["Les fautes d'orthographe uniquement.", "Le glissement sémantique vers la justification passive au détriment de la proposition structurelle active.", "Le nombre de mots compliqués employés.", "Le plagiat de documents internes."], correct: 1, feedback: "L'IA excelle à identifier les marqueurs linguistiques de soumission ou de passivité managériale." },
-                { q: "La Note de Cadrage non sollicitée est considérée comme un acte de :", options: ["Insubordination caractérisée.", "Proactivity d'ingénierie de positionnement visant à prendre le contrôle du calendrier stratégique.", "Simple politesse managériale.", "Rapport managérial de routine."], correct: 1, feedback: "Prendre l'initiative de la structuration fixe définitivement votre niveau de leadership." },
-                { q: "Quel élément valide que votre message d'autorité a été perçu par le CODIR ?", options: ["Ils arrêtent de vous parler temporairement.", "Leurs réponses reprennent textuellement vos concepts de cadrage et vos formulations structurelles.", "Ils vous invitent à toutes les soirées informelles.", "Le Directeur Général vous propose une augmentation."], correct: 1, feedback: "L'adoption de votre vocabulaire par l'adversaire ou le partenaire valide la prise de contrôle intellectuelle." },
-                { q: "Avant d'envoyer votre note, vous devez obligatoirement :", options: ["La faire valider par l'ensemble des collaborateurs du département.", "Passer le texte au crible de l'analyseur de posture IA pour purger les tics de langage d'exécutant.", "Demander l'autorisation écrite de la DRH.", "Attendre la fin des 30 premiers jours."], correct: 1, feedback: "Le nettoyage posturo-sémantique garantit l'étanchéité de votre signal d'autorité." },
-                { q: "Une note d'architecte performante intègre toujours :", options: ["Le contexte historique exact, l'enjeu business direct, la proposition de rupture et l'arbitrage net attendu.", "Des graphiques multicolores complexes.", "Une liste de doléances de l'équipe.", "Les CV des membres clés de votre équipe."], correct: 0, feedback: "La structure standard HBR garantit une lisibilité immédiate par les profils de direction executive." },
-                { q: "La Phase L valide votre passage d'un statut de 'nouveau venu' à un statut de :", options: ["Gestionnaire de crise temporaire.", "Cadreur stratégique incontournable de la trajectoire de l'organisation.", "Spécialiste technique de niche.", "Observateur neutre des processus."], correct: 1, feedback: "Le cadrage réussi fige votre légitimité politique bien avant la livraison des grands chantiers complexes." }
-            ],
-            "panel-p": [
-                { q: "Une présentation CODIR haut de gamme doit respecter quelle règle stricte de volume ?", options: ["30 slides détaillant chaque étape technique.", "5 slides maximum axées exclusivement sur les arbitrages, la vision macro, les priorités et le ROI.", "Pas de slides, uniquement un discours oral improvisé.", "Un document PDF de 50 pages annexé."], correct: 1, feedback: "Au-delà de 5 slides, vous perdez l'attention stratégique des décideurs et diluez votre message central." },
-                { q: "Comment formule-t-on le ROI d'un Quick Win technique devant un CODIR ?", options: ["En expliquant en détail la propreté du nouveau code source injecté.", "En convertissant l'impact opérationnel direct en gain financier projeté sur 12 mois (Euros ou jours d'exploitation économisés).", "En affichant le niveau de satisfaction interne de l'équipe.", "En comparant la situation avec un concurrent américain."], correct: 1, feedback: "Le langage universel du top management est exclusivement le langage de la valeur financière et de l'optimisation des ressources." },
-                { q: "Le Dry Run d'évaluation face à une IA simulant un CODIR hostile sert à :", options: ["Vérifier le fonctionnement du logiciel de présentation.", "Tester la robustesse émotionnelle et la stabilité de vos arguments face aux questions pièges les plus déstabilisantes.", "Calculer le temps de parole exact.", "Générer un compte-rendu automatique."], correct: 1, feedback: "L'entraînement sous haute pression cognitive garantit une froideur d'exécution parfaite le jour J." },
-                { q: "Dans la construction de la roadmap de 90 jours, le premier mois doit être dédié à :", options: ["L'implémentation de la refonte globale de l'infrastructure.", "La consolidation des Quick Wins et la stabilisation des lignes de défense politiques définies en phase L.", "La prise de congés pour éviter le burn-out.", "La restructuration complète des équipes N-2."], correct: 1, feedback: "Le séquençage doit valider les gains précoces avant d'engager les transformations structurelles lourdes." },
-                { q: "Le ton d'une présentation CODIR performante doit être :", options: ["Chaleureux, enthousiaste et très émotionnel.", "Froid, factuel, hautement structuré et résolument orienté vers la prise de décision executive.", "Technique, cryptique et ultra-détaillé.", "Poétique et axé sur les valeurs humaines de l'entreprise."], correct: 1, feedback: "La froideur factuelle inspire la confiance managériale face aux risques d'exécution complexes." },
-                { q: "Quel est le piège slide classique à bannir absolument selon les standards Apple/Stripe ?", options: ["L'utilisation d'une typographie Arial épurée.", "L'accumulation de puces de texte denses, de graphiques illisibles et de gradients de couleurs flashy.", "L'excès d'espaces blancs autour des titres.", "L'utilisation de photos en noir et blanc."], correct: 1, feedback: "Le minimalisme visuel renforce la clarté du propos. Moins de bruit graphique équivaut à plus d'impact intellectuel." },
-                { q: "Pour prouver le ROI d'une action, la projection financière doit idéalement s'étendre sur :", options: ["3 semaines", "12 mois glissants", "15 ans", "La durée de vie totale de l'entreprise"], correct: 1, feedback: "L'horizon de 12 mois correspond aux cycles budgétaires standards des comités de direction." },
-                { q: "Si un membre du CODIR conteste vos chiffres de ROI en pleine séance, votre posture DALPS est :", options: ["Vous énerver pour défendre votre honneur.", "Soutenir calmement la validité des hypothèses de calcul basées sur les logs réels du terrain et proposer une revue de détail hors session.", "Retirer immédiatement la slide en vous excusant.", "Déléguer la réponse à votre responsable comptable."], correct: 1, feedback: "La neutralité émotionnelle face à la contestation désarme instantanément les attaques politiques de surface." },
-                { q: "La slide 'Cap' de votre présentation executive doit formaliser :", options: ["La description de vos tâches quotidiennes.", "La trajectoire stratégique cible à moyen terme validée en amont avec les pivots centraux.", "La liste des prestataires externes retenus.", "L'organigramme cible du département de l'année prochaine."], correct: 1, feedback: "Fixer le cap redonne de la perspective et de la hauteur aux débats souvent trop opérationnels." },
-                { q: "L'attribution nominale de l'impact financier dans un rapport CODIR permet de :", options: ["Dénoncer les collaborateurs inefficaces.", "Valoriser précisément les contributions de vos alliés de la Power Map pour sceller définitivement leur soutien politique.", "Remplir les critères d'évaluation des RH.", "Réduire le montant des impôts de l'entreprise."], correct: 1, feedback: "Partager le succès financier avec vos alliés renforce mécaniquement votre assise et votre réseau d'influence." },
-                { q: "Une roadmap exécutif performante se découpe généralement en :", options: ["90 jours découpés en blocs de 30 jours avec livrables d'impact identifiables.", "365 jours détaillés heure par heure.", "Une seule grande phase continue sans jalons clairs.", "Un plan sur 5 ans sans révision intermédiaire."], correct: 0, feedback: "Le rythme de 90 jours offre le parfait équilibre entre vélocité tactique et visibilité stratégique." },
-                { q: "Pour mesurer la réception de votre présentation CODIR en post-séance, vous analysez :", options: ["Les sourires à la machine à café.", "Les flux d'emails post-réunion via Gemini pour cartographier le niveau d'engagement réel ou de résistance passive.", "Le compte rendu officiel rédigé par la secrétaire.", "Le taux d'absentéisme du lendemain."], correct: 1, feedback: "Les signaux sémantiques écrits confirment la traduction concrète des engagements pris en séance." },
-                { q: "Le niveau de détail technique de vos slides doit être :", options: ["Poussé au maximum pour prouver votre expertise métier absolue.", "Réduit au strict minimum requis pour éclairer la prise de décision stratégique globale.", "Inexistant, pas de chiffres du tout.", "Adapté aux ingénieurs présents dans la salle."], correct: 1, feedback: "Le CODIR arbitre des trajectoires et des budgets ; il ne débugue pas les systèmes de production." },
-                { q: "L'ingénierie de présentation executive exige que chaque slide contienne au maximum :", options: ["Une seule idée directrice claire et percutante soutenue par des faits chiffrés.", "12 blocs de texte distincts.", "Toute la documentation technique de l'annexe.", "Trois propositions contradictoires."], correct: 0, feedback: "Une idée par slide garantit une assimilation cognitive instantanée par une audience surchargée." },
-                { q: "La Phase P est considérée comme validée lorsque :", options: ["Vous avez terminé de concevoir vos 5 slides.", "Le CODIR a formellement acté et validé votre feuille de route et acté les arbitrages budgétaires demandés.", "La période d'essai est validée par écrit.", "Le Quick Win a atteint sa deuxième semaine."], correct: 1, feedback: "La production ne s'arrête pas au livrable, elle se valide par l'obtention du feu vert décisionnel officiel." }
-            ],
-            "panel-s": [
-                { q: "Pourquoi est-il vital de formaliser des règles de décision claires dès J20/J30 ?", options: ["Pour complexifier les processus internes d'approbation.", "Pour sanctuariser votre périmètre d'autorité autonome et éviter les ingérences politiques des directions connexes.", "Pour faire plaisir au département conformité et audit.", "Pour réduire le nombre d'e-mails reçus."], correct: 1, feedback: "Fixer les règles du jeu décisionnel protège durablement vos équipes et votre périmètre d'action stratégique." },
-                { q: "Un tableau de bord exécutif de pilotage d'activité performant doit contenir au maximum :", options: ["5 KPIs cibles stratégiques essentiels assurant une visibilité transversale nette.", "150 métriques techniques détaillées.", "Uniquement le chiffre d'affaires global.", "Les indicateurs de performance individuels de chaque employé."], correct: 0, feedback: "La profusion d'indicateurs noie le pilotage. 5 KPIs bien calibrés offrent une clarté de contrôle absolue." },
-                { q: "La revue des talents assistée par IA en phase S sert en priorité à :", options: ["Automatiser la rédaction des fiches de paie.", "Cartographier objectivement les postes critiques isolés sans plans de succession et anticiper les départs de profils clés.", "Surveiller les horaires de connexion.", "Remplacer l'entretien annuel."], correct: 1, feedback: "La sécurité d'une direction repose entièrement sur la solidité et la rétention de son capital humain de premier rang." },
-                { q: "Quelle action menez-vous face à un profil à haut potentiel identifié comme risquant de quitter l'entreprise ?", options: ["L'ignorer en attendant de voir s'il démissionne réellement.", "Déployer immédiatement un plan de sécurisation personnalisé (revalorisation du rôle, plan de carrière, levée des frustrations).", "Le remplacer préventivement par un profil externe.", "L'isoler des projets confidentiels."], correct: 1, feedback: "Sécuriser les talents clés fait partie des impératifs de protection des fondations opérationnelles du leader." },
-                { q: "Les rituels de gouvernance instaurés en fin de trajectoire DALPS servent à :", options: ["Remplir vos semaines de réunions de contrôle.", "Ancrer durablement la récurrence des flux d'information légitimes et le suivi rigoureux de la performance.", "Créer des moments de socialisation informelle.", "Préparer le prochain audit externe."], correct: 1, feedback: "La gouvernance stabilise la structure et évite le retour des dérives organisationnelles passées." },
-                { q: "En phase S, la veille hebdomadaire via Perplexity sur les signaux faibles externes permet de :", options: ["Chercher des opportunités d'emploi ailleurs.", "Anticiper les fusions, acquisitions ou restructurations macro-sectorielles pouvant déstabiliser vos budgets internes.", "Suivre l'actualité des célébrités du secteur.", "Analyser la stratégie marketing digitale."], correct: 1, feedback: "Un leader sécurisé est un leader qui surveille l'horizon pour ne jamais subir les secousses de l'écosystème." },
-                { q: "Une gouvernance résiliente selon les standards MIT Sloan repose sur :", options: ["Une centralisation absolue de toutes les décisions sur la tête du dirigeant.", "Une décentralisation claire des responsabilités sous contrainte de règles d'escalade parfaitement définies.", "L'absence totale de structures de contrôle fixes.", "La rotation hebdomadaire des postes de direction."], correct: 1, feedback: "La décentralisation contrôlée maximise la vélocité opérationnelle de l'organisation tout en protégeant le top management." },
-                { q: "La matrice de responsabilité des décisions (de type RACI) doit être :", options: ["Conservée secrète dans votre coffre-fort.", "Partagée, validée et appliquée rigoureusement par l'ensemble des parties prenantes de votre écosystème.", "Remplacée par des accords verbaux fluides.", "Rédigée uniquement en fin d'année."], correct: 1, feedback: "L'écrit partagé élimine définitivement la mauvaise foi politique et les chevauchements de rôles conflictuels." },
-                { q: "Que signifie la notion de 'baseline J0' dans votre tableau de bord de pilotage ?", options: ["La ligne de budget minimum de l'année précédente.", "L'état initial chiffré des indicateurs mesuré à votre arrivée précise dans l'organisation.", "Le niveau de performance des concurrents directs.", "La cible idéale à atteindre à 5 ans."], correct: 1, feedback: "La baseline J0 constitue le point de comparaison indispensable pour mesurer scientifiquement la valeur créée par votre gestion." },
-                { q: "Un plan de succession robuste exige de prévoir au moins :", options: ["Un remplaçant potentiel interne ou externe identifié et préparé pour chaque poste critique de votre premier cercle.", "Une augmentation de salaire préventive pour tout le monde.", "Un recours systématique à des cabinets de chasse de têtes en urgence.", "Un outil d'évaluation psychologique des N-2."], correct: 0, feedback: "L'anticipation du risque de rupture de compétences garantit la continuité d'exploitation de la direction." },
-                { q: "La déstabilisation politique interne peut souvent être contenue par :", options: ["Une communication agressive sur les réseaux sociaux d'entreprise.", "Une transparence totale des indicateurs de performance face aux instances exécutives de contrôle.", "Le cloisonnement strict de toutes les informations du département.", "L'annulation des réunions transverses."], correct: 1, feedback: "Des résultats chiffrés indiscutables et transparents forment le meilleur bouclier contre les attaques politiques de couloir." },
-                { q: "La fréquence idéale de revue de vos 5 KPIs stratégiques en comité de direction est :", options: ["Toutes les heures de la journée.", "Mensuelle ou bimensuelle selon la vélocité requise par l'activité business de l'entreprise.", "Annuelle uniquement.", "Hebdomadaire le vendredi soir."], correct: 1, feedback: "Le rythme mensuel permet de corriger la trajectoire opérationnelle avant que les dérives ne deviennent critiques." },
-                { q: "L'automatisation des flux de données de votre tableau de bord élimine :", options: ["Le besoin de manager les équipes.", "Les biais de manipulation humaine ou de rétention d'information au sein de la ligne hiérarchique.", "Toutes les pannes informatiques.", "La nécessité de faire des réunions CODIR."], correct: 1, feedback: "La donnée automatisée en direct garantit une objectivité parfaite des débats de performance." },
-                { q: "En fin de Phase S, votre niveau de dépendance opérationnelle vis-à-vis du quotidien doit être :", options: ["Maximal, vous devez tout valider vous-même heure par heure.", "Minimal, la structure de gouvernance et les processus automatisés tournent de manière autonome sous votre contrôle macro.", "Nul, vous pouvez quitter l'entreprise définitivement sans impact.", "Égal à celui du premier jour d'intégration."], correct: 1, feedback: "Le but ultime du framework DALPS est de faire de vous un architecte libéré des urgences opérationnelles quotidiennes." },
-                { q: "Le succès complet du framework DALPS se matérialise par :", options: ["La simple validation de vos 90 premiers jours dans l'entreprise.", "Une direction performante, pacifiée politiquement, hautement automatisée et structurellement sécurisée à long terme.", "L'obtention d'un meilleur bureau de direction.", "L'approbation unanime de votre dernier message d'équipe."], correct: 1, feedback: "L'Académie Executive prépare à l'indépendance stratégique et à la maîtrise totale de sa trajectoire de direction." }
-            ]
-        };
-
-        let currentActivePhaseId = "panel-d";
-        let currentQuestionIndex = 0;
-
-        /* LOGIQUE DE NAVIGATION DES ONGLETS DE PHASES */
-        function switchPhase(panelId, element) {
-            document.querySelectorAll('.dalps-panel').forEach(panel => panel.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
-            
-            document.getElementById(panelId).classList.add('active');
-            element.classList.add('active');
-            currentActivePhaseId = panelId;
-        }
-
-        /* ACTIONS BOUTON COPIER POUR PRESSE-PAPIERS */
-        function copyPrompt(elementId, buttonElement) {
-            const textToCopy = document.getElementById(elementId).innerText;
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                const originalText = buttonElement.innerText;
-                buttonElement.innerText = "Prompt copié ✓";
-                buttonElement.style.borderColor = "#4A7C59";
-                buttonElement.style.color = "#4A7C59";
-                setTimeout(() => {
-                    buttonElement.innerText = originalText;
-                    buttonElement.style.borderColor = "var(--text-color)";
-                    buttonElement.style.color = "var(--text-color)";
-                }, 2000);
-            });
-        }
-
-        /* APPLICATION INTERACTIVE ET MODALE DU QUIZ EXECUTIVE */
-        function openQuiz(phaseId) {
-            currentActivePhaseId = phaseId;
-            currentQuestionIndex = 0;
-            
-            const badge = document.getElementById('modal-quiz-phase-badge');
-            if(phaseId === 'panel-d') badge.innerText = "Phase Fondatrice · Décoder";
-            if(phaseId === 'panel-a') badge.innerText = "Phase d'Assimilation · Absorber";
-            if(phaseId === 'panel-l') badge.innerText = "Phase de Positionnement · Légitimer";
-            if(phaseId === 'panel-p') badge.innerText = "Phase d'Exécution · Produire";
-            if(phaseId === 'panel-s') badge.innerText = "Phase de Pérennisation · Sécuriser";
-
-            document.getElementById('executive-quiz-modal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            renderQuestion();
-        }
-
-        function closeQuiz() {
-            document.getElementById('executive-quiz-modal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        function renderQuestion() {
-            const questionsList = ALL_PHASES_QUIZ_DATA[currentActivePhaseId];
-            const currentQuestion = questionsList[currentQuestionIndex];
-            
-            const progressPercent = (currentQuestionIndex / questionsList.length) * 100;
-            document.getElementById('quiz-progress-fill').style.width = `${progressPercent}%`;
-            document.getElementById('quiz-counter-text').innerText = `Question ${currentQuestionIndex + 1} sur ${questionsList.length}`;
-            document.getElementById('quiz-next-btn').style.display = 'none';
-
-            let html = `
-                <h4 style="font-size:1.25rem; font-weight:400; line-height:1.4; margin-bottom:24px; color:var(--text-color);">${currentQuestion.q}</h4>
-                <div class="options-vertical">
-            `;
-
-            currentQuestion.options.forEach((option, index) => {
-                html += `<button class="option-btn" onclick="selectOption(${index})" id="option-${index}">${option}</button>`;
-            });
-
-            html += `
-                </div>
-                <div id="modal-feedback-box" class="quiz-feedback">
-                    <strong style="display:block; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px; color:var(--text-color);">Analyse Pédagogique DALPS</strong>
-                    <p style="font-size:0.95rem; color:#444444;">${currentQuestion.feedback}</p>
-                </div>
-            `;
-
-            document.getElementById('quiz-question-container').innerHTML = html;
-        }
-
-        function selectOption(index) {
-            const questionsList = ALL_PHASES_QUIZ_DATA[currentActivePhaseId];
-            const currentQuestion = questionsList[currentQuestionIndex];
-            
-            document.querySelectorAll('.option-btn').forEach(btn => btn.disabled = true);
-            const selectedBtn = document.getElementById(`option-${index}`);
-            
-            if (index === currentQuestion.correct) {
-                selectedBtn.classList.add('selected-correct');
-            } else {
-                selectedBtn.classList.add('selected-incorrect');
-                document.getElementById(`option-${currentQuestion.correct}`).classList.add('selected-correct');
-            }
-
-            document.getElementById('modal-feedback-box').style.display = 'block';
-            document.getElementById('quiz-next-btn').style.display = 'inline-block';
-            document.getElementById('quiz-next-btn').innerText = (currentQuestionIndex === questionsList.length - 1) ? "Terminer l'Évaluation" : "Question Suivante";
-        }
-
-        function nextQuestion() {
-            const questionsList = ALL_PHASES_QUIZ_DATA[currentActivePhaseId];
-            if (currentQuestionIndex < questionsList.length - 1) {
-                currentQuestionIndex++;
-                renderQuestion();
-            } else {
-                document.getElementById('quiz-progress-fill').style.width = `100%`;
-                document.getElementById('quiz-question-container').innerHTML = `
-                    <div style="text-align:center; padding: 24px 0;">
-                        <span style="font-size:3rem; color:var(--accent-color); display:block; margin-bottom:16px;">✓</span>
-                        <h4 style="font-size:1.5rem; font-weight:400; margin-bottom:12px;">Évaluation de Phase Validée</h4>
-                        <p style="color:#555555; font-size:1rem; max-width:500px; margin: 0 auto 24px auto;">Vos réponses ont été enregistrées avec succès dans le framework d'assimilation de votre protocole.</p>
-                        <button class="btn btn-accent" onclick="closeQuiz()">Retourner à la formation</button>
+                <h4 class="section-index-title title-video"><span>01</span> Masterclass Vidéo & Décryptage</h4>
+                <div class="media-block">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
                     </div>
-                `;
-                document.getElementById('quiz-next-btn').style.display = 'none';
-                document.getElementById('quiz-counter-text').innerText = "Évaluation terminée";
-            }
-        }
-    </script>
-</body>
-</html>
+                </div>
+
+                <h4 class="section-index-title title-prompts"><span>02</span> Stratégie de l'Ombre & Alignement IA</h4>
+                <div class="prompt-suite">
+                    <div class="prompt-card">
+                        <h5>Prompt D1 : L'Ingénierie de la Cartographie Invisible</h5>
+                        <div class="clinical-context">
+                            <strong>Objectif Clinique :</strong> Isoler les flux d'influence informels et les alliances tacites qui court-circuitent l'organigramme officiel afin de bâtir votre Power Map.
+                        </div>
+                        <code>Analyse l'organigramme officiel fourni ainsi que les notes d'observations textuelles suivantes. Identifie les "Pivots Centraux", les "Décisionnaires Informels" et les "Vétos Silencieux". Génère une matrice d'influence à double entrée (Pouvoir Réel vs Soutien Apparent).</code>
+                        <div class="anecdote-box">
+                            <strong>Anecdote de terrain :</strong> Lors de ma prise de poste dans un grand cabinet conseil, l'organigramme désignait le Directeur des Opérations comme le décideur ultime. En appliquant cette cartographie, j'ai réalisé que c'était en fait sa responsable comptable qui bloquait ou validait discrètement tous les arbitrages budgétaires stratégiques.
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="section-index-title title-quiz"><span>03</span> Auto-Évaluation & Quiz Stratégique</h4>
+                <div class="quiz-container" id="quiz-module-d">
+                    <div class="quiz-question" data-correct="B">
+                        <p class="question-text">Question D1 : Vous êtes nouveau Directeur Financier depuis 2 jours. Lors d'une réunion budgétaire, vous remarquez que le Responsable Comptable répond aux questions des autres avant même que vous n'ayez le temps de répondre. Quelle est votre interprétation prioritaire ?</p>
+                        <div class="options-group">
+                            <label class="option-label"><input type="radio" name="qd1" value="A"> A) Il est simplement efficace et bien informé</label>
+                            <label class="option-label"><input type="radio" name="qd1" value="B"> B) Il est probablement le pivot central informel de cette direction</label>
+                            <label class="option-label"><input type="radio" name="qd1" value="C"> C) Il cherche à vous déstabiliser publiquement</label>
+                            <label class="option-label"><input type="radio" name="qd1" value="D"> D) Il n'a pas encore intégré votre arrivée dans l'organigramme</label>
+                        </div>
+                        <div class="quiz-feedback"><strong>Bonne réponse : B.</strong> <em>Feedback : Le comportement décrit — répondre avant le nouveau dirigeant — est le signal classique d'un pivot central. Il détient la mémoire organisationnelle et l'adhésion du groupe sans avoir le titre. Votre priorité : ne pas le neutraliser, mais l'identifier comme allié potentiel. Toute tentative de le court-circuiter avant J7 serait une erreur politique majeure.</em></div>
+                    </div>
+
+                    <div class="quiz-question" data-correct="C">
+                        <p class="question-text">Question D2 : À J2, vous demandez à votre assistante de vous organiser des entretiens individuels avec chacun de vos N-1. Elle vous répond "Monsieur Durand préfère généralement attendre la fin du mois pour les réunions formelles." Que faites-vous ?</p>
+                        <div class="options-group">
+                            <label class="option-label"><input type="radio" name="qd2" value="A"> A) Vous respectez sa préférence et attendez la fin du mois</label>
+                            <label class="option-label"><input type="radio" name="qd2" value="B"> B) Vous imposez votre agenda — c'est vous le directeur</label>
+                            <label class="option-label"><input type="radio" name="qd2" value="C"> C) Vous notez que Monsieur Durand est probablement un véto silencieux et planifiez un contact informel avant l'entretien formel</label>
+                            <label class="option-label"><input type="radio" name="qd2" value="D"> D) Vous demandez à votre assistante d'insister</label>
+                        </div>
+                        <div class="quiz-feedback"><strong>Bonne réponse : C.</strong> <em>Feedback : L'information donnée par l'assistante n'est pas anodine. "Préfère attendre" signifie que Durand contrôle son agenda et donc ses interactions avec la hiérarchie. C'est un signal de résistance passive. Le contact informel (café, couloir) avant l'entretien formel désamorce la résistance sans créer de confrontation.</em></div>
+                    </div>
+                    <button class="validate-quiz-btn" onclick="evaluateModuleQuiz('quiz-module-d')">Valider mes réponses</button>
+                    <div class="score-display"></div>
+                </div>
+
+                <h4 class="section-index-title title-outils"><span>04</span> Hub Outils Opérationnels</h4>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h4>Matrice d'Analyse d'Influence (Power Map)</h4>
+                        <p>Tableau opérationnel pour lister vos N-1 et parties prenantes selon leur pouvoir d'impact réel.</p>
+                        <a href="#" class="tool-download-btn">Télécharger la Matrice Excel →</a>
+                        <div class="tool-prompt-accordion">
+                            <button class="accordion-trigger" onclick="toggleAccordion(this)">▶ Voir le prompt de l'outil</button>
+                            <div class="accordion-content">
+                                <code>[PROMPT EN APPUY] Génère un tableau Markdown à 4 colonnes : Acteur, Niveau d'influence réel (1-5), Niveau de soutien apparent, Levier d'activation prioritaire.</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="panel-a" class="content-panel">
+                <div class="section-header">
+                    <span class="section-badge">Phase A · J4 à J7</span>
+                    <h1 class="section-title">Absorber la Mémoire Organisationnelle</h1>
+                    <p class="section-subtitle">Extraire les données non écrites, auditer la viabilité des projets et détecter les points de friction techniques.</p>
+                </div>
+
+                <h4 class="section-index-title title-video"><span>01</span> Masterclass Vidéo & Décryptage</h4>
+                <div class="media-block">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <h4 class="section-index-title title-prompts"><span>02</span> Stratégie de l'Ombre & Alignement IA</h4>
+                <div class="prompt-suite">
+                    <div class="prompt-card">
+                        <h5>Prompt A1 : L'Extracteur de Vérité Opérationnelle</h5>
+                        <div class="clinical-context">
+                            <strong>Objectif Clinique :</strong> Déceler l'écart systémique entre les process officiels de l'entreprise et la réalité opérationnelle pour identifier vos premiers Quick Wins.
+                        </div>
+                        <code>Agis en tant qu'auditeur de performance. Analyse ces comptes-rendus opérationnels. Repère les frictions récurrentes et propose 3 chantiers prioritaires à fort impact et faible résistance politique.</code>
+                        <div class="anecdote-box">
+                            <strong>Anecdote de terrain :</strong> Dans une grande infrastructure logistique, le système SAP officiel était décrit comme fluide. En analysant les coulisses, j'ai découvert que les équipes utilisaient des fichiers Excel parallèles pour piloter l'entrepôt. Résoudre ce bug de transmission a été mon premier Quick Win majeur.
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="section-index-title title-quiz"><span>03</span> Auto-Évaluation & Quiz Stratégique</h4>
+                <div class="quiz-container" id="quiz-module-a">
+                    <div class="quiz-question" data-correct="B">
+                        <p class="question-text">Question A1 : À J4, vous organisez un atelier avec votre équipe pour identifier les irritants opérationnels. Un collaborateur dit : "Le vrai problème c'est le système SAP — il bloque tout depuis 2 ans." Trois autres hochent la tête. Quelle est votre lecture ?</p>
+                        <div class="options-group">
+                            <label class="option-label"><input type="radio" name="qa1" value="A"> A) Vous avez identifié votre Quick Win : résoudre le problème SAP</label>
+                            <label class="option-label"><input type="radio" name="qa1" value="B"> B) SAP est un symptôme — vous devez identifier pourquoi ce problème n'a pas été résolu en 2 ans malgré son impact</label>
+                            <label class="option-label"><input type="radio" name="qa1" value="C"> C) Vous notez le problème et le transmettez à la DSI</label>
+                            <label class="option-label"><input type="radio" name="qa1" value="D"> D) Vous promettez de le résoudre avant J15</label>
+                        </div>
+                        <div class="quiz-feedback"><strong>Bonne réponse : B.</strong> <em>Feedback : Un problème connu depuis 2 ans et non résolu n'est jamais uniquement technique. Il y a une raison politique, budgétaire ou humaine derrière cette inaction. Identifier cette raison vous donne une information plus précieuse que le problème lui-même.</em></div>
+                    </div>
+
+                    <div class="quiz-question" data-correct="C">
+                        <p class="question-text">Question A2 : Le Quick Win idéal selon le protocole D.A.L.P.S doit répondre à quels critères ?</p>
+                        <div class="options-group">
+                            <label class="option-label"><input type="radio" name="qa2" value="A"> A) Visible, rapide à exécuter, techniquement impressionnant</label>
+                            <label class="option-label"><input type="radio" name="qa2" value="B"> B) Important stratégiquement, difficile à réaliser, approuvé par votre N+1</label>
+                            <label class="option-label"><input type="radio" name="qa2" value="C"> C) Visible, mesurable, attribué nominalement à vous, validé implicitement par les décisionnaires clés</label>
+                            <label class="option-label"><input type="radio" name="qa2" value="D"> D) Populaire auprès de l'équipe, peu coûteux, réalisable en 48h</label>
+                        </div>
+                        <div class="quiz-feedback"><strong>Bonne réponse : C.</strong> <em>Feedback : Le Quick Win DALPS n'est pas le plus impressionnant techniquement — c'est celui qui sera vu et reconnu par les acteurs qui comptent dans votre Power Map. La validation implicite des décisionnaires avant l'exécution est la condition sine qua non.</em></div>
+                    </div>
+                    <button class="validate-quiz-btn" onclick="evaluateModuleQuiz('quiz-module-a')">Valider mes réponses</button>
+                    <div class="score-display"></div>
+                </div>
+
+                <h4 class="section-index-title title-outils"><span>04</span> Hub Outils Opérationnels</h4>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h4>Grille d'Évaluation de Viabilité de Projet</h4>
+                        <p>Matrice Excel de scoring pour évaluer mathématiquement la santé réelle de vos chantiers.</p>
+                        <a href="#" class="tool-download-btn">Télécharger la Grille →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="panel-l" class="content-panel">
+                <div class="section-header">
+                    <span class="section-badge">Phase L · J8 à J10</span>
+                    <h1 class="section-title">Légitimer l'Autorité Strategique</h1>
+                    <p class="section-subtitle">Asseoir sa posture souveraine sans basculer dans l'autoritarisme, via la Note J10.</p>
+                </div>
+
+                <h4 class="section-index-title title-video"><span>01</span> Masterclass Vidéo & Décryptage</h4>
+                <div class="media-block">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <h4 class="section-index-title title-prompts"><span>02</span> Stratégie de l'Ombre & Alignement IA</h4>
+                <div class="prompt-suite">
+                    <div class="prompt-card">
+                        <h5>Prompt L1 : Le Rédacteur Impitoyable de la Note J10</h5>
+                        <div class="clinical-context">
+                            <strong>Objectif Clinique :</strong> Structurer une note de cadrage stratégique clinique, factuelle, incontestable, qui neutralise d'emblée toute critique.
+                        </div>
+                        <code>Rédige une note de synthèse exécutive de 3 pages max destinée à mon N+1. Utilise un ton ultra-factuel, dénué de tout jargon émotionnel. Structure : 1. Constats Quantifiables, 2. Risques de Statu Quo, 3. Arbitrages Immédiats.</code>
+                        <div class="anecdote-box">
+                            <strong>Anecdote de terrain :</strong> La Note J10 est l'outil le plus puissant du protocole. En la transmettant à mon Codir lors d'une restructuration, elle a immédiatement déplacé le débat du "Qui a raison ?" vers "Voici les faits non négociables". Elle m'a évité 3 mois de guerres de tranchées politiques.
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="section-index-title title-quiz"><span>03</span> Auto-Évaluation & Quiz Stratégique</h4>
+                <div class="quiz-container" id="quiz-module-l">
+                    <div class="quiz-question" data-correct="A">
+                        <p class="question-text">Question L1 : Quel est l'objectif premier de la Note Stratégique J10 envoyée à votre N+1 ?</p>
+                        <div class="options-group">
+                            <label class="option-label"><input type="radio" name="ql1" value="A"> A) Poser vos constats de manière ultra-factuelle et acter vos axes d'arbitrage sans négociation émotionnelle</label>
+                            <label class="option-label"><input type="radio" name="ql1" value="B"> B) Demander l'autorisation de changer l'organisation des équipes</label>
+                            <label class="option-label"><input type="radio" name="ql1" value="C"> C) Présenter un rapport d'étonnement convivial</label>
+                            <label class="option-label"><input type="radio" name="ql1" value="D"> D) Se plaindre des dysfonctionnements laissés par votre prédécesseur</label>
+                        </div>
+                        <div class="quiz-feedback"><strong>Bonne réponse : A.</strong> <em>Feedback : La Note J10 est un acte d'autorité clinique. Elle pose les faits de manière indiscutable pour forcer les arbitrages nécessaires, gelant ainsi les velléités de déstabilisation dès le dixième jour.</em></div>
+                    </div>
+                    <button class="validate-quiz-btn" onclick="evaluateModuleQuiz('quiz-module-l')">Valider mes réponses</button>
+                    <div class="score-display"></div>
+                </div>
+
+                <h4 class="section-index-title title-outils"><span>04</span> Hub Outils Opérationnels</h4>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h4>Template Officiel de la Note J10 (Format HBR)</h4>
+                        <p>Architecture de document minimaliste Word pensée pour maximiser l'impact de lecture chez les cadres supérieurs.</p>
+                        <a href="#" class="tool-download-btn">Télécharger le Template Word →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="panel-p" class="content-panel">
+                <div class="section-header">
+                    <span class="section-badge">Phase P · J11 à J13</span>
+                    <h1 class="section-title">Produire l'Alignement des Forces</h1>
+                    <p class="section-subtitle">Verrouiller l'exécution des chantiers et obtenir l'engagement formel de vos équipes directes.</p>
+                </div>
+
+                <h4 class="section-index-title title-video"><span>01</span> Masterclass Vidéo & Décryptage</h4>
+                <div class="media-block">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <h4 class="section-index-title title-prompts"><span>02</span> Stratégie de l'Ombre & Alignement IA</h4>
+                <div class="prompt-suite">
+                    <div class="prompt-card">
+                        <h5>Prompt P1 : Le Concepteur d'Indicateurs d'Inflexion</h5>
+                        <div class="clinical-context">
+                            <strong>Objectif Clinique :</strong> Définir des indicateurs clés (KPIs) qui forcent les équipes à changer de comportement opérationnel plutôt qu'à simplement optimiser l'existant.
+                        </div>
+                        <code>Crée un tableau de bord de pilotage pour mon équipe basé sur 3 indicateurs d'inflexion comportementale. Évite les indicateurs de volume passifs, concentre-toi sur la vélocité et le respect des fenêtres de livraison critiques.</code>
+                        <div class="anecdote-box">
+                            <strong>Anecdote de terrain :</strong> En forçant un changement d'indicateur axé non plus sur le volume de tickets traités, mais sur le taux de résolution immédiate au premier contact, j'ai transformé une culture d'exécutants passifs en une équipe d'ingénieurs hautement responsables en moins de 4 jours.
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="section-index-title title-quiz"><span>03</span> Auto-Évaluation & Quiz Stratégique</h4>
+                <div class="quiz-container
