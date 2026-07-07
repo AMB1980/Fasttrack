@@ -785,6 +785,320 @@
             border-top: 1px dashed #eaeaea;
         }
 
+        /* ============================================================
+           PATCH V3 — DALPS EXECUTIVE LAB
+           Moteur de simulations. Réutilise quiz-card / quiz-option /
+           quiz-feedback / quiz-dashboard. Nouveaux composants seuls.
+           ============================================================ */
+
+        /* CATALOGUE DE SIMULATIONS */
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .lab-card {
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .lab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(17, 17, 17, 0.08);
+        }
+        .lab-card p { flex: 1; }
+        .lab-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 14px;
+            padding-top: 10px;
+            border-top: 1px dashed #eaeaea;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .lab-card-meta .lab-count { color: #d4af37; }
+        .lab-card-meta .lab-cta { color: #111111; }
+        .lab-card.lab-soon {
+            cursor: default;
+            opacity: 0.55;
+        }
+        .lab-card.lab-soon:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        .lab-soon-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #888888;
+            background: #f1f1f1;
+            border: 1px solid #e3e3e3;
+            padding: 3px 8px;
+            border-radius: 3px;
+        }
+
+        /* LECTEUR DE SIMULATION */
+        .lab-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+        .lab-back-btn {
+            background: none;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #111111;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+        .lab-back-btn:hover {
+            border-color: #111111;
+            background: #111111;
+            color: #ffffff;
+        }
+        .lab-topbar-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #666666;
+        }
+        .lab-progress-track {
+            height: 4px;
+            background: #eeeeee;
+            border-radius: 2px;
+            margin: -20px 0 35px 0;
+            overflow: hidden;
+        }
+        .lab-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: #d4af37;
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        /* FIN DE SIMULATION */
+        .lab-endcard {
+            background: #fafafa;
+            border: 1px solid #f0f0f0;
+            border-left: 3px solid #d4af37;
+            border-radius: 0 4px 4px 0;
+            padding: 26px 30px;
+            margin-top: 10px;
+        }
+        .lab-endcard h4 {
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+        .lab-endcard p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #444444;
+        }
+        .lab-endcard .lab-end-actions {
+            margin-top: 18px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================================
+           PATCH V4 — COMPOSANTS GÉNÉRIQUES FT-* (V2.1)
+           Recherche, filtres, badges, compteurs, états vides.
+           Famille transverse : réutilisable dans toute rubrique
+           du portail, sans dépendance à l'Executive Lab.
+           ============================================================ */
+
+        /* BARRE D'OUTILS (recherche + filtres + compteur) */
+        .ft-toolbar {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 6px;
+            padding: 20px 22px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* CHAMP DE RECHERCHE INSTANTANÉE */
+        .ft-search {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            padding: 0 14px;
+            background: #fafafa;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+        .ft-search:focus-within {
+            border-color: #111111;
+            background: #ffffff;
+        }
+        .ft-search-icon {
+            font-size: 0.85rem;
+            opacity: 0.55;
+        }
+        .ft-search input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 12px 0;
+            font-size: 0.9rem;
+            font-family: inherit;
+            color: #111111;
+            outline: none;
+        }
+        .ft-search input::placeholder { color: #999999; }
+
+        /* GROUPES DE FILTRES À PASTILLES */
+        .ft-chip-group {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .ft-chip-group + .ft-chip-group { margin-top: 4px; }
+        .ft-chip-label {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #999999;
+            min-width: 82px;
+        }
+        .ft-chip {
+            border: 1px solid #dddddd;
+            background: #ffffff;
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #444444;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+        .ft-chip:hover { border-color: #111111; color: #111111; }
+        .ft-chip.active {
+            background: #111111;
+            border-color: #111111;
+            color: #ffffff;
+        }
+
+        /* COMPTEUR DE RÉSULTATS */
+        .ft-counter {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #999999;
+        }
+        .ft-counter strong { color: #d4af37; }
+
+        /* BADGES MÉTA GÉNÉRIQUES (niveau, durée, volumétrie…) */
+        .ft-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #555555;
+            background: #f7f7f7;
+            border: 1px solid #ebebeb;
+            border-radius: 3px;
+            padding: 3px 8px;
+            white-space: nowrap;
+        }
+        .lab-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 14px;
+        }
+
+        /* ÉTAT VIDE (aucun résultat) */
+        .ft-empty {
+            text-align: center;
+            border: 1px dashed #dddddd;
+            border-radius: 6px;
+            padding: 50px 30px;
+            color: #666666;
+        }
+        .ft-empty p { font-size: 0.9rem; line-height: 1.6; }
+        .ft-empty p + p { margin-top: 4px; }
+        .ft-empty button { margin-top: 18px; }
+
+        /* STATUT DISPONIBLE (pendant du .lab-soon-badge existant) */
+        .lab-open-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #d4af37;
+        }
+        .lab-open-badge::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #d4af37;
+        }
+
+        @media (max-width: 700px) {
+            .ft-chip-label { min-width: 100%; }
+        }
+
+        /* ============================================================
+           PATCH V5 — EXECUTIVE LAB V2.2 (Thèmes > Simulations)
+           Enrichissement du rendu des scénarios. Composants seuls.
+           ============================================================ */
+        .lab-sim-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 10px 0 12px 0;
+        }
+        .lab-context {
+            display: block;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #555555;
+            background: #fafafa;
+            border-left: 3px solid #dddddd;
+            padding: 10px 14px;
+            border-radius: 0 4px 4px 0;
+            margin-bottom: 12px;
+        }
+        .lab-insight {
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px dashed #e5d9b2;
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+        .lab-insight strong { color: #b8962e; }
+
         @media (max-width: 992px) {
             .page-container { flex-direction: column; }
             .sidebar { width: 100%; height: auto; position: relative; top: 0; padding: 25px 20px; border-right: none; border-bottom: 1px solid #eaeaea; }
@@ -831,6 +1145,9 @@
                 </li>
                 <li class="menu-item" id="menu-quiz" onclick="navigateTo('panel-quiz', 'menu-quiz')">
                     <button style="border-left: 2px solid #d4af37; padding-left: 16px;">🏆 Quiz Certificatif</button>
+                </li>
+                <li class="menu-item" id="menu-lab" onclick="navigateTo('panel-lab', 'menu-lab')">
+                    <button style="border-left: 2px solid #666666; padding-left: 16px;">🧪 Executive Lab</button>
                 </li>
             </ul>
         </aside>
@@ -2087,6 +2404,58 @@
                 <div id="quiz-dynamic-wrapper"></div>
             </div>
 
+            <div id="panel-lab" class="content-panel">
+                <div class="section-header">
+                    <span class="section-badge">Entraînement Continu — Simulations Professionnelles</span>
+                    <h1 class="section-title">DALPS Executive Lab</h1>
+                    <p class="section-subtitle">Éprouvez votre jugement de dirigeant sur les grands référentiels professionnels, dans le format clinique du protocole D.A.L.P.S.</p>
+                </div>
+
+                <div class="text-block">
+                    <p><strong>Le Quiz Certificatif valide votre maîtrise du protocole. L'Executive Lab entraîne votre jugement au-delà.</strong> Chaque simulation vous confronte à des situations de décision réelles — mêmes règles que la certification : une seule tentative par question, correction immédiate, feedback stratégique. La bibliothèque s'enrichit régulièrement : revenez-y.</p>
+                </div>
+
+                <div id="lab-catalog-view">
+                    <h3 class="section-index-title title-outils"><span>01</span> Bibliothèque de Simulations</h3>
+
+                    <div class="ft-toolbar">
+                        <div class="ft-search">
+                            <span class="ft-search-icon">🔎</span>
+                            <input id="lab-search" type="search" placeholder="Rechercher une simulation — Scrum, SAFe, ITIL, Leadership…" oninput="labSetQuery(this.value)" aria-label="Rechercher une simulation">
+                        </div>
+                        <div id="lab-filters"></div>
+                        <div class="ft-counter" id="lab-counter"></div>
+                    </div>
+
+                    <div class="lab-grid" id="lab-catalog-grid"></div>
+                    <div class="ft-empty" id="lab-empty" style="display: none;">
+                        <p><strong>Aucune simulation ne correspond à votre recherche.</strong></p>
+                        <p>Essayez un autre terme, ou réinitialisez les filtres.</p>
+                        <button class="lab-back-btn" onclick="labResetFilters()">↻ Réinitialiser les filtres</button>
+                    </div>
+                </div>
+
+                <div id="lab-player-view" style="display: none;">
+                    <div class="lab-topbar">
+                        <button class="lab-back-btn" onclick="closeLabSimulation()">← Retour à la bibliothèque</button>
+                        <span class="lab-topbar-title" id="lab-sim-title"></span>
+                    </div>
+
+                    <div class="quiz-dashboard">
+                        <div class="quiz-status-box">
+                            <h4 id="lab-status">Simulation en cours</h4>
+                            <p id="lab-progress-text">Répondez aux questions pour mesurer votre maîtrise.</p>
+                        </div>
+                        <div class="quiz-score-big" id="lab-score">00<span>/00</span></div>
+                    </div>
+
+                    <div class="lab-progress-track"><div class="lab-progress-fill" id="lab-progress-fill"></div></div>
+
+                    <div id="lab-questions-wrapper"></div>
+                    <div id="lab-end-wrapper"></div>
+                </div>
+            </div>
+
         </main>
     </div>
 
@@ -2562,5 +2931,453 @@
     });
     </script>
 
+    <script>
+    /* ================================================================
+       DALPS EXECUTIVE LAB — MOTEUR UNIVERSEL · V2.2
+       ----------------------------------------------------------------
+       Le moteur ne connaît que deux abstractions :
+         THÈME       = un domaine (données pures, jamais codé en dur)
+         SIMULATION  = un scénario de décision, individuellement
+                       publiable (status: published | draft | placeholder)
+       API unique : registerLabTheme({...})
+       Ajouter un thème = ajouter un fichier de données. Le moteur,
+       le HTML, le CSS et la navigation ne changent jamais.
+       ----------------------------------------------------------------
+       PRÉPARATION LAB BUILDER (future version) :
+       • publier une simulation      = status 'placeholder' → 'published'
+       • prévisualiser avant publication = LAB_SETTINGS.previewDrafts
+       • le Builder produira des fichiers respectant ce même contrat
+       ================================================================ */
+
+    /* ---------- RÉGLAGES PLATEFORME ---------- */
+    const LAB_SETTINGS = {
+        previewDrafts: false   // true = joue aussi les simulations 'draft' (mode prévisualisation du futur Lab Builder)
+    };
+
+    /* ---------- CONFIGURATION : TAXONOMIE DES FILTRES ---------- */
+    const LAB_TAXONOMY = {
+        categories: {
+            management: 'Management',
+            agile:      'Agile',
+            ia:         'IA',
+            it:         'IT',
+            finance:    'Finance',
+            leadership: 'Leadership'
+        },
+        levels: {
+            debutant: 'Débutant',
+            confirme: 'Confirmé',
+            expert:   'Expert'
+        },
+        durations: [
+            { id: 'express',     label: 'Express (≤ 10 min)',      test: m => m <= 10 },
+            { id: 'standard',    label: 'Standard (10–25 min)',    test: m => m > 10 && m <= 25 },
+            { id: 'approfondie', label: 'Approfondie (25 min +)',  test: m => m > 25 }
+        ]
+    };
+
+    /* ---------- ÉTAT ---------- */
+    const LAB_THEMES = [];
+    const labFilterState = { query: '', category: 'all', level: 'all', duration: 'all' };
+    let labCurrentTheme = null;
+    let labCurrentSims = [];
+    let labAnswers = {};
+
+    /* ---------- API PUBLIQUE : ENREGISTRER UN THÈME ---------- */
+    function registerLabTheme(theme) {
+        if (LAB_THEMES.some(t => t.id === theme.id)) return;
+        theme.simulations = theme.simulations || [];
+        LAB_THEMES.push(theme);
+        if (document.getElementById('lab-catalog-grid')) renderLabCatalog();
+    }
+
+    /* ---------- HELPERS PURS (métadonnées calculées) ---------- */
+    function labPlayable(theme) {
+        return theme.simulations.filter(s =>
+            s.status === 'published' || (LAB_SETTINGS.previewDrafts && s.status === 'draft'));
+    }
+    function labIsAvailable(theme) {
+        return labPlayable(theme).length > 0;
+    }
+    function labTotalCount(theme) {
+        return theme.simulations.length || theme.plannedSimulations || 0;
+    }
+    function labSimDuration(sim) {
+        return sim.durationMinutes || 2; // ≈ 2 min par scénario de décision
+    }
+    function labThemeDuration(theme) {
+        const sims = labIsAvailable(theme) ? labPlayable(theme) : theme.simulations;
+        const total = sims.length
+            ? sims.reduce((acc, s) => acc + labSimDuration(s), 0)
+            : labTotalCount(theme) * 2;
+        return Math.max(5, Math.round(total / 5) * 5);
+    }
+    function labMatches(theme) {
+        const f = labFilterState;
+        if (f.category !== 'all' && theme.category !== f.category) return false;
+        if (f.level !== 'all' && theme.level !== f.level) return false;
+        if (f.duration !== 'all') {
+            const bucket = LAB_TAXONOMY.durations.find(d => d.id === f.duration);
+            if (bucket && !bucket.test(labThemeDuration(theme))) return false;
+        }
+        if (f.query) {
+            const haystack = [
+                theme.title, theme.domain, theme.description,
+                LAB_TAXONOMY.categories[theme.category] || '',
+                LAB_TAXONOMY.levels[theme.level] || '',
+                ...labPlayable(theme).map(s => (s.skill || '') + ' ' + (s.title || ''))
+            ].join(' ').toLowerCase();
+            if (!haystack.includes(f.query)) return false;
+        }
+        return true;
+    }
+
+    /* ---------- FILTRES : RENDU DEPUIS LA CONFIG + ACTIONS ---------- */
+    function renderLabFilters() {
+        const host = document.getElementById('lab-filters');
+        if (!host) return;
+        const group = (label, facet, entries) => `
+            <div class="ft-chip-group" role="group" aria-label="${label}">
+                <span class="ft-chip-label">${label}</span>
+                <button class="ft-chip ${labFilterState[facet] === 'all' ? 'active' : ''}"
+                        aria-pressed="${labFilterState[facet] === 'all'}"
+                        onclick="labSetFilter('${facet}', 'all')">Tous</button>
+                ${entries.map(([id, lbl]) => `
+                    <button class="ft-chip ${labFilterState[facet] === id ? 'active' : ''}"
+                            aria-pressed="${labFilterState[facet] === id}"
+                            onclick="labSetFilter('${facet}', '${id}')">${lbl}</button>`).join('')}
+            </div>`;
+        host.innerHTML =
+            group('Catégorie', 'category', Object.entries(LAB_TAXONOMY.categories)) +
+            group('Niveau', 'level', Object.entries(LAB_TAXONOMY.levels)) +
+            group('Durée', 'duration', LAB_TAXONOMY.durations.map(d => [d.id, d.label]));
+    }
+    function labSetFilter(facet, value) {
+        labFilterState[facet] = value;
+        renderLabFilters();
+        renderLabCatalog();
+    }
+    function labSetQuery(value) {
+        labFilterState.query = (value || '').trim().toLowerCase();
+        renderLabCatalog();
+    }
+    function labResetFilters() {
+        labFilterState.query = '';
+        labFilterState.category = labFilterState.level = labFilterState.duration = 'all';
+        const input = document.getElementById('lab-search');
+        if (input) input.value = '';
+        renderLabFilters();
+        renderLabCatalog();
+    }
+
+    /* ---------- CATALOGUE DES THÈMES ---------- */
+    function labCardHTML(theme) {
+        const available = labIsAvailable(theme);
+        const open = labPlayable(theme).length;
+        const total = labTotalCount(theme);
+        return `
+            <div class="tool-card-header">
+                <h4>${theme.icon} ${theme.title}</h4>
+                <span style="font-size:0.75rem; color:#d4af37; font-weight:700;">${theme.domain.toUpperCase()}</span>
+            </div>
+            <p>${theme.description}</p>
+            <div class="lab-badges">
+                <span class="ft-badge">🎓 ${LAB_TAXONOMY.levels[theme.level] || '—'}</span>
+                <span class="ft-badge">⏱ ≈ ${labThemeDuration(theme)} min</span>
+                <span class="ft-badge">🧩 ${available ? `${open}/${total} scénarios` : `${total} scénarios prévus`}</span>
+            </div>
+            <div class="lab-card-meta">
+                ${available
+                    ? `<span class="lab-open-badge">Disponible</span><span class="lab-cta">Lancer →</span>`
+                    : `<span class="lab-soon-badge">À venir</span>`}
+            </div>`;
+    }
+
+    function renderLabCatalog() {
+        const grid = document.getElementById('lab-catalog-grid');
+        if (!grid) return;
+        grid.innerHTML = '';
+
+        const visible = [...LAB_THEMES]
+            .sort((a, b) => labIsAvailable(b) - labIsAvailable(a))
+            .filter(labMatches);
+
+        visible.forEach(theme => {
+            const available = labIsAvailable(theme);
+            const card = document.createElement('div');
+            card.className = available ? 'tool-card lab-card' : 'tool-card lab-card lab-soon';
+            if (available) card.onclick = () => openLabTheme(theme.id);
+            card.innerHTML = labCardHTML(theme);
+            grid.appendChild(card);
+        });
+
+        const openCount = LAB_THEMES.filter(labIsAvailable).length;
+        const counter = document.getElementById('lab-counter');
+        if (counter) counter.innerHTML =
+            `${visible.length} thème${visible.length > 1 ? 's' : ''} affiché${visible.length > 1 ? 's' : ''} · <strong>${openCount} disponible${openCount > 1 ? 's' : ''}</strong> · ${LAB_THEMES.length} au catalogue`;
+
+        const empty = document.getElementById('lab-empty');
+        if (empty) empty.style.display = visible.length === 0 ? 'block' : 'none';
+    }
+
+    /* ---------- OUVERTURE / FERMETURE D'UN THÈME ---------- */
+    function openLabTheme(themeId) {
+        const theme = LAB_THEMES.find(t => t.id === themeId);
+        if (!theme || !labIsAvailable(theme)) return;
+        labCurrentTheme = theme;
+        labCurrentSims = labPlayable(theme);
+        labAnswers = {};
+        document.getElementById('lab-catalog-view').style.display = 'none';
+        document.getElementById('lab-player-view').style.display = 'block';
+        document.getElementById('lab-sim-title').innerText = `Thème — ${theme.title}`;
+        document.getElementById('lab-end-wrapper').innerHTML = '';
+        renderLabSimulations();
+        updateLabDashboard();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function closeLabTheme() {
+        labCurrentTheme = null;
+        labCurrentSims = [];
+        labAnswers = {};
+        document.getElementById('lab-player-view').style.display = 'none';
+        document.getElementById('lab-catalog-view').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* ---------- RENDU DES SIMULATIONS (composants du Quiz réutilisés) ---------- */
+    function renderLabSimulations() {
+        const wrapper = document.getElementById('lab-questions-wrapper');
+        wrapper.innerHTML = '';
+        labCurrentSims.forEach((sim, index) => {
+            const qEl = document.createElement('div');
+            qEl.className = 'quiz-card';
+            qEl.innerHTML = `
+                <div class="quiz-question">
+                    <strong>Scénario ${index + 1}/${labCurrentSims.length} — ${sim.title || 'Situation de décision'}</strong>
+                    <div class="lab-sim-badges">
+                        ${sim.skill ? `<span class="ft-badge">🎯 ${sim.skill}</span>` : ''}
+                        ${sim.level ? `<span class="ft-badge">🎓 ${LAB_TAXONOMY.levels[sim.level] || sim.level}</span>` : ''}
+                        <span class="ft-badge">⏱ ${labSimDuration(sim)} min</span>
+                    </div>
+                    ${sim.context ? `<span class="lab-context">${sim.context}</span>` : ''}
+                    <em>${sim.question}</em>
+                </div>
+                <div class="quiz-options" id="lab-options-${sim.id}">
+                    ${['A','B','C','D'].map(l =>
+                        `<button class="quiz-option" onclick="labSelectOption('${sim.id}', '${l}')"><strong>${l})</strong> ${sim.options[l]}</button>`
+                    ).join('')}
+                </div>
+                <div class="quiz-feedback" id="lab-feedback-${sim.id}">
+                    <strong>💡 Feedback Stratégique :</strong>
+                    <span>${sim.feedback}</span>
+                    ${sim.insight ? `<div class="lab-insight"><strong>🏛 Executive Insight —</strong> ${sim.insight}</div>` : ''}
+                    ${sim.reference ? `<div class="lab-insight">📚 <a href="${sim.reference.url}" target="_blank" class="tool-download-btn">${sim.reference.label}</a></div>` : ''}
+                </div>`;
+            wrapper.appendChild(qEl);
+        });
+    }
+
+    /* ---------- CORRECTION (même logique restrictive que le Quiz) ---------- */
+    function labSelectOption(simId, selectedLetter) {
+        if (!labCurrentTheme || labAnswers[simId]) return;
+        const sim = labCurrentSims.find(s => s.id === simId);
+        if (!sim) return;
+
+        labAnswers[simId] = selectedLetter;
+        const buttons = document.querySelectorAll(`#lab-options-${simId} .quiz-option`);
+        const letters = ['A', 'B', 'C', 'D'];
+        buttons.forEach((btn, idx) => {
+            btn.setAttribute('disabled', 'true');
+            if (letters[idx] === sim.correct) btn.classList.add('correct');
+            else if (letters[idx] === selectedLetter) btn.classList.add('wrong');
+        });
+        document.getElementById(`lab-feedback-${simId}`).style.display = 'block';
+        updateLabDashboard();
+    }
+
+    /* ---------- TABLEAU DE BORD + FIN DE PARCOURS ---------- */
+    function updateLabDashboard() {
+        const total = labCurrentSims.length;
+        const answered = Object.keys(labAnswers).length;
+        const correct = labCurrentSims.filter(s => labAnswers[s.id] === s.correct).length;
+
+        document.getElementById('lab-score').innerHTML =
+            `${correct.toString().padStart(2, '0')}<span>/${total}</span>`;
+        document.getElementById('lab-progress-text').innerText =
+            answered === 0
+                ? 'Répondez aux scénarios pour mesurer votre maîtrise.'
+                : `Scénario ${Math.min(answered + 1, total)} sur ${total} — ${answered} réponse${answered > 1 ? 's' : ''} enregistrée${answered > 1 ? 's' : ''}.`;
+        document.getElementById('lab-progress-fill').style.width =
+            `${Math.round((answered / total) * 100)}%`;
+
+        const status = document.getElementById('lab-status');
+        if (answered < total) {
+            status.innerText = 'Simulation en cours';
+            status.style.color = '#ffffff';
+        } else {
+            renderLabEnd(correct, total, status);
+        }
+    }
+
+    function renderLabEnd(correct, total, statusEl) {
+        const th = labCurrentTheme.thresholds || { master: 0.8, pass: 0.6 };
+        const ratio = correct / total;
+        let verdict, color;
+        if (ratio >= th.master)     { verdict = '🏆 Maîtrise confirmée';            color = '#d4af37'; }
+        else if (ratio >= th.pass)  { verdict = '🤝 Socle acquis — à consolider';   color = '#137333'; }
+        else                        { verdict = '⚠️ Reprendre les fondamentaux';    color = '#c5221f'; }
+        statusEl.innerText = verdict;
+        statusEl.style.color = color;
+        document.getElementById('lab-progress-text').innerText =
+            `Parcours terminé : ${correct} bonne${correct > 1 ? 's' : ''} réponse${correct > 1 ? 's' : ''} sur ${total}.`;
+
+        const planned = labTotalCount(labCurrentTheme);
+        const refs = (labCurrentTheme.references || [])
+            .map(r => `<a href="${r.url}" target="_blank" class="tool-download-btn">${r.label}</a>`)
+            .join(' · ');
+        document.getElementById('lab-end-wrapper').innerHTML = `
+            <div class="lab-endcard">
+                <h4 style="color:${color};">${verdict}</h4>
+                <p>Score final : <strong>${correct}/${total}</strong>. Relisez les feedbacks des scénarios manqués — c'est là que se construit le jugement.</p>
+                ${total < planned ? `<p style="margin-top:10px; font-style:italic; color:#888;">Version démonstrateur — ${planned - total} scénarios supplémentaires du thème ${labCurrentTheme.title} seront publiés progressivement (${planned} au total).</p>` : ''}
+                ${refs ? `<p style="margin-top:14px;">📚 <strong>Pour aller plus loin :</strong> ${refs}</p>` : ''}
+                <div class="lab-end-actions">
+                    <button class="lab-back-btn" onclick="openLabTheme('${labCurrentTheme.id}')">↻ Rejouer le parcours</button>
+                    <button class="lab-back-btn" onclick="closeLabTheme()">← Retour à la bibliothèque</button>
+                </div>
+            </div>`;
+    }
+
+    /* ---------- OUTIL DE DONNÉES : ÉCHAFAUDAGE DE PLACEHOLDERS ----------
+       Génère des structures de simulation complètes (status 'placeholder')
+       en attendant leur rédaction. Le fichier sims/scrum.theme.js livré
+       séparément contient les 75 structures explicites et éditables. */
+    function labScaffold(prefix, from, to, defaults) {
+        const out = [];
+        for (let i = from; i <= to; i++) {
+            out.push(Object.assign({
+                id: `${prefix}${i}`,
+                title: `[TITRE — Scénario ${prefix}${i}]`,
+                context: `[CONTEXTE — Situation d'entreprise du scénario ${prefix}${i}]`,
+                question: `[QUESTION — Décision à prendre dans le scénario ${prefix}${i}]`,
+                options: { A: '[Réponse A]', B: '[Réponse B]', C: '[Réponse C]', D: '[Réponse D]' },
+                correct: 'A',
+                feedback: '[FEEDBACK STRATÉGIQUE — Pourquoi la bonne réponse est la bonne]',
+                insight: '[EXECUTIVE INSIGHT — La leçon de dirigeant à retenir]',
+                reference: { label: '[RÉFÉRENCE]', url: 'https://example.com' },
+                skill: '[COMPÉTENCE ÉVALUÉE]',
+                level: 'confirme',
+                durationMinutes: 2,
+                status: 'placeholder'
+            }, defaults || {}));
+        }
+        return out;
+    }
+
+    /* ================================================================
+       DONNÉES — THÈME SCRUM (75 structures : 3 publiées + 72 placeholders)
+       Aucun cas particulier : n'importe quel thème suit ce même contrat.
+       ================================================================ */
+    registerLabTheme({
+        id: 'scrum',
+        icon: '🌀',
+        title: 'Scrum',
+        domain: 'Agilité & Delivery',
+        category: 'agile',
+        level: 'confirme',
+        description: "Éprouvez votre lecture des rôles, des rituels et des rapports de force réels d'une organisation Scrum en environnement exécutif.",
+        references: [
+            { label: 'Scrum Guide 2020', url: 'https://scrumguides.org' },
+            { label: 'Scrum.org', url: 'https://www.scrum.org' }
+        ],
+        simulations: [
+            {
+                id: 'SCRUM1',
+                title: "Le sponsor contre le Sprint",
+                context: "Vous êtes directeur nouvellement nommé. Un sponsor influent exige que le Product Owner insère « en urgence » sa demande en tête du Sprint en cours. Le PO vous sollicite.",
+                question: "Quelle est la réponse conforme au cadre Scrum — et politiquement tenable ?",
+                options: {
+                    A: "Imposer l'insertion immédiate : le sponsor finance le produit, il décide",
+                    B: "Rappeler que le Sprint Backlog appartient aux Developers et que le PO arbitre la demande pour le prochain Sprint via le Product Backlog, en chiffrant le coût d'une interruption",
+                    C: "Couper la poire en deux : accepter la moitié de la demande dans le Sprint en cours",
+                    D: "Escalader au CODIR pour trancher entre le sponsor et l'équipe"
+                },
+                correct: 'B',
+                feedback: "Le périmètre d'un Sprint est protégé : seul le Product Owner arbitre le contenu du Product Backlog, et une interruption de Sprint a un coût mesurable (contexte, re-planification, signal envoyé à l'équipe). La réponse B protège le cadre tout en traitant le sponsor en adulte : sa demande est priorisée, datée et chiffrée — pas ignorée.",
+                insight: "Un cadre méthodologique ne tient que si le dirigeant paie le prix politique de le défendre — cadrer sans confronter, c'est la posture d'architecte.",
+                reference: { label: 'Scrum Guide — The Sprint', url: 'https://scrumguides.org' },
+                skill: "Protection du cadre & arbitrage",
+                level: 'confirme',
+                durationMinutes: 2,
+                status: 'published'
+            },
+            {
+                id: 'SCRUM2',
+                title: "Le Daily devenu tribunal",
+                context: "En observant un Daily Scrum, vous constatez qu'il dure 35 minutes et que chaque développeur s'adresse au manager présent, sur le mode du reporting individuel.",
+                question: "Quel est le dysfonctionnement principal ?",
+                options: {
+                    A: "Le Daily est trop long : il suffit d'imposer un chronomètre de 15 minutes",
+                    B: "Les développeurs manquent de préparation individuelle",
+                    C: "L'événement a perdu sa finalité : conçu pour synchroniser l'équipe vers l'objectif de Sprint, il est devenu un rituel de contrôle hiérarchique — le format n'est qu'un symptôme",
+                    D: "Le manager devrait animer la réunion pour la rendre plus efficace"
+                },
+                correct: 'C',
+                feedback: "La durée n'est que le symptôme visible. Le Daily Scrum appartient aux Developers : c'est un point de synchronisation entre pairs vers l'objectif de Sprint, pas une revue de comptes. Quand les regards convergent vers le manager, l'équipe a cessé de s'auto-organiser — et l'information qui remonte devient défensive, donc pauvre.",
+                insight: "Quand un rituel d'équipe se transforme en rituel de contrôle, corriger le format sans corriger la finalité ancre le dysfonctionnement.",
+                reference: { label: 'Scrum Guide — Daily Scrum', url: 'https://scrumguides.org' },
+                skill: "Lecture des rituels & auto-organisation",
+                level: 'confirme',
+                durationMinutes: 2,
+                status: 'published'
+            },
+            {
+                id: 'SCRUM3',
+                title: "La vélocité en CODIR",
+                context: "Votre CODIR vous demande un tableau comparatif de la vélocité des quatre équipes Scrum « pour identifier les équipes les moins performantes ».",
+                question: "Que répondez-vous ?",
+                options: {
+                    A: "Vous produisez le tableau : la transparence des données est un principe agile",
+                    B: "Vous expliquez que la vélocité est une mesure de planification interne, non normalisée entre équipes, et proposez des indicateurs de valeur comparables : délai de mise en marché, valeur livrée, satisfaction client",
+                    C: "Vous normalisez d'abord les points d'estimation entre les équipes pour rendre la comparaison équitable",
+                    D: "Vous refusez : le CODIR n'a pas à consulter les métriques des équipes"
+                },
+                correct: 'B',
+                feedback: "La vélocité mesure la capacité de planification d'une équipe dans son propre référentiel d'estimation : comparer les vélocités entre équipes revient à comparer des devises sans taux de change — et provoque l'inflation des estimations dès que les équipes se savent observées. La réponse B redirige la demande légitime du CODIR vers des indicateurs de valeur réellement comparables.",
+                insight: "Toute métrique observée devient un objectif — un dirigeant choisit ses indicateurs pour les comportements qu'ils induisent, pas pour les tableaux qu'ils remplissent.",
+                reference: { label: 'Loi de Goodhart — appliquée à l\'agilité', url: 'https://www.scrum.org' },
+                skill: "Gouvernance par les métriques",
+                level: 'expert',
+                durationMinutes: 2,
+                status: 'published'
+            },
+            /* Les 72 structures suivantes (SCRUM4 → SCRUM75) sont générées
+               ci-dessous en placeholders complets. Leur version explicite
+               et éditable est livrée dans sims/scrum.theme.js — remplacez
+               progressivement les champs, passez status à 'published'. */
+            ...labScaffold('SCRUM', 4, 75)
+        ]
+    });
+
+    /* ================================================================
+       THÈMES ANNONCÉS — données pures, moteur inchangé à jamais.
+       Pour activer : remplir simulations[], ou charger un fichier :
+       <script src="sims/<id>.theme.js"><\/script>
+       ================================================================ */
+    registerLabTheme({ id: 'safe',    icon: '🏗️', title: 'SAFe',                  domain: 'Agilité à l\'échelle', category: 'agile',      level: 'expert',   description: "Piloter des trains de release, arbitrer les dépendances et gouverner l'agilité multi-équipes au niveau portefeuille.", plannedSimulations: 75, simulations: [] });
+    registerLabTheme({ id: 'itil',    icon: '🧭', title: 'ITIL 4',                domain: 'Gouvernance IT',        category: 'it',         level: 'confirme', description: "Décider en environnement de services : incidents majeurs, changements à risque et chaînes de valeur IT.", plannedSimulations: 75, simulations: [] });
+    registerLabTheme({ id: 'leader',  icon: '🎖️', title: 'Leadership',            domain: 'Posture Exécutive',     category: 'leadership', level: 'expert',   description: "Situations de commandement réelles : conflits d'équipe, décisions impopulaires, gestion des ego et du politique.", plannedSimulations: 75, simulations: [] });
+    registerLabTheme({ id: 'product', icon: '📐', title: 'Product Management',    domain: 'Stratégie Produit',     category: 'management', level: 'confirme', description: "Arbitrer une roadmap sous contrainte, dire non à un stakeholder puissant, mesurer la valeur plutôt que l'activité.", plannedSimulations: 75, simulations: [] });
+    registerLabTheme({ id: 'genai',   icon: '🤖', title: 'IA Générative',         domain: 'Transformation & IA',   category: 'ia',         level: 'debutant', description: "Gouverner le déploiement de l'IA en entreprise : cas d'usage, risques, conformité et conduite du changement.", plannedSimulations: 75, simulations: [] });
+    registerLabTheme({ id: 'cyber',   icon: '🛡️', title: 'Cybersécurité',         domain: 'Risque & Résilience',   category: 'it',         level: 'expert',   description: "Décider sous incident : crise ransomware, arbitrages budget-risque et acculturation du CODIR à la menace.", plannedSimulations: 75, simulations: [] });
+    registerLabTheme({ id: 'finance', icon: '📊', title: 'Finance d\'Entreprise', domain: 'Pilotage & Décision',   category: 'finance',    level: 'confirme', description: "Lire un P&L en dirigeant non-financier : marges, cash, investissements et dialogue d'égal à égal avec la DAF.", plannedSimulations: 75, simulations: [] });
+
+    /* Initialisation au chargement : filtres (depuis la config) + catalogue */
+    window.addEventListener('DOMContentLoaded', () => {
+        renderLabFilters();
+        renderLabCatalog();
+    });
+    </script>
 </body>
 </html>
