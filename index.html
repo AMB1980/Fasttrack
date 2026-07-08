@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1098,6 +1099,224 @@
             line-height: 1.6;
         }
         .lab-insight strong { color: #b8962e; }
+
+        /* ============================================================
+           PATCH V6 — DALPS LAB BUILDER (CMS ADMINISTRATEUR)
+           Réutilise ft-badge / ft-counter / ft-empty / lab-topbar /
+           lab-back-btn / quiz-card. Nouveaux composants seuls.
+           ============================================================ */
+        .builder-notice {
+            background: #fffdf5;
+            border: 1px solid #efe3c2;
+            border-left: 3px solid #d4af37;
+            border-radius: 0 4px 4px 0;
+            padding: 14px 18px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #555555;
+            margin-bottom: 35px;
+        }
+        .builder-notice code {
+            background: #f4f6f8;
+            border: 1px solid #e1e4e6;
+            border-radius: 3px;
+            padding: 1px 6px;
+            font-size: 0.8rem;
+        }
+        .builder-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+        .builder-btn {
+            border: 1px solid #dddddd;
+            background: #ffffff;
+            border-radius: 4px;
+            padding: 8px 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #111111;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+        .builder-btn:hover:not([disabled]) { border-color: #111111; }
+        .builder-btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+        .builder-btn--primary { background: #111111; border-color: #111111; color: #ffffff; }
+        .builder-btn--primary:hover { background: #000000; }
+        .builder-btn--danger:hover:not([disabled]) { border-color: #c5221f; color: #c5221f; }
+        .builder-btn--ghost { border-style: dashed; color: #777777; }
+
+        .builder-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-radius: 4px;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+        }
+        .builder-row-main { flex: 1; min-width: 200px; }
+        .builder-row-main strong { font-size: 0.92rem; display: block; }
+        .builder-row-sub { font-size: 0.78rem; color: #888888; }
+        .builder-row-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+
+        .builder-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px 22px;
+            margin-bottom: 22px;
+        }
+        .builder-field { display: flex; flex-direction: column; gap: 6px; }
+        .builder-field--full { grid-column: 1 / -1; }
+        .builder-field span {
+            font-size: 0.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #999999;
+        }
+        .builder-field input,
+        .builder-field select,
+        .builder-field textarea {
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            padding: 10px 12px;
+            font-size: 0.88rem;
+            font-family: inherit;
+            color: #111111;
+            background: #ffffff;
+            outline: none;
+            transition: border-color 0.2s ease;
+            resize: vertical;
+        }
+        .builder-field input:focus,
+        .builder-field select:focus,
+        .builder-field textarea:focus { border-color: #111111; }
+
+        .builder-import {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 22px;
+        }
+        .builder-import-zone {
+            border: 1px dashed #cccccc;
+            border-radius: 6px;
+            padding: 20px 22px;
+            background: #fafafa;
+        }
+        .builder-import-zone p { font-size: 0.85rem; line-height: 1.6; color: #444444; margin-bottom: 12px; }
+        .builder-import-zone textarea {
+            width: 100%;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            padding: 10px 12px;
+            font-size: 0.85rem;
+            font-family: inherit;
+            resize: vertical;
+        }
+        .builder-import-zone input[type="file"] { font-size: 0.82rem; }
+        .builder-hint { font-size: 0.75rem !important; color: #999999 !important; margin-top: 10px; margin-bottom: 0 !important; }
+
+        /* ============================================================
+           PATCH V7 — LAB BUILDER V3.1 (tableau de bord, workflow,
+           réorganisation, pipeline). Composants additionnels seuls.
+           ============================================================ */
+        .builder-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 14px;
+            margin-bottom: 40px;
+        }
+        .builder-stat {
+            background: #ffffff;
+            border: 1px solid #eaeaea;
+            border-top: 3px solid #111111;
+            border-radius: 4px;
+            padding: 18px 16px;
+            text-align: center;
+        }
+        .builder-stat--accent { border-top-color: #d4af37; }
+        .builder-stat-value {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #111111;
+            line-height: 1.1;
+        }
+        .builder-stat-value small { font-size: 0.65rem; font-weight: 600; color: #999999; }
+        .builder-stat-label {
+            margin-top: 6px;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #999999;
+        }
+
+        /* Badges de workflow éditorial */
+        .ft-badge.wf-draft     { background: #f4f4f4; color: #666666; }
+        .ft-badge.wf-review    { background: #eef2f9; color: #35558a; border-color: #dbe4f2; }
+        .ft-badge.wf-validated { background: #ecf5ef; color: #2e7d4f; border-color: #d7e9dd; }
+        .ft-badge.wf-published { background: #faf5e6; color: #9a7b1e; border-color: #efe3c2; }
+        .ft-badge.wf-archived  { background: #f1f1f1; color: #999999; }
+
+        .builder-row--archived { opacity: 0.55; }
+        .builder-reorder { display: flex; flex-direction: column; gap: 3px; }
+        .builder-btn--icon { padding: 2px 8px; font-size: 0.7rem; line-height: 1.3; }
+        .builder-list-title {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #999999;
+            margin: 6px 0 12px 0;
+        }
+
+        /* Carte du pipeline unique */
+        .builder-pipeline {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            background: #111111;
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin-bottom: 22px;
+        }
+        .builder-pipeline span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #f1f1f1;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            padding: 4px 11px;
+        }
+        .builder-pipeline b { color: #d4af37; font-weight: 700; }
+
+        /* Centre de publication */
+        .builder-publish {
+            border: 1px solid #efe3c2;
+            border-left: 3px solid #d4af37;
+            border-radius: 0 4px 4px 0;
+            background: #fffdf5;
+            padding: 20px 22px;
+            margin-bottom: 30px;
+        }
+        .builder-publish p { font-size: 0.87rem; line-height: 1.65; color: #555555; margin-bottom: 14px; }
+        .builder-publish code {
+            background: #f4f6f8;
+            border: 1px solid #e1e4e6;
+            border-radius: 3px;
+            padding: 1px 6px;
+            font-size: 0.78rem;
+        }
 
         @media (max-width: 992px) {
             .page-container { flex-direction: column; }
@@ -2456,6 +2675,150 @@
                 </div>
             </div>
 
+            <div id="panel-builder" class="content-panel">
+                <div class="section-header">
+                    <span class="section-badge">Espace Administrateur — Réservé</span>
+                    <h1 class="section-title">DALPS Lab Builder</h1>
+                    <p class="section-subtitle">Le CMS propriétaire de FAST TRACK : votre atelier de production — créez, validez, prévisualisez et publiez sans jamais toucher au code du portail.</p>
+                </div>
+
+                <div class="builder-notice">
+                    🔒 Accès uniquement via <code>#lab-builder</code> — invisible des utilisateurs. Sauvegarde automatique locale à chaque action. Publication définitive : « Exporter le paquet de publication » puis dépôt dans <code>/sims/</code>.
+                </div>
+
+                <!-- ===================== VUE 1 : PILOTAGE & BIBLIOTHÈQUE ===================== -->
+                <div id="builder-view-themes">
+                    <h3 class="section-index-title title-video"><span>00</span> Tableau de Bord</h3>
+                    <div class="builder-dashboard" id="builder-dashboard"></div>
+
+                    <h3 class="section-index-title title-outils"><span>01</span> Bibliothèque de Thèmes</h3>
+                    <div class="builder-actions">
+                        <button class="builder-btn builder-btn--primary" onclick="builderNewTheme()">＋ Nouveau thème</button>
+                        <button class="builder-btn" onclick="builderPushToEngine()">▶ Tester dans le moteur (session)</button>
+                        <button class="builder-btn builder-btn--ghost" onclick="builderResetWorkspace()">↺ Réinitialiser l'espace de travail</button>
+                    </div>
+                    <div id="builder-themes-list"></div>
+
+                    <h3 class="section-index-title title-prompts"><span>02</span> Studio d'Import — Pipeline Unique</h3>
+                    <div class="builder-pipeline" id="builder-pipeline-map">
+                        <span>Import</span><b>→</b><span>Extraction</span><b>→</b><span>Transformation</span><b>→</b><span>Validation</span><b>→</b><span>Prévisualisation</span><b>→</b><span>Publication</span><b>→</b><span>Manifeste</span><b>→</b><span>Executive Lab</span>
+                    </div>
+                    <div class="builder-import">
+                        <div class="builder-import-zone">
+                            <p><strong>Importer un fichier</strong> — JSON (thème), CSV (lot), Markdown (source de vérité), TXT, Word (.docx), PDF.</p>
+                            <input type="file" id="builder-file-input" accept=".json,.csv,.md,.txt,.docx,.pdf" onchange="builderImportFile(this.files[0])">
+                            <p class="builder-hint">JSON et CSV : traités immédiatement. Markdown : rejoint la Bibliothèque de Sources. TXT / DOCX / PDF et texte collé : file d'attente du pipeline IA.</p>
+                        </div>
+                        <div class="builder-import-zone">
+                            <p><strong>Coller un texte source</strong> — extrait de livre, article, étude, contenu de PDF…</p>
+                            <textarea id="builder-paste" rows="5" placeholder="Collez ici votre matière première…"></textarea>
+                            <div class="builder-actions" style="margin-top:10px; margin-bottom:0;">
+                                <button class="builder-btn" onclick="builderImportPaste('source')">📚 Enregistrer comme source</button>
+                                <button class="builder-btn" onclick="builderImportPaste('job')">＋ File d'attente IA</button>
+                                <button class="builder-btn builder-btn--ghost" disabled title="Point de branchement préparé — LAB_AI_PROVIDERS (V-next)">✨ Générer via IA (à venir)</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="builder-jobs-list"></div>
+
+                    <h3 class="section-index-title title-outils"><span>03</span> Bibliothèque de Sources (.md)</h3>
+                    <p class="builder-hint" style="margin-bottom:14px;">Vos fichiers Markdown sont la source de vérité éditoriale (Sources/Scrum.md, SAFe.md, Leadership.md…). Chaque source pourra alimenter le pipeline IA pour générer ses simulations.</p>
+                    <div id="builder-sources-list"></div>
+
+                    <h3 class="section-index-title title-video"><span>04</span> Centre de Publication</h3>
+                    <div class="builder-publish">
+                        <p>Génère automatiquement <code>manifest.json</code> et un fichier <code>&lt;id&gt;.json</code> par thème publié — vous ne modifiez jamais ces fichiers à la main. Déposez-les dans <code>/sims/</code> : disponibilité immédiate dans Executive Lab.</p>
+                        <div class="builder-actions" style="margin-bottom:0;">
+                            <button class="builder-btn builder-btn--primary" onclick="builderExportAll()">📦 Exporter le paquet de publication</button>
+                            <button class="builder-btn" onclick="builderExportManifest()">⬇ manifest.json seul</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===================== VUE 2 : ÉDITEUR DE THÈME ===================== -->
+                <div id="builder-view-theme" style="display:none;">
+                    <div class="lab-topbar">
+                        <button class="lab-back-btn" onclick="builderShowThemes()">← Bibliothèque de thèmes</button>
+                        <span class="lab-topbar-title" id="builder-theme-crumb"></span>
+                    </div>
+
+                    <h3 class="section-index-title title-outils"><span>01</span> Identité du Thème</h3>
+                    <div class="builder-form" id="builder-theme-form">
+                        <label class="builder-field"><span>Identifiant (slug)</span><input id="bt-id" placeholder="scrum"></label>
+                        <label class="builder-field"><span>Icône (émoji)</span><input id="bt-icon" placeholder="🌀"></label>
+                        <label class="builder-field"><span>Titre</span><input id="bt-title" placeholder="Scrum"></label>
+                        <label class="builder-field"><span>Domaine (sur-titre)</span><input id="bt-domain" placeholder="Agilité &amp; Delivery"></label>
+                        <label class="builder-field"><span>Catégorie</span><select id="bt-category"></select></label>
+                        <label class="builder-field"><span>Niveau</span><select id="bt-level"></select></label>
+                        <label class="builder-field builder-field--full"><span>Description</span><textarea id="bt-description" rows="2"></textarea></label>
+                        <label class="builder-field builder-field--full"><span>Références du thème (une par ligne : Libellé | URL)</span><textarea id="bt-references" rows="2" placeholder="Scrum Guide 2020 | https://scrumguides.org"></textarea></label>
+                    </div>
+                    <div class="builder-actions">
+                        <button class="builder-btn builder-btn--primary" onclick="builderSaveTheme()">💾 Enregistrer</button>
+                        <button class="builder-btn" id="bt-publish-btn" onclick="builderToggleThemePublished()"></button>
+                        <button class="builder-btn" id="bt-archive-btn" onclick="builderToggleThemeArchived()"></button>
+                        <button class="builder-btn" onclick="builderDuplicateTheme()">⧉ Dupliquer</button>
+                        <button class="builder-btn" onclick="builderExportTheme()">⬇ &lt;id&gt;.json</button>
+                        <button class="builder-btn builder-btn--danger" onclick="builderDeleteTheme()">🗑 Supprimer</button>
+                    </div>
+
+                    <h3 class="section-index-title title-prompts"><span>02</span> Simulations du Thème</h3>
+                    <div class="builder-actions">
+                        <button class="builder-btn builder-btn--primary" onclick="builderNewSim()">＋ Nouvelle simulation</button>
+                        <span class="ft-counter" id="builder-sims-counter"></span>
+                    </div>
+                    <div id="builder-sims-list"></div>
+                </div>
+
+                <!-- ===================== VUE 3 : ÉDITEUR DE SIMULATION ===================== -->
+                <div id="builder-view-sim" style="display:none;">
+                    <div class="lab-topbar">
+                        <button class="lab-back-btn" onclick="builderShowTheme()">← Retour au thème</button>
+                        <span class="lab-topbar-title" id="builder-sim-crumb"></span>
+                    </div>
+
+                    <h3 class="section-index-title title-outils"><span>01</span> Contenu du Scénario</h3>
+                    <div class="builder-form">
+                        <label class="builder-field"><span>Identifiant</span><input id="bs-id" placeholder="SCRUM4"></label>
+                        <label class="builder-field"><span>Titre</span><input id="bs-title" placeholder="Le sponsor contre le Sprint"></label>
+                        <label class="builder-field builder-field--full"><span>Contexte (mise en situation)</span><textarea id="bs-context" rows="2"></textarea></label>
+                        <label class="builder-field builder-field--full"><span>Question (décision à prendre)</span><textarea id="bs-question" rows="2"></textarea></label>
+                        <label class="builder-field builder-field--full"><span>Réponse A</span><textarea id="bs-A" rows="2"></textarea></label>
+                        <label class="builder-field builder-field--full"><span>Réponse B</span><textarea id="bs-B" rows="2"></textarea></label>
+                        <label class="builder-field builder-field--full"><span>Réponse C</span><textarea id="bs-C" rows="2"></textarea></label>
+                        <label class="builder-field builder-field--full"><span>Réponse D</span><textarea id="bs-D" rows="2"></textarea></label>
+                        <label class="builder-field"><span>Bonne réponse</span><select id="bs-correct"><option>A</option><option>B</option><option>C</option><option>D</option></select></label>
+                        <label class="builder-field"><span>Compétence évaluée</span><input id="bs-skill"></label>
+                        <label class="builder-field builder-field--full"><span>Feedback stratégique</span><textarea id="bs-feedback" rows="3"></textarea></label>
+                        <label class="builder-field builder-field--full"><span>Executive Insight</span><textarea id="bs-insight" rows="2"></textarea></label>
+                        <label class="builder-field"><span>Référence — libellé</span><input id="bs-ref-label"></label>
+                        <label class="builder-field"><span>Référence — URL</span><input id="bs-ref-url" placeholder="https://…"></label>
+                        <label class="builder-field"><span>Niveau</span><select id="bs-level"></select></label>
+                        <label class="builder-field"><span>Durée (minutes)</span><input id="bs-duration" type="number" min="1" value="2"></label>
+                        <label class="builder-field"><span>Workflow éditorial</span><select id="bs-workflow">
+                            <option value="draft">📝 Brouillon</option>
+                            <option value="review">🔍 À relire</option>
+                            <option value="validated">✔️ Validé</option>
+                            <option value="published">✅ Publié</option>
+                            <option value="archived">📦 Archivé</option>
+                        </select></label>
+                        <label class="builder-field"><span>Statut moteur (dérivé — lecture seule)</span><input id="bs-status-derived" readonly></label>
+                        <label class="builder-field"><span>Tags (séparés par des virgules)</span><input id="bs-tags" placeholder="backlog, sponsor, arbitrage"></label>
+                    </div>
+                    <div class="builder-actions">
+                        <button class="builder-btn builder-btn--primary" onclick="builderSaveSim()">💾 Enregistrer</button>
+                        <button class="builder-btn" onclick="builderPreviewSim()">👁 Prévisualiser</button>
+                        <button class="builder-btn" onclick="builderDuplicateSim()">⧉ Dupliquer</button>
+                        <button class="builder-btn builder-btn--danger" onclick="builderDeleteSim()">🗑 Supprimer</button>
+                    </div>
+
+                    <div id="builder-preview" style="display:none;">
+                        <h3 class="section-index-title title-video"><span>02</span> Prévisualisation — rendu exact du moteur</h3>
+                        <div id="builder-preview-card"></div>
+                    </div>
+                </div>
+            </div>
+
         </main>
     </div>
 
@@ -2984,10 +3347,15 @@
     let labAnswers = {};
 
     /* ---------- API PUBLIQUE : ENREGISTRER UN THÈME ---------- */
-    function registerLabTheme(theme) {
-        if (LAB_THEMES.some(t => t.id === theme.id)) return;
+    function registerLabTheme(theme, opts) {
         theme.simulations = theme.simulations || [];
-        LAB_THEMES.push(theme);
+        const existing = LAB_THEMES.findIndex(t => t.id === theme.id);
+        if (existing >= 0) {
+            if (!(opts && opts.replace)) return;
+            LAB_THEMES[existing] = theme;   // remplacement (CMS = source de vérité)
+        } else {
+            LAB_THEMES.push(theme);
+        }
         if (document.getElementById('lab-catalog-grid')) renderLabCatalog();
     }
 
@@ -3146,15 +3514,12 @@
     }
 
     /* ---------- RENDU DES SIMULATIONS (composants du Quiz réutilisés) ---------- */
-    function renderLabSimulations() {
-        const wrapper = document.getElementById('lab-questions-wrapper');
-        wrapper.innerHTML = '';
-        labCurrentSims.forEach((sim, index) => {
-            const qEl = document.createElement('div');
-            qEl.className = 'quiz-card';
-            qEl.innerHTML = `
+    /* Rendu d'UN scénario — partagé entre le moteur et le Lab Builder
+       (idPrefix isole les IDs DOM, handler définit la fonction de réponse) */
+    function labSimHTML(sim, index, total, idPrefix, handler) {
+        return `
                 <div class="quiz-question">
-                    <strong>Scénario ${index + 1}/${labCurrentSims.length} — ${sim.title || 'Situation de décision'}</strong>
+                    <strong>Scénario ${index + 1}/${total} — ${sim.title || 'Situation de décision'}</strong>
                     <div class="lab-sim-badges">
                         ${sim.skill ? `<span class="ft-badge">🎯 ${sim.skill}</span>` : ''}
                         ${sim.level ? `<span class="ft-badge">🎓 ${LAB_TAXONOMY.levels[sim.level] || sim.level}</span>` : ''}
@@ -3163,17 +3528,26 @@
                     ${sim.context ? `<span class="lab-context">${sim.context}</span>` : ''}
                     <em>${sim.question}</em>
                 </div>
-                <div class="quiz-options" id="lab-options-${sim.id}">
+                <div class="quiz-options" id="${idPrefix}-options-${sim.id}">
                     ${['A','B','C','D'].map(l =>
-                        `<button class="quiz-option" onclick="labSelectOption('${sim.id}', '${l}')"><strong>${l})</strong> ${sim.options[l]}</button>`
+                        `<button class="quiz-option" onclick="${handler}('${sim.id}', '${l}')"><strong>${l})</strong> ${sim.options[l]}</button>`
                     ).join('')}
                 </div>
-                <div class="quiz-feedback" id="lab-feedback-${sim.id}">
+                <div class="quiz-feedback" id="${idPrefix}-feedback-${sim.id}">
                     <strong>💡 Feedback Stratégique :</strong>
                     <span>${sim.feedback}</span>
                     ${sim.insight ? `<div class="lab-insight"><strong>🏛 Executive Insight —</strong> ${sim.insight}</div>` : ''}
                     ${sim.reference ? `<div class="lab-insight">📚 <a href="${sim.reference.url}" target="_blank" class="tool-download-btn">${sim.reference.label}</a></div>` : ''}
                 </div>`;
+    }
+
+    function renderLabSimulations() {
+        const wrapper = document.getElementById('lab-questions-wrapper');
+        wrapper.innerHTML = '';
+        labCurrentSims.forEach((sim, index) => {
+            const qEl = document.createElement('div');
+            qEl.className = 'quiz-card';
+            qEl.innerHTML = labSimHTML(sim, index, labCurrentSims.length, 'lab', 'labSelectOption');
             wrapper.appendChild(qEl);
         });
     }
@@ -3373,11 +3747,748 @@
     registerLabTheme({ id: 'cyber',   icon: '🛡️', title: 'Cybersécurité',         domain: 'Risque & Résilience',   category: 'it',         level: 'expert',   description: "Décider sous incident : crise ransomware, arbitrages budget-risque et acculturation du CODIR à la menace.", plannedSimulations: 75, simulations: [] });
     registerLabTheme({ id: 'finance', icon: '📊', title: 'Finance d\'Entreprise', domain: 'Pilotage & Décision',   category: 'finance',    level: 'confirme', description: "Lire un P&L en dirigeant non-financier : marges, cash, investissements et dialogue d'égal à égal avec la DAF.", plannedSimulations: 75, simulations: [] });
 
-    /* Initialisation au chargement : filtres (depuis la config) + catalogue */
+    /* ---------- CHARGEUR DE THÈMES DISTANTS (sims/manifest.json) ----------
+       Publication CMS : déposer <id>.json dans /sims/ et le lister dans
+       sims/manifest.json — le moteur charge tout seul, zéro code.
+       Un thème distant REMPLACE un thème inline de même id
+       (le CMS est la source de vérité). Silencieux hors-ligne. */
+    async function labLoadRemoteThemes() {
+        if (window.location.protocol === 'file:') {
+            console.warn('[Executive Lab] Page ouverte en local (file://) : le navigateur bloque fetch(). Les thèmes distants (/sims/) ne peuvent pas être chargés — seuls les thèmes inline s\'affichent. Testez sur l\'hébergement ou via un serveur local.');
+            return;
+        }
+        try {
+            const res = await fetch('sims/manifest.json', { cache: 'no-store' });
+            if (!res.ok) { console.warn('[Executive Lab] sims/manifest.json introuvable (HTTP ' + res.status + ') à ' + new URL('sims/manifest.json', window.location.href) + ' — thèmes inline seuls.'); return; }
+            const manifest = await res.json();
+            for (const file of (manifest.themes || [])) {
+                try {
+                    const r = await fetch('sims/' + file, { cache: 'no-store' });
+                    if (r.ok) {
+                        const theme = await r.json();
+                        registerLabTheme(theme, { replace: true });
+                        console.info('[Executive Lab] Thème distant chargé : ' + file + ' (' + theme.simulations.filter(s => s.status === 'published').length + ' publiées / ' + theme.simulations.length + ')');
+                    } else {
+                        console.warn('[Executive Lab] sims/' + file + ' introuvable (HTTP ' + r.status + ').');
+                    }
+                } catch (e) { console.warn('[Executive Lab] sims/' + file + ' illisible : ' + e.message); }
+            }
+        } catch (e) { console.warn('[Executive Lab] Chargement du manifeste impossible : ' + e.message + ' — thèmes inline seuls.'); }
+    }
+
+    /* ---------- ACCÈS ADMINISTRATEUR : DALPS LAB BUILDER ----------
+       Jamais dans la navigation. Uniquement via l'URL #lab-builder.
+       (Discrétion, pas sécurité : l'authentification réelle viendra
+       avec le futur espace membre.) */
+    function labMaybeOpenBuilder() {
+        if (window.location.hash === '#lab-builder' && typeof openLabBuilder === 'function') {
+            openLabBuilder();
+        }
+    }
+
+    /* Initialisation au chargement : filtres + catalogue + thèmes distants */
     window.addEventListener('DOMContentLoaded', () => {
         renderLabFilters();
         renderLabCatalog();
+        labLoadRemoteThemes();
+        labMaybeOpenBuilder();
     });
+    window.addEventListener('hashchange', labMaybeOpenBuilder);
+    </script>
+    <script>
+    /* ================================================================
+       DALPS LAB BUILDER — CMS OFFICIEL FAST TRACK · V3.1 (RC)
+       ----------------------------------------------------------------
+       ARCHITECTURE EN COUCHES (compatible 5 ans / SaaS) :
+       1. BuilderStorage : adaptateur de persistance (localStorage
+          aujourd'hui ; API / cloud / base demain — même interface).
+       2. STORE          : espace de travail versionné + migrations.
+       3. WORKFLOW       : 5 états éditoriaux (brouillon → à relire →
+          validé → publié → archivé) ; le statut moteur est DÉRIVÉ
+          en un point unique — Executive Lab reste figé.
+       4. CRUD           : thèmes (dupliquer/archiver/publier) et
+          simulations (réorganiser/prévisualiser/publier).
+       5. PIPELINE       : import unique → extraction → transformation
+          → validation → prévisualisation → publication → manifeste.
+          Branchements préparés : LAB_AI_PROVIDERS, LAB_EXPORTERS.
+       ================================================================ */
+
+    /* ========== COUCHE 1 : ADAPTATEUR DE PERSISTANCE ==========
+       Futur espace membre / cloud / API : remplacer ces 3 méthodes
+       (mêmes signatures, version async) — rien d'autre ne change. */
+    const BuilderStorage = {
+        get(key)        { try { return localStorage.getItem(key); } catch (e) { return null; } },
+        set(key, value) { try { localStorage.setItem(key, value); return true; } catch (e) { return false; } },
+        remove(key)     { try { localStorage.removeItem(key); } catch (e) {} }
+    };
+
+    /* ========== POINTS DE BRANCHEMENT (préparés, non développés) ========== */
+    const LAB_AI_PROVIDERS = {           // Mission 8 : OpenAI / Claude / Gemini / autre
+        active: null,                    // ex. 'claude'
+        adapters: {                      // contrat V-next : generate(sourceText, themeMeta) → thème JSON officiel
+            openai: null,
+            claude: null,
+            gemini: null
+        }
+    };
+    const LAB_EXPORTERS = {              // Mission 14 : formats d'export
+        json: theme => JSON.stringify(theme, null, 2),   // implémenté
+        markdown: null,                  // V-next
+        pdf: null,                       // V-next
+        csv: null                        // V-next
+    };
+
+    /* ========== COUCHE 2 : STORE + MIGRATIONS ========== */
+    const BUILDER_STORAGE_KEY = 'ftDalpsLabBuilder.v1';
+    let builderWorkspace = null;   // { version, updatedAt, themes[], jobs[], sources[] }
+    let builderThemeId = null;
+    let builderSimId = null;
+
+    function builderMigrate(ws) {
+        ws.version = 2;
+        ws.jobs = ws.jobs || [];
+        ws.sources = ws.sources || [];
+        ws.themes.forEach(t => {
+            if (t.published === undefined) t.published = true;
+            if (t.archived === undefined) t.archived = false;
+            t.simulations.forEach(s => {
+                if (!s.workflow) {
+                    s.workflow = s.status === 'published' ? 'published' : 'draft';
+                }
+            });
+        });
+        return ws;
+    }
+    function builderLoad() {
+        try {
+            const raw = BuilderStorage.get(BUILDER_STORAGE_KEY);
+            if (raw) { builderWorkspace = builderMigrate(JSON.parse(raw)); return; }
+        } catch (e) {}
+        builderWorkspace = builderMigrate({
+            version: 2,
+            themes: JSON.parse(JSON.stringify(LAB_THEMES)),
+            jobs: [], sources: []
+        });
+        builderSave();
+    }
+    function builderSave() {
+        builderWorkspace.updatedAt = new Date().toISOString();
+        if (!BuilderStorage.set(BUILDER_STORAGE_KEY, JSON.stringify(builderWorkspace)))
+            alert("Sauvegarde locale impossible (stockage plein ou bloqué).");
+    }
+    function builderTheme() { return builderWorkspace.themes.find(t => t.id === builderThemeId); }
+    function builderSim() {
+        const t = builderTheme();
+        return t ? t.simulations.find(s => s.id === builderSimId) : null;
+    }
+
+    /* ========== COUCHE 3 : WORKFLOW ÉDITORIAL → STATUT MOTEUR ========== */
+    const BUILDER_WORKFLOWS = {
+        draft:     { label: '📝 Brouillon', cls: 'wf-draft' },
+        review:    { label: '🔍 À relire',  cls: 'wf-review' },
+        validated: { label: '✔️ Validé',    cls: 'wf-validated' },
+        published: { label: '✅ Publié',    cls: 'wf-published' },
+        archived:  { label: '📦 Archivé',   cls: 'wf-archived' }
+    };
+    /* Point de dérivation UNIQUE (le moteur ne connaît que 3 statuts) */
+    function builderDeriveStatus(sim) {
+        if (sim.workflow === 'published') return 'published';
+        if (sim.workflow === 'archived')  return 'placeholder';   // invisible du moteur
+        return 'draft';                                            // prévisualisable
+    }
+    function builderSyncStatuses(theme) {
+        theme.simulations.forEach(s => { s.status = builderDeriveStatus(s); });
+    }
+    function builderIsTodo(sim) {   // "à compléter" = placeholders rédactionnels
+        return /\[/.test((sim.title || '') + (sim.question || ''));
+    }
+
+    /* ========== OUVERTURE + NAVIGATION (3 VUES) ========== */
+    function openLabBuilder() {
+        builderLoad();
+        document.querySelectorAll('.content-panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.menu-item').forEach(m => m.classList.remove('active'));
+        document.getElementById('panel-builder').classList.add('active');
+        builderShowThemes();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function builderSetView(view) {
+        ['builder-view-themes', 'builder-view-theme', 'builder-view-sim'].forEach(id =>
+            document.getElementById(id).style.display = (id === view) ? 'block' : 'none');
+    }
+    function builderShowThemes() { builderSetView('builder-view-themes'); builderRenderDashboard(); builderRenderThemes(); builderRenderJobs(); builderRenderSources(); }
+    function builderShowTheme()  { builderSetView('builder-view-theme');  builderRenderThemeEditor(); }
+    function builderShowSim()    { builderSetView('builder-view-sim');    builderRenderSimEditor(); }
+
+    /* ========== MISSION 2 : TABLEAU DE BORD ========== */
+    function builderStats() {
+        const themes = builderWorkspace.themes.filter(t => !t.archived);
+        const sims = themes.flatMap(t => t.simulations);
+        const by = wf => sims.filter(s => s.workflow === wf).length;
+        const published = by('published');
+        const total = sims.length;
+        return {
+            themes: themes.length,
+            archivedThemes: builderWorkspace.themes.length - themes.length,
+            total, published,
+            drafts: by('draft') + by('review'),
+            validated: by('validated'),
+            todo: sims.filter(builderIsTodo).length,
+            progress: total ? Math.round((published / total) * 100) : 0,
+            updatedAt: builderWorkspace.updatedAt
+        };
+    }
+    function builderRenderDashboard() {
+        const s = builderStats();
+        const health = s.progress >= 60 ? ['🟢', 'Catalogue sain'] : s.progress >= 20 ? ['🟠', 'En construction'] : ['🔴', 'Phase d\'amorçage'];
+        const stat = (value, label, accent) => `
+            <div class="builder-stat${accent ? ' builder-stat--accent' : ''}">
+                <div class="builder-stat-value">${value}</div>
+                <div class="builder-stat-label">${label}</div>
+            </div>`;
+        document.getElementById('builder-dashboard').innerHTML =
+            stat(s.themes, 'Thèmes actifs' + (s.archivedThemes ? ` <small>(+${s.archivedThemes} archivés)</small>` : '')) +
+            stat(s.total, 'Simulations au total') +
+            stat(s.published, 'Publiées', true) +
+            stat(s.drafts, 'Brouillons & relectures') +
+            stat(s.todo, 'À compléter') +
+            stat(s.progress + '%', 'Progression globale', true) +
+            stat(s.updatedAt ? new Date(s.updatedAt).toLocaleDateString('fr-FR', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' }) : '—', 'Dernière mise à jour') +
+            stat(health[0], health[1]);
+    }
+
+    /* ========== MISSION 3 : GESTION DES THÈMES ========== */
+    function builderRenderThemes() {
+        const host = document.getElementById('builder-themes-list');
+        if (!builderWorkspace.themes.length) {
+            host.innerHTML = '<div class="ft-empty"><p><strong>Aucun thème dans l\'espace de travail.</strong></p></div>';
+            return;
+        }
+        host.innerHTML = builderWorkspace.themes.map(t => {
+            const pub = t.simulations.filter(s => s.workflow === 'published').length;
+            return `
+            <div class="builder-row ${t.archived ? 'builder-row--archived' : ''}">
+                <div class="builder-row-main">
+                    <strong>${t.icon || '▫️'} ${t.title || t.id}</strong>
+                    <span class="builder-row-sub">${t.domain || ''} · ${LAB_TAXONOMY.categories[t.category] || t.category || '—'}</span>
+                </div>
+                <div class="lab-badges">
+                    <span class="ft-badge">🧩 ${t.simulations.length}</span>
+                    <span class="ft-badge">✅ ${pub} publiées</span>
+                    ${t.archived ? '<span class="ft-badge wf-archived">📦 Archivé</span>'
+                        : (t.published ? '<span class="ft-badge wf-published">● En ligne</span>' : '<span class="ft-badge wf-draft">⏸ Dépublié</span>')}
+                </div>
+                <div class="builder-row-actions">
+                    <button class="builder-btn" onclick="builderEditTheme('${t.id}')">✎ Éditer</button>
+                    <button class="builder-btn" onclick="builderExportTheme('${t.id}')">⬇ JSON</button>
+                </div>
+            </div>`;
+        }).join('');
+    }
+    function builderNewTheme() {
+        const id = prompt("Identifiant du nouveau thème (slug, ex: blockchain) :");
+        if (!id) return;
+        const slug = id.trim().toLowerCase().replace(/[^a-z0-9-]/g, '-');
+        if (builderWorkspace.themes.some(t => t.id === slug)) { alert("Cet identifiant existe déjà."); return; }
+        builderWorkspace.themes.push({
+            id: slug, icon: '▫️', title: slug, domain: '', category: 'management',
+            level: 'confirme', description: '', references: [], simulations: [],
+            published: false, archived: false
+        });
+        builderSave();
+        builderEditTheme(slug);
+    }
+    function builderEditTheme(id) { builderThemeId = id; builderSimId = null; builderShowTheme(); }
+    function builderDuplicateTheme() {
+        const t = builderTheme();
+        if (!t) return;
+        const copy = JSON.parse(JSON.stringify(t));
+        let n = 1;
+        while (builderWorkspace.themes.some(x => x.id === `${t.id}-copie${n}`)) n++;
+        copy.id = `${t.id}-copie${n}`;
+        copy.title = `${t.title} (copie)`;
+        copy.published = false;
+        copy.simulations.forEach(s => { if (s.workflow === 'published') s.workflow = 'validated'; });
+        builderWorkspace.themes.push(copy);
+        builderSave();
+        builderEditTheme(copy.id);
+    }
+    function builderToggleThemePublished() {
+        const t = builderTheme(); if (!t) return;
+        t.published = !t.published;
+        builderSave(); builderRenderThemeEditor();
+    }
+    function builderToggleThemeArchived() {
+        const t = builderTheme(); if (!t) return;
+        t.archived = !t.archived;
+        if (t.archived) t.published = false;
+        builderSave(); builderRenderThemeEditor();
+    }
+    function builderDeleteTheme() {
+        const t = builderTheme(); if (!t) return;
+        if (!confirm(`Supprimer définitivement « ${t.title} » et ses ${t.simulations.length} simulations ?\n(Conseil : préférez l'archivage.)`)) return;
+        builderWorkspace.themes = builderWorkspace.themes.filter(x => x.id !== t.id);
+        builderSave();
+        builderShowThemes();
+    }
+
+    /* ========== ÉDITEUR DE THÈME ========== */
+    function builderFillSelect(sel, entries, value) {
+        sel.innerHTML = entries.map(([k, v]) => `<option value="${k}" ${k === value ? 'selected' : ''}>${v}</option>`).join('');
+    }
+    function builderRenderThemeEditor() {
+        const t = builderTheme();
+        if (!t) { builderShowThemes(); return; }
+        document.getElementById('builder-theme-crumb').innerText = `Thème — ${t.title || t.id}`;
+        document.getElementById('bt-id').value = t.id;
+        document.getElementById('bt-icon').value = t.icon || '';
+        document.getElementById('bt-title').value = t.title || '';
+        document.getElementById('bt-domain').value = t.domain || '';
+        builderFillSelect(document.getElementById('bt-category'), Object.entries(LAB_TAXONOMY.categories), t.category);
+        builderFillSelect(document.getElementById('bt-level'), Object.entries(LAB_TAXONOMY.levels), t.level);
+        document.getElementById('bt-description').value = t.description || '';
+        document.getElementById('bt-references').value = (t.references || []).map(r => `${r.label} | ${r.url}`).join('\n');
+        document.getElementById('bt-publish-btn').innerText = t.published ? '⏸ Dépublier le thème' : '▲ Publier le thème';
+        document.getElementById('bt-archive-btn').innerText = t.archived ? '📤 Désarchiver' : '📦 Archiver';
+        builderRenderSims();
+    }
+    function builderSaveTheme() {
+        const t = builderTheme(); if (!t) return;
+        const newId = document.getElementById('bt-id').value.trim().toLowerCase().replace(/[^a-z0-9-]/g, '-');
+        if (newId && newId !== t.id && builderWorkspace.themes.some(x => x.id === newId)) { alert("Identifiant déjà utilisé."); return; }
+        if (newId) { t.id = newId; builderThemeId = newId; }
+        t.icon = document.getElementById('bt-icon').value.trim();
+        t.title = document.getElementById('bt-title').value.trim();
+        t.domain = document.getElementById('bt-domain').value.trim();
+        t.category = document.getElementById('bt-category').value;
+        t.level = document.getElementById('bt-level').value;
+        t.description = document.getElementById('bt-description').value.trim();
+        t.references = document.getElementById('bt-references').value.split('\n')
+            .map(l => l.split('|')).filter(p => p.length >= 2)
+            .map(p => ({ label: p[0].trim(), url: p.slice(1).join('|').trim() }));
+        builderSave();
+        builderRenderThemeEditor();
+    }
+
+    /* ========== MISSION 4 : GESTION DES SIMULATIONS (+ RÉORGANISER) ========== */
+    function builderRenderSims() {
+        const t = builderTheme();
+        const host = document.getElementById('builder-sims-list');
+        const pub = t.simulations.filter(s => s.workflow === 'published').length;
+        document.getElementById('builder-sims-counter').innerHTML =
+            `${t.simulations.length} structures · <strong>${pub} publiées</strong> · ${t.simulations.filter(builderIsTodo).length} à compléter`;
+        host.innerHTML = t.simulations.map((s, i) => {
+            const wf = BUILDER_WORKFLOWS[s.workflow] || BUILDER_WORKFLOWS.draft;
+            return `
+            <div class="builder-row">
+                <div class="builder-reorder">
+                    <button class="builder-btn builder-btn--icon" ${i === 0 ? 'disabled' : ''} onclick="builderMoveSim('${s.id}', -1)">▲</button>
+                    <button class="builder-btn builder-btn--icon" ${i === t.simulations.length - 1 ? 'disabled' : ''} onclick="builderMoveSim('${s.id}', 1)">▼</button>
+                </div>
+                <div class="builder-row-main">
+                    <strong>${s.id}</strong>
+                    <span class="builder-row-sub">${(s.title || '—').substring(0, 70)}</span>
+                </div>
+                <div class="lab-badges"><span class="ft-badge ${wf.cls}">${wf.label}</span>${builderIsTodo(s) ? '<span class="ft-badge">✏️ à compléter</span>' : ''}</div>
+                <div class="builder-row-actions">
+                    <button class="builder-btn" onclick="builderEditSim('${s.id}')">✎</button>
+                    <button class="builder-btn" onclick="builderTogglePublish('${s.id}')">${s.workflow === 'published' ? '⏸' : '▲'}</button>
+                    <button class="builder-btn" onclick="builderDuplicateSimById('${s.id}')">⧉</button>
+                    <button class="builder-btn builder-btn--danger" onclick="builderDeleteSimById('${s.id}')">🗑</button>
+                </div>
+            </div>`;
+        }).join('') || '<div class="ft-empty"><p>Aucune simulation — créez la première.</p></div>';
+    }
+    function builderMoveSim(simId, delta) {
+        const sims = builderTheme().simulations;
+        const i = sims.findIndex(s => s.id === simId);
+        const j = i + delta;
+        if (i < 0 || j < 0 || j >= sims.length) return;
+        [sims[i], sims[j]] = [sims[j], sims[i]];
+        builderSave();
+        builderRenderSims();
+    }
+    function builderTogglePublish(simId) {
+        const s = builderTheme().simulations.find(x => x.id === simId);
+        if (!s) return;
+        s.workflow = (s.workflow === 'published') ? 'validated' : 'published';
+        s.status = builderDeriveStatus(s);
+        builderSave();
+        builderRenderSims();
+    }
+    function builderDuplicateSimById(simId) {
+        const t = builderTheme();
+        const s = t.simulations.find(x => x.id === simId);
+        if (!s) return;
+        const copy = JSON.parse(JSON.stringify(s));
+        let n = 1;
+        while (t.simulations.some(x => x.id === `${s.id}-COPIE${n}`)) n++;
+        copy.id = `${s.id}-COPIE${n}`;
+        copy.workflow = 'draft';
+        copy.status = builderDeriveStatus(copy);
+        t.simulations.splice(t.simulations.indexOf(s) + 1, 0, copy);
+        builderSave();
+        builderRenderSims();
+    }
+    function builderDeleteSimById(simId) {
+        const t = builderTheme();
+        if (!confirm(`Supprimer la simulation ${simId} ?`)) return;
+        t.simulations = t.simulations.filter(x => x.id !== simId);
+        builderSave();
+        builderRenderSims();
+    }
+
+    /* ========== ÉDITEUR DE SIMULATION + PRÉVISUALISATION ========== */
+    function builderNewSim() {
+        const t = builderTheme();
+        const prefix = t.id.toUpperCase().replace(/[^A-Z0-9]/g, '');
+        let n = t.simulations.length + 1;
+        while (t.simulations.some(s => s.id === `${prefix}${n}`)) n++;
+        t.simulations.push({
+            id: `${prefix}${n}`, title: '', context: '', question: '',
+            options: { A: '', B: '', C: '', D: '' }, correct: 'A',
+            feedback: '', insight: '', reference: { label: '', url: '' },
+            skill: '', level: t.level || 'confirme', durationMinutes: 2,
+            workflow: 'draft', status: 'draft', tags: []
+        });
+        builderSave();
+        builderEditSim(`${prefix}${n}`);
+    }
+    function builderEditSim(simId) { builderSimId = simId; builderShowSim(); }
+    function builderRenderSimEditor() {
+        const s = builderSim();
+        if (!s) { builderShowTheme(); return; }
+        document.getElementById('builder-sim-crumb').innerText = `${builderTheme().title} — ${s.id}`;
+        document.getElementById('bs-id').value = s.id;
+        document.getElementById('bs-title').value = s.title || '';
+        document.getElementById('bs-context').value = s.context || '';
+        document.getElementById('bs-question').value = s.question || '';
+        ['A','B','C','D'].forEach(l => document.getElementById('bs-' + l).value = (s.options && s.options[l]) || '');
+        document.getElementById('bs-correct').value = s.correct || 'A';
+        document.getElementById('bs-skill').value = s.skill || '';
+        document.getElementById('bs-feedback').value = s.feedback || '';
+        document.getElementById('bs-insight').value = s.insight || '';
+        document.getElementById('bs-ref-label').value = (s.reference && s.reference.label) || '';
+        document.getElementById('bs-ref-url').value = (s.reference && s.reference.url) || '';
+        builderFillSelect(document.getElementById('bs-level'), Object.entries(LAB_TAXONOMY.levels), s.level || 'confirme');
+        document.getElementById('bs-duration').value = s.durationMinutes || 2;
+        document.getElementById('bs-workflow').value = s.workflow || 'draft';
+        document.getElementById('bs-status-derived').value = builderDeriveStatus(s);
+        document.getElementById('bs-tags').value = (s.tags || []).join(', ');
+        document.getElementById('builder-preview').style.display = 'none';
+    }
+    function builderCollectSim() {
+        const workflow = document.getElementById('bs-workflow').value;
+        const sim = {
+            id: document.getElementById('bs-id').value.trim(),
+            title: document.getElementById('bs-title').value.trim(),
+            context: document.getElementById('bs-context').value.trim(),
+            question: document.getElementById('bs-question').value.trim(),
+            options: {
+                A: document.getElementById('bs-A').value.trim(),
+                B: document.getElementById('bs-B').value.trim(),
+                C: document.getElementById('bs-C').value.trim(),
+                D: document.getElementById('bs-D').value.trim()
+            },
+            correct: document.getElementById('bs-correct').value,
+            feedback: document.getElementById('bs-feedback').value.trim(),
+            insight: document.getElementById('bs-insight').value.trim(),
+            reference: {
+                label: document.getElementById('bs-ref-label').value.trim(),
+                url: document.getElementById('bs-ref-url').value.trim()
+            },
+            skill: document.getElementById('bs-skill').value.trim(),
+            level: document.getElementById('bs-level').value,
+            durationMinutes: parseInt(document.getElementById('bs-duration').value, 10) || 2,
+            workflow,
+            tags: document.getElementById('bs-tags').value.split(',').map(x => x.trim()).filter(Boolean)
+        };
+        sim.status = builderDeriveStatus(sim);
+        return sim;
+    }
+    function builderSaveSim() {
+        const t = builderTheme();
+        const s = builderSim();
+        if (!t || !s) return;
+        const data = builderCollectSim();
+        if (data.id !== s.id && t.simulations.some(x => x.id === data.id)) { alert("Identifiant de simulation déjà utilisé."); return; }
+        Object.assign(s, data);
+        builderSimId = s.id;
+        builderSave();
+        document.getElementById('bs-status-derived').value = s.status;
+        document.getElementById('builder-sim-crumb').innerText = `${t.title} — ${s.id}`;
+    }
+    function builderDuplicateSim() { builderSaveSim(); builderDuplicateSimById(builderSimId); builderShowTheme(); }
+    function builderDeleteSim() {
+        const id = builderSimId;
+        builderDeleteSimById(id);
+        if (!builderSim()) builderShowTheme();
+    }
+    function builderPreviewSim() {   /* Mission 12 : rendu final exact avant publication */
+        builderSaveSim();
+        const s = builderSim();
+        const host = document.getElementById('builder-preview-card');
+        host.innerHTML = `<div class="quiz-card">${labSimHTML(s, 0, 1, 'builder', 'builderPreviewAnswer')}</div>`;
+        document.getElementById('builder-preview').style.display = 'block';
+        window.__builderPreviewSim = s;
+    }
+    function builderPreviewAnswer(simId, letter) {
+        const s = window.__builderPreviewSim;
+        if (!s || s.id !== simId) return;
+        const buttons = document.querySelectorAll(`#builder-options-${simId} .quiz-option`);
+        ['A','B','C','D'].forEach((l, idx) => {
+            buttons[idx].setAttribute('disabled', 'true');
+            if (l === s.correct) buttons[idx].classList.add('correct');
+            else if (l === letter) buttons[idx].classList.add('wrong');
+        });
+        document.getElementById(`builder-feedback-${simId}`).style.display = 'block';
+    }
+
+    /* ========== SESSION : TESTER DANS LE MOTEUR ========== */
+    function builderPushToEngine() {
+        LAB_SETTINGS.previewDrafts = true;
+        builderWorkspace.themes.filter(t => !t.archived).forEach(t => {
+            const copy = JSON.parse(JSON.stringify(t));
+            builderSyncStatuses(copy);
+            registerLabTheme(copy, { replace: true });
+        });
+        alert("Espace de travail poussé vers Executive Lab (session, drafts jouables).\nOuvrez 🧪 Executive Lab pour tester.");
+    }
+    function builderResetWorkspace() {
+        if (!confirm("Réinitialiser l'espace de travail depuis les thèmes actuellement chargés dans le moteur ?\n(Vos modifications locales non exportées seront perdues.)")) return;
+        BuilderStorage.remove(BUILDER_STORAGE_KEY);
+        builderLoad();
+        builderShowThemes();
+    }
+
+    /* ========== MISSIONS 7 & 14 : PUBLICATION & EXPORTS ========== */
+    function builderDownload(filename, text, mime) {
+        const blob = new Blob([text], { type: (mime || 'application/json') + ';charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+    }
+    function builderExportableThemes() {
+        return builderWorkspace.themes.filter(t => !t.archived && t.published);
+    }
+    function builderExportTheme(id) {
+        const t = builderWorkspace.themes.find(x => x.id === (id || builderThemeId));
+        if (!t) return;
+        const copy = JSON.parse(JSON.stringify(t));
+        builderSyncStatuses(copy);
+        builderDownload(`${copy.id}.json`, LAB_EXPORTERS.json(copy));
+    }
+    function builderManifestJSON() {
+        return JSON.stringify({
+            version: 1,
+            generated: new Date().toISOString(),
+            themes: builderExportableThemes().map(t => `${t.id}.json`)
+        }, null, 2);
+    }
+    function builderExportManifest() { builderDownload('manifest.json', builderManifestJSON()); }
+    function builderExportAll() {    /* Paquet de publication : manifeste + thèmes publiés */
+        const themes = builderExportableThemes();
+        if (!themes.length) { alert("Aucun thème publié à exporter.\nPubliez au moins un thème (bouton « ▲ Publier le thème »)."); return; }
+        builderExportManifest();
+        themes.forEach((t, i) => setTimeout(() => builderExportTheme(t.id), 250 * (i + 1)));
+        alert(`Paquet de publication : manifest.json + ${themes.length} thème(s).\nDéposez l'ensemble dans /sims/ — disponibilité immédiate dans Executive Lab.`);
+    }
+
+    /* ========== MISSIONS 5, 8, 9 : IMPORT UNIQUE, SOURCES .MD, PIPELINE ========== */
+    /* Contrat du pipeline (préparé, non développé) :
+       import → extraction (LAB_PIPELINE.extract) → transformation IA
+       (LAB_AI_PROVIDERS.adapters[active].generate) → validation
+       (workflow 'review') → prévisualisation (Builder) → publication
+       (workflow 'published') → manifeste (builderExportAll) → moteur. */
+    const LAB_PIPELINE = {
+        extract: null,      // V-next : DOCX/PDF → texte
+        transform: null,    // V-next : texte → thème JSON (via LAB_AI_PROVIDERS)
+        validate: null,     // V-next : contrôle du contrat de données
+        publish: null       // V-next : publication assistée
+    };
+
+    function builderAddJob(job) {
+        job.id = 'JOB' + Date.now();
+        job.created = new Date().toISOString();
+        job.status = job.status || 'awaiting_ai';
+        builderWorkspace.jobs.unshift(job);
+        builderSave();
+        builderRenderJobs();
+    }
+    const BUILDER_JOB_LABELS = {
+        awaiting_extraction: '⏳ En attente d\'extraction (V-next)',
+        awaiting_ai: '⏳ En attente de génération IA (V-next)',
+        done: '✅ Traité'
+    };
+    function builderRenderJobs() {
+        const host = document.getElementById('builder-jobs-list');
+        if (!builderWorkspace.jobs.length) { host.innerHTML = ''; return; }
+        host.innerHTML = '<h4 class="builder-list-title">File d\'attente du pipeline</h4>' +
+            builderWorkspace.jobs.map(j => `
+            <div class="builder-row">
+                <div class="builder-row-main">
+                    <strong>${j.name}</strong>
+                    <span class="builder-row-sub">${j.type.toUpperCase()} · ${j.chars ? j.chars + ' caractères · ' : ''}${new Date(j.created).toLocaleDateString('fr-FR')}</span>
+                </div>
+                <div class="lab-badges"><span class="ft-badge">${BUILDER_JOB_LABELS[j.status] || j.status}</span></div>
+                <div class="builder-row-actions">
+                    <button class="builder-btn builder-btn--danger" onclick="builderDeleteJob('${j.id}')">🗑</button>
+                </div>
+            </div>`).join('');
+    }
+    function builderDeleteJob(id) {
+        builderWorkspace.jobs = builderWorkspace.jobs.filter(j => j.id !== id);
+        builderSave();
+        builderRenderJobs();
+    }
+
+    /* Bibliothèque de sources Markdown — la source de vérité éditoriale */
+    function builderAddSource(name, content) {
+        builderWorkspace.sources.unshift({
+            id: 'SRC' + Date.now(),
+            name, content, chars: content.length,
+            created: new Date().toISOString()
+        });
+        builderSave();
+        builderRenderSources();
+    }
+    function builderRenderSources() {
+        const host = document.getElementById('builder-sources-list');
+        if (!builderWorkspace.sources.length) {
+            host.innerHTML = '<div class="ft-empty"><p>Aucune source — importez vos fichiers <strong>Sources/*.md</strong> (Scrum.md, SAFe.md, Leadership.md…).</p></div>';
+            return;
+        }
+        host.innerHTML = builderWorkspace.sources.map(s => `
+            <div class="builder-row">
+                <div class="builder-row-main">
+                    <strong>📄 ${s.name}</strong>
+                    <span class="builder-row-sub">${s.chars} caractères · ${new Date(s.created).toLocaleDateString('fr-FR')}</span>
+                </div>
+                <div class="builder-row-actions">
+                    <button class="builder-btn" onclick="builderSourceToPipeline('${s.id}')">→ Pipeline IA</button>
+                    <button class="builder-btn" onclick="builderDownloadSource('${s.id}')">⬇ .md</button>
+                    <button class="builder-btn builder-btn--danger" onclick="builderDeleteSource('${s.id}')">🗑</button>
+                </div>
+            </div>`).join('');
+    }
+    function builderSourceToPipeline(id) {
+        const s = builderWorkspace.sources.find(x => x.id === id);
+        if (!s) return;
+        builderAddJob({ type: 'md', name: s.name, sourceId: s.id, chars: s.chars, status: 'awaiting_ai' });
+    }
+    function builderDownloadSource(id) {
+        const s = builderWorkspace.sources.find(x => x.id === id);
+        if (s) builderDownload(s.name, s.content, 'text/markdown');
+    }
+    function builderDeleteSource(id) {
+        builderWorkspace.sources = builderWorkspace.sources.filter(s => s.id !== id);
+        builderSave();
+        builderRenderSources();
+    }
+
+    function builderImportFile(file) {
+        if (!file) return;
+        const ext = (file.name.split('.').pop() || '').toLowerCase();
+        if (ext === 'json') {
+            file.text().then(txt => {
+                try {
+                    const data = builderMigrateTheme(JSON.parse(txt));
+                    if (!data.id || !Array.isArray(data.simulations)) { alert("JSON invalide : champs 'id' et 'simulations' requis (format officiel)."); return; }
+                    const idx = builderWorkspace.themes.findIndex(t => t.id === data.id);
+                    if (idx >= 0) {
+                        if (!confirm(`Le thème « ${data.id} » existe — le remplacer ?`)) return;
+                        builderWorkspace.themes[idx] = data;
+                    } else builderWorkspace.themes.push(data);
+                    builderSave();
+                    builderShowThemes();
+                    alert(`Thème « ${data.id} » importé : ${data.simulations.length} simulations.`);
+                } catch (e) { alert("JSON illisible : " + e.message); }
+            });
+        } else if (ext === 'csv') {
+            if (!builderWorkspace.themes.length) { alert("Créez d'abord un thème de destination."); return; }
+            const target = prompt("Identifiant du thème de destination :", builderThemeId || builderWorkspace.themes[0].id);
+            const t = builderWorkspace.themes.find(x => x.id === target);
+            if (!t) { alert("Thème introuvable."); return; }
+            file.text().then(txt => {
+                const sims = builderParseCSV(txt);
+                if (!sims.length) { alert("Aucune ligne exploitable. Colonnes : id,title,context,question,A,B,C,D,correct,feedback,insight,reference_label,reference_url,skill,level,durationMinutes,workflow,tags"); return; }
+                sims.forEach(s => { if (!t.simulations.some(x => x.id === s.id)) t.simulations.push(s); });
+                builderSave();
+                builderShowThemes();
+                alert(`${sims.length} simulations importées dans « ${t.id} ».`);
+            });
+        } else if (ext === 'md') {
+            file.text().then(txt => builderAddSource(file.name, txt));
+        } else if (ext === 'txt') {
+            file.text().then(txt => builderAddJob({ type: 'txt', name: file.name, rawText: txt, chars: txt.length, status: 'awaiting_ai' }));
+        } else if (['docx', 'pdf'].includes(ext)) {
+            builderAddJob({ type: ext, name: file.name, chars: null, status: 'awaiting_extraction' });
+        } else {
+            alert("Format non pris en charge.");
+        }
+        document.getElementById('builder-file-input').value = '';
+    }
+    function builderMigrateTheme(t) {
+        t.simulations = t.simulations || [];
+        if (t.published === undefined) t.published = true;
+        if (t.archived === undefined) t.archived = false;
+        t.simulations.forEach(s => {
+            if (!s.workflow) s.workflow = s.status === 'published' ? 'published' : 'draft';
+            s.status = builderDeriveStatus(s);
+        });
+        return t;
+    }
+    function builderImportPaste(mode) {
+        const txt = document.getElementById('builder-paste').value.trim();
+        if (txt.length < 50) { alert("Collez un texte d'au moins 50 caractères."); return; }
+        if (mode === 'source') {
+            const name = prompt("Nom de la source (ex: Scrum.md) :", "Source.md");
+            if (!name) return;
+            builderAddSource(name.endsWith('.md') ? name : name + '.md', txt);
+        } else {
+            builderAddJob({ type: 'texte', name: txt.substring(0, 60).replace(/\s+/g, ' ') + '…', rawText: txt, chars: txt.length, status: 'awaiting_ai' });
+        }
+        document.getElementById('builder-paste').value = '';
+    }
+    function builderParseCSV(txt) {
+        const lines = txt.split(/\r?\n/).filter(l => l.trim());
+        if (lines.length < 2) return [];
+        const parse = line => {
+            const out = []; let cur = '', inQ = false;
+            for (let i = 0; i < line.length; i++) {
+                const c = line[i];
+                if (c === '"') { if (inQ && line[i+1] === '"') { cur += '"'; i++; } else inQ = !inQ; }
+                else if (c === ',' && !inQ) { out.push(cur); cur = ''; }
+                else cur += c;
+            }
+            out.push(cur);
+            return out.map(x => x.trim());
+        };
+        const headers = parse(lines[0]).map(h => h.toLowerCase());
+        return lines.slice(1).map(line => {
+            const cells = parse(line);
+            const get = k => cells[headers.indexOf(k)] || '';
+            if (!get('id') || !get('question')) return null;
+            const sim = {
+                id: get('id'), title: get('title'), context: get('context'), question: get('question'),
+                options: { A: get('a'), B: get('b'), C: get('c'), D: get('d') },
+                correct: (get('correct') || 'A').toUpperCase(),
+                feedback: get('feedback'), insight: get('insight'),
+                reference: { label: get('reference_label'), url: get('reference_url') },
+                skill: get('skill'), level: get('level') || 'confirme',
+                durationMinutes: parseInt(get('durationminutes'), 10) || 2,
+                workflow: get('workflow') || get('status') || 'draft',
+                tags: get('tags') ? get('tags').split(';').map(x => x.trim()).filter(Boolean) : []
+            };
+            if (!BUILDER_WORKFLOWS[sim.workflow]) sim.workflow = 'draft';
+            sim.status = builderDeriveStatus(sim);
+            return sim;
+        }).filter(Boolean);
+    }
     </script>
 </body>
 </html>
