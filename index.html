@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -1318,6 +1317,43 @@
             font-size: 0.78rem;
         }
 
+        /* ============================================================
+           PATCH V8 — PAGINATION STANDARD DE LA PLATEFORME (ft-*)
+           Composant unique : Quiz Certificatif + Executive Lab.
+           ============================================================ */
+        .ft-pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 25px 0;
+        }
+        .ft-page-btn {
+            min-width: 36px;
+            padding: 8px 10px;
+            border: 1px solid #dddddd;
+            background: #ffffff;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #444444;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+        .ft-page-btn:hover:not([disabled]):not(.active) { border-color: #111111; color: #111111; }
+        .ft-page-btn.active { background: #111111; border-color: #111111; color: #ffffff; }
+        .ft-page-btn[disabled] { opacity: 0.35; cursor: not-allowed; }
+        .ft-page-info {
+            margin-left: 10px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #999999;
+        }
+
         @media (max-width: 992px) {
             .page-container { flex-direction: column; }
             .sidebar { width: 100%; height: auto; position: relative; top: 0; padding: 25px 20px; border-right: none; border-bottom: 1px solid #eaeaea; }
@@ -2620,7 +2656,9 @@
                     <div class="quiz-score-big" id="quiz-global-score">00<span>/75</span></div>
                 </div>
 
+                <div id="quiz-pagination-top"></div>
                 <div id="quiz-dynamic-wrapper"></div>
+                <div id="quiz-pagination-bottom"></div>
             </div>
 
             <div id="panel-lab" class="content-panel">
@@ -2670,7 +2708,9 @@
 
                     <div class="lab-progress-track"><div class="lab-progress-fill" id="lab-progress-fill"></div></div>
 
+                    <div id="lab-pagination-top"></div>
                     <div id="lab-questions-wrapper"></div>
+                    <div id="lab-pagination-bottom"></div>
                     <div id="lab-end-wrapper"></div>
                 </div>
             </div>
@@ -3159,28 +3199,89 @@
     const userAnswers = {};
 
     /* RENDU DYNAMIQUE DU QUIZ */
+    /* ================================================================
+       COMPOSANTS TRANSVERSES DE LA PLATEFORME (Golden Template V1.0)
+       Pagination standard : 10 items/page — utilisée à l'identique par
+       le Quiz Certificatif et l'Executive Lab. Restauration d'état :
+       une question déjà répondue conserve sa correction sur toute page.
+       ================================================================ */
+    const FT_PAGE_SIZE = 10;
+
+    function ftPageCount(total) { return Math.max(1, Math.ceil(total / FT_PAGE_SIZE)); }
+
+    function ftRenderPagination(containerId, current, count, goFn) {
+        const host = document.getElementById(containerId);
+        if (!host) return;
+        if (count <= 1) { host.innerHTML = ''; return; }
+        let btns = `<button class="ft-page-btn" ${current === 0 ? 'disabled' : ''} onclick="${goFn}(${current - 1})" aria-label="Page précédente">←</button>`;
+        for (let i = 0; i < count; i++) {
+            btns += `<button class="ft-page-btn ${i === current ? 'active' : ''}" onclick="${goFn}(${i})">${i + 1}</button>`;
+        }
+        btns += `<button class="ft-page-btn" ${current === count - 1 ? 'disabled' : ''} onclick="${goFn}(${current + 1})" aria-label="Page suivante">→</button>`;
+        host.innerHTML = `<div class="ft-pagination">${btns}<span class="ft-page-info">Page ${current + 1} / ${count}</span></div>`;
+    }
+
+    function ftRestoreAnswer(optionsId, feedbackId, correct, selected) {
+        const block = document.getElementById(optionsId);
+        if (!block) return;
+        const buttons = block.querySelectorAll('.quiz-option');
+        ['A', 'B', 'C', 'D'].forEach((l, idx) => {
+            if (!buttons[idx]) return;
+            buttons[idx].setAttribute('disabled', 'true');
+            if (l === correct) buttons[idx].classList.add('correct');
+            else if (l === selected) buttons[idx].classList.add('wrong');
+        });
+        const fb = document.getElementById(feedbackId);
+        if (fb) fb.style.display = 'block';
+    }
+
+    /* ---------- QUIZ CERTIFICATIF : PAGINATION 10 QUESTIONS / PAGE ---------- */
+    let quizCurrentPage = 0;
+
+    function quizFlat() {
+        const flat = [];
+        quizData.forEach(mod => mod.questions.forEach((q, i) => flat.push({ mod, q, first: i === 0 })));
+        return flat;
+    }
+
+    function quizGoToPage(i) {
+        quizCurrentPage = Math.max(0, Math.min(i, ftPageCount(quizFlat().length) - 1));
+        renderQuiz();
+        const panel = document.getElementById('panel-quiz');
+        if (panel) window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     function renderQuiz() {
         const wrapper = document.getElementById('quiz-dynamic-wrapper');
         wrapper.innerHTML = '';
 
-        quizData.forEach(mod => {
-            const modEl = document.createElement('div');
-            modEl.className = 'quiz-module-container';
-            modEl.innerHTML = `
-                <div class="quiz-module-header">
-                    <span class="quiz-module-badge">Phase ${mod.moduleId}</span>
-                    <h3 class="quiz-module-title">${mod.moduleTitle}</h3>
-                    <div class="quiz-module-subtitle">${mod.moduleSubtitle}</div>
-                </div>
-                <div id="module-body-${mod.moduleId}"></div>
-            `;
-            wrapper.appendChild(modEl);
+        const flat = quizFlat();
+        const pageCount = ftPageCount(flat.length);
+        if (quizCurrentPage >= pageCount) quizCurrentPage = pageCount - 1;
+        const pageItems = flat.slice(quizCurrentPage * FT_PAGE_SIZE, (quizCurrentPage + 1) * FT_PAGE_SIZE);
 
-            const modBody = document.getElementById(`module-body-${mod.moduleId}`);
-            mod.questions.forEach((q, index) => {
-                const qEl = document.createElement('div');
-                qEl.className = 'quiz-card';
-                qEl.innerHTML = `
+        let currentModuleId = null;
+        let modBody = null;
+        pageItems.forEach(item => {
+            if (item.mod.moduleId !== currentModuleId) {
+                currentModuleId = item.mod.moduleId;
+                const modEl = document.createElement('div');
+                modEl.className = 'quiz-module-container';
+                modEl.innerHTML = `
+                    <div class="quiz-module-header">
+                        <span class="quiz-module-badge">Phase ${item.mod.moduleId}</span>
+                        <h3 class="quiz-module-title">${item.mod.moduleTitle}${item.first ? '' : ' <small style="font-size:0.6em; color:#999; font-weight:400;">(suite)</small>'}</h3>
+                        <div class="quiz-module-subtitle">${item.mod.moduleSubtitle}</div>
+                    </div>
+                    <div id="module-body-${item.mod.moduleId}-p${quizCurrentPage}"></div>
+                `;
+                wrapper.appendChild(modEl);
+                modBody = document.getElementById(`module-body-${item.mod.moduleId}-p${quizCurrentPage}`);
+            }
+            const q = item.q;
+            const qEl = document.createElement('div');
+            qEl.className = 'quiz-card';
+            qEl.innerHTML = `
                     <div class="quiz-question">
                         <strong>Question ${q.id}</strong>
                         <em>${q.q}</em>
@@ -3196,10 +3297,14 @@
                         <span id="feedback-text-${q.id}">${q.feedback}</span>
                     </div>
                 `;
-                modBody.appendChild(qEl);
-            });
+            modBody.appendChild(qEl);
+            if (userAnswers[q.id]) ftRestoreAnswer(`options-block-${q.id}`, `feedback-${q.id}`, q.correct, userAnswers[q.id]);
         });
+
+        ftRenderPagination('quiz-pagination-top', quizCurrentPage, pageCount, 'quizGoToPage');
+        ftRenderPagination('quiz-pagination-bottom', quizCurrentPage, pageCount, 'quizGoToPage');
     }
+
 
     /* ACTION DE SELECTION D'UNE OPTION (LOGIQUE DE COCHE VERT/ROUGE RESTRICTIVE) */
     function selectOption(questionId, selectedLetter) {
@@ -3345,6 +3450,7 @@
     let labCurrentTheme = null;
     let labCurrentSims = [];
     let labAnswers = {};
+    let labCurrentPage = 0;   // pagination standard FT_PAGE_SIZE (Golden Template)
 
     /* ---------- API PUBLIQUE : ENREGISTRER UN THÈME ---------- */
     function registerLabTheme(theme, opts) {
@@ -3495,6 +3601,7 @@
         labCurrentTheme = theme;
         labCurrentSims = labPlayable(theme);
         labAnswers = {};
+        labCurrentPage = 0;
         document.getElementById('lab-catalog-view').style.display = 'none';
         document.getElementById('lab-player-view').style.display = 'block';
         document.getElementById('lab-sim-title').innerText = `Thème — ${theme.title}`;
@@ -3541,15 +3648,28 @@
                 </div>`;
     }
 
+    function labGoToPage(i) {
+        labCurrentPage = Math.max(0, Math.min(i, ftPageCount(labCurrentSims.length) - 1));
+        renderLabSimulations();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     function renderLabSimulations() {
         const wrapper = document.getElementById('lab-questions-wrapper');
         wrapper.innerHTML = '';
-        labCurrentSims.forEach((sim, index) => {
+        const pageCount = ftPageCount(labCurrentSims.length);
+        if (labCurrentPage >= pageCount) labCurrentPage = pageCount - 1;
+        const start = labCurrentPage * FT_PAGE_SIZE;
+        labCurrentSims.slice(start, start + FT_PAGE_SIZE).forEach((sim, i) => {
+            const index = start + i;
             const qEl = document.createElement('div');
             qEl.className = 'quiz-card';
             qEl.innerHTML = labSimHTML(sim, index, labCurrentSims.length, 'lab', 'labSelectOption');
             wrapper.appendChild(qEl);
+            if (labAnswers[sim.id]) ftRestoreAnswer(`lab-options-${sim.id}`, `lab-feedback-${sim.id}`, sim.correct, labAnswers[sim.id]);
         });
+        ftRenderPagination('lab-pagination-top', labCurrentPage, pageCount, 'labGoToPage');
+        ftRenderPagination('lab-pagination-bottom', labCurrentPage, pageCount, 'labGoToPage');
     }
 
     /* ---------- CORRECTION (même logique restrictive que le Quiz) ---------- */
