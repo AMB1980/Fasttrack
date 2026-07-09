@@ -1,0 +1,2166 @@
+{
+  "id": "scrum",
+  "icon": "🌀",
+  "title": "Scrum",
+  "domain": "Agilité & Delivery",
+  "category": "agile",
+  "level": "confirme",
+  "description": "Éprouvez votre lecture des rôles, des rituels et des rapports de force réels d'une organisation Scrum en environnement exécutif.",
+  "references": [
+    {
+      "label": "Scrum Guide 2020",
+      "url": "https://scrumguides.org"
+    },
+    {
+      "label": "Scrum.org",
+      "url": "https://www.scrum.org"
+    }
+  ],
+  "simulations": [
+    {
+      "id": "SCRUM1",
+      "title": "Le sponsor contre le Sprint",
+      "context": "Vous êtes directeur nouvellement nommé. Un sponsor influent exige que le Product Owner insère « en urgence » sa demande en tête du Sprint en cours. Le PO vous sollicite.",
+      "question": "Quelle est la réponse conforme au cadre Scrum — et politiquement tenable ?",
+      "options": {
+        "A": "Imposer l'insertion immédiate : le sponsor finance le produit, il décide",
+        "B": "Rappeler que le Sprint Backlog appartient aux Developers et que le PO arbitre la demande pour le prochain Sprint via le Product Backlog, en chiffrant le coût d'une interruption",
+        "C": "Couper la poire en deux : accepter la moitié de la demande dans le Sprint en cours",
+        "D": "Escalader au CODIR pour trancher entre le sponsor et l'équipe"
+      },
+      "correct": "B",
+      "feedback": "Le périmètre d'un Sprint est protégé : seul le Product Owner arbitre le contenu du Product Backlog, et une interruption de Sprint a un coût mesurable (contexte, re-planification, signal envoyé à l'équipe). La réponse B protège le cadre tout en traitant le sponsor en adulte : sa demande est priorisée, datée et chiffrée — pas ignorée.",
+      "insight": "Un cadre méthodologique ne tient que si le dirigeant paie le prix politique de le défendre — cadrer sans confronter, c'est la posture d'architecte.",
+      "reference": {
+        "label": "Scrum Guide — The Sprint",
+        "url": "https://scrumguides.org"
+      },
+      "skill": "Protection du cadre & arbitrage",
+      "level": "confirme",
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published",
+      "tags": []
+    },
+    {
+      "id": "SCRUM2",
+      "title": "Le Daily devenu tribunal",
+      "context": "En observant un Daily Scrum, vous constatez qu'il dure 35 minutes et que chaque développeur s'adresse au manager présent, sur le mode du reporting individuel.",
+      "question": "Quel est le dysfonctionnement principal ?",
+      "options": {
+        "A": "Le Daily est trop long : il suffit d'imposer un chronomètre de 15 minutes",
+        "B": "Les développeurs manquent de préparation individuelle",
+        "C": "L'événement a perdu sa finalité : conçu pour synchroniser l'équipe vers l'objectif de Sprint, il est devenu un rituel de contrôle hiérarchique — le format n'est qu'un symptôme",
+        "D": "Le manager devrait animer la réunion pour la rendre plus efficace"
+      },
+      "correct": "C",
+      "feedback": "La durée n'est que le symptôme visible. Le Daily Scrum appartient aux Developers : c'est un point de synchronisation entre pairs vers l'objectif de Sprint, pas une revue de comptes. Quand les regards convergent vers le manager, l'équipe a cessé de s'auto-organiser — et l'information qui remonte devient défensive, donc pauvre.",
+      "insight": "Quand un rituel d'équipe se transforme en rituel de contrôle, corriger le format sans corriger la finalité ancre le dysfonctionnement.",
+      "reference": {
+        "label": "Scrum Guide — Daily Scrum",
+        "url": "https://scrumguides.org"
+      },
+      "skill": "Lecture des rituels & auto-organisation",
+      "level": "confirme",
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published",
+      "tags": []
+    },
+    {
+      "id": "SCRUM3",
+      "title": "La vélocité en CODIR",
+      "context": "Votre CODIR vous demande un tableau comparatif de la vélocité des quatre équipes Scrum « pour identifier les équipes les moins performantes ».",
+      "question": "Que répondez-vous ?",
+      "options": {
+        "A": "Vous produisez le tableau : la transparence des données est un principe agile",
+        "B": "Vous expliquez que la vélocité est une mesure de planification interne, non normalisée entre équipes, et proposez des indicateurs de valeur comparables : délai de mise en marché, valeur livrée, satisfaction client",
+        "C": "Vous normalisez d'abord les points d'estimation entre les équipes pour rendre la comparaison équitable",
+        "D": "Vous refusez : le CODIR n'a pas à consulter les métriques des équipes"
+      },
+      "correct": "B",
+      "feedback": "La vélocité mesure la capacité de planification d'une équipe dans son propre référentiel d'estimation : comparer les vélocités entre équipes revient à comparer des devises sans taux de change — et provoque l'inflation des estimations dès que les équipes se savent observées. La réponse B redirige la demande légitime du CODIR vers des indicateurs de valeur réellement comparables.",
+      "insight": "Toute métrique observée devient un objectif — un dirigeant choisit ses indicateurs pour les comportements qu'ils induisent, pas pour les tableaux qu'ils remplissent.",
+      "reference": {
+        "label": "Loi de Goodhart — appliquée à l'agilité",
+        "url": "https://www.scrum.org"
+      },
+      "skill": "Gouvernance par les métriques",
+      "level": "expert",
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published",
+      "tags": []
+    },
+    {
+      "id": "SCRUM4",
+      "title": "Le Sprint Goal sous pression",
+      "context": "À mi-Sprint, le directeur commercial exige l'ajout immédiat d'une fonctionnalité pour conclure une vente importante. Le Product Owner estime que cette demande est stratégique, tandis que les Developers craignent de compromettre le Sprint Goal.",
+      "question": "Quelle décision respecte le mieux Scrum tout en restant pertinente pour l'entreprise ?",
+      "options": {
+        "A": "Ajouter immédiatement la fonctionnalité afin de satisfaire le client.",
+        "B": "Annuler le Sprint et recommencer avec le nouveau besoin.",
+        "C": "Évaluer avec le Product Owner si l'objectif du Sprint reste atteignable avant toute modification du Sprint Backlog.",
+        "D": "Reporter automatiquement toute nouvelle demande au Sprint suivant."
+      },
+      "correct": "C",
+      "feedback": "Le Sprint Backlog peut évoluer durant le Sprint tant que le Sprint Goal reste pertinent et atteignable. La décision doit donc être guidée par l'objectif du Sprint, pas par la pression hiérarchique.",
+      "insight": "Les meilleures équipes ne protègent pas leur planning. Elles protègent leur capacité à créer de la valeur.",
+      "reference": {
+        "label": "Scrum Guide 2020 — Sprint Goal",
+        "url": "https://scrumguides.org"
+      },
+      "skill": "Gestion du Sprint Goal",
+      "level": "confirme",
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published",
+      "tags": []
+    },
+    {
+      "id": "SCRUM5",
+      "title": "Le Product Owner absent",
+      "context": "Depuis plusieurs Sprints, le Product Owner est rarement disponible. Les Developers prennent eux-mêmes les décisions de priorisation afin d'éviter les blocages.",
+      "question": "Quel est le principal risque ?",
+      "options": {
+        "A": "Le Sprint sera plus long.",
+        "B": "L'équipe risque de produire des fonctionnalités qui ne maximisent plus la valeur métier.",
+        "C": "Le Scrum Master devra remplacer définitivement le Product Owner.",
+        "D": "Les Developers perdent automatiquement leur autonomie."
+      },
+      "correct": "B",
+      "feedback": "Sans arbitrage métier clair, les décisions techniques prennent le dessus sur la valeur attendue par les utilisateurs.",
+      "insight": "L'absence de décision est elle-même une décision... souvent coûteuse.",
+      "reference": {
+        "label": "Scrum Guide 2020 — Product Owner",
+        "url": "https://scrumguides.org"
+      },
+      "skill": "Valeur produit",
+      "level": "confirme",
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published",
+      "tags": []
+    },
+    {
+      "id": "SCRUM6",
+      "title": "Le faux Scrum Master",
+      "context": "Le Scrum Master attribue quotidiennement les tâches à chaque développeur afin d'améliorer la productivité.",
+      "question": "Quelle est l'analyse la plus juste ?",
+      "options": {
+        "A": "Le Scrum Master remplit parfaitement son rôle.",
+        "B": "Cette pratique réduit l'auto-organisation de l'équipe.",
+        "C": "Cette pratique est recommandée lorsque l'équipe débute.",
+        "D": "Le Scrum Guide recommande cette organisation."
+      },
+      "correct": "B",
+      "feedback": "Le Scrum Master accompagne l'équipe vers l'auto-organisation ; il ne distribue pas le travail comme un chef de projet.",
+      "insight": "Plus un Scrum Master décide à la place de l'équipe, moins celle-ci apprend à décider.",
+      "reference": {
+        "label": "Scrum Guide — Scrum Master",
+        "url": "https://scrumguides.org"
+      },
+      "skill": "Leadership serviteur",
+      "level": "confirme",
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published",
+      "tags": []
+    },
+    {
+      "id": "SCRUM7",
+      "title": "Le Product Backlog gigantesque",
+      "context": "Le Product Backlog contient plus de 2 000 éléments. Personne ne sait réellement lesquels seront développés un jour.",
+      "question": "Quelle est la meilleure décision ?",
+      "options": {
+        "A": "Conserver toutes les idées pour ne rien perdre.",
+        "B": "Créer plusieurs Product Backlogs.",
+        "C": "Supprimer, fusionner ou re-prioriser régulièrement les éléments afin que le Product Backlog reste exploitable.",
+        "D": "Confier la gestion complète du Backlog au Scrum Master."
+      },
+      "correct": "C",
+      "feedback": "Un Product Backlog est un outil de décision, pas un cimetière d'idées.",
+      "insight": "Un backlog surchargé masque les vraies priorités.",
+      "reference": {
+        "label": "Scrum Guide — Product Backlog",
+        "url": "https://scrumguides.org"
+      },
+      "skill": "Gestion du Product Backlog",
+      "level": "confirme",
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published",
+      "tags": []
+    },
+    {
+      "id": "SCRUM8",
+      "title": "La démonstration sans utilisateurs",
+      "context": "Lors de chaque Sprint Review, seuls les membres de l'équipe Scrum participent. Les utilisateurs métiers ne sont jamais invités.",
+      "question": "Quelle conséquence est la plus probable ?",
+      "options": {
+        "A": "La Sprint Review sera plus courte.",
+        "B": "Le produit risque d'évoluer sans véritable validation métier.",
+        "C": "La vélocité augmentera automatiquement.",
+        "D": "Le Product Owner gagnera en autonomie."
+      },
+      "correct": "B",
+      "feedback": "La Sprint Review sert à recueillir les retours des parties prenantes afin d'adapter les priorités du produit.",
+      "insight": "Construire vite n'a aucun intérêt si personne ne valide la bonne direction.",
+      "reference": {
+        "label": "Scrum Guide — Sprint Review",
+        "url": "https://scrumguides.org"
+      },
+      "skill": "Collaboration avec les parties prenantes",
+      "level": "confirme",
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published",
+      "tags": []
+    },
+    {
+      "id": "SCRUM9",
+      "title": "Le Sprint Planning sans cap",
+      "level": "debutant",
+      "skill": "Sprint Goal & focus",
+      "context": "Vous assistez au Sprint Planning d'une de vos équipes. Après trois heures, le Sprint Backlog contient dix-huit éléments hétérogènes, mais personne ne peut vous dire à quoi servira ce Sprint.",
+      "question": "Quelle est l'intervention la plus utile ?",
+      "options": {
+        "A": "Demander que la réunion se termine par la formulation d'un Sprint Goal unique, quitte à retirer des éléments qui ne le servent pas",
+        "B": "Laisser faire : le contenu du Sprint Backlog appartient aux Developers",
+        "C": "Exiger une réduction à dix éléments maximum pour garantir la tenue des délais",
+        "D": "Reporter le Sprint tant que le Product Backlog n'est pas mieux préparé"
+      },
+      "correct": "A",
+      "feedback": "Un Sprint sans objectif est une liste de tâches, pas un engagement. Le Sprint Goal est le seul point fixe du Sprint : il donne le critère d'arbitrage quotidien et la cohérence de l'incrément. La réponse B confond autonomie et absence de direction ; la C traite le symptôme (le volume) et pas la cause (l'absence de cap).",
+      "insight": "Une équipe qui sait tout faire mais ne sait pas pourquoi produira de l'activité, jamais de la direction.",
+      "reference": {
+        "label": "Scrum Guide — Sprint Planning & Sprint Goal",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "sprint goal",
+        "planning",
+        "focus"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM10",
+      "title": "La Definition of Done à géométrie variable",
+      "level": "debutant",
+      "skill": "Qualité & Definition of Done",
+      "context": "En fin de Sprint, l'équipe déclare huit éléments « terminés ». En creusant, vous découvrez que trois n'ont pas été testés en intégration « parce que le temps manquait », mais qu'ils sont comptés dans l'incrément.",
+      "question": "Quelle position prenez-vous ?",
+      "options": {
+        "A": "Accepter ponctuellement : la pression de fin de Sprint justifie des compromis",
+        "B": "Créer deux niveaux de Done : « Done technique » et « Done complet »",
+        "C": "Sanctionner l'équipe pour dissimulation d'information",
+        "D": "Rappeler que la Definition of Done est un engagement non négociable : un élément qui ne la satisfait pas retourne au Product Backlog, sans exception"
+      },
+      "correct": "D",
+      "feedback": "La Definition of Done est le contrat de transparence de tout Scrum : si elle devient élastique, l'incrément ment, la vélocité ment, et vos décisions de dirigeant reposent sur des données fausses. Le double standard (B) institutionnalise le mensonge ; la sanction (C) détruit la transparence qui vous a permis de le découvrir.",
+      "insight": "Le jour où « terminé » cesse de vouloir dire terminé, tout votre système de pilotage devient de la fiction.",
+      "reference": {
+        "label": "Scrum Guide — Definition of Done",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "definition of done",
+        "qualité",
+        "transparence"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM11",
+      "title": "L'objectif devenu obsolète",
+      "level": "confirme",
+      "skill": "Autorité du Product Owner",
+      "context": "Au troisième jour d'un Sprint de deux semaines, un concurrent lance exactement la fonctionnalité que votre équipe développe, en version gratuite. Le Sprint Goal n'a plus de valeur marchande. Le Scrum Master propose de « finir proprement le Sprint quand même ».",
+      "question": "Que doit-il se passer selon le cadre — et selon le bon sens ?",
+      "options": {
+        "A": "Terminer le Sprint : l'interrompre démotiverait l'équipe",
+        "B": "Le Product Owner peut annuler le Sprint, l'objectif étant devenu obsolète, et l'équipe replanifie immédiatement sur la nouvelle donne",
+        "C": "Le CODIR doit voter l'annulation du Sprint",
+        "D": "Basculer l'équipe sur un autre sujet sans formalité : l'agilité, c'est s'adapter"
+      },
+      "correct": "B",
+      "feedback": "Seul le Product Owner a l'autorité d'annuler un Sprint, et ce cas — un objectif devenu sans valeur — est exactement celui prévu par le cadre. Continuer (A) brûle deux semaines de masse salariale par confort rituel ; le vote CODIR (C) dilue une autorité que Scrum a volontairement concentrée ; le basculement informel (D) détruit la discipline de planification.",
+      "insight": "L'agilité n'est pas de finir ce qu'on a commencé : c'est de savoir arrêter vite ce qui ne vaut plus la peine d'être fini.",
+      "reference": {
+        "label": "Scrum Guide — The Sprint (annulation)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "sprint",
+        "product owner",
+        "décision"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM12",
+      "title": "La Rétrospective sacrifiée",
+      "level": "debutant",
+      "skill": "Amélioration continue",
+      "context": "Depuis trois Sprints, l'équipe saute la Rétrospective « faute de temps » — avec l'accord tacite de son manager, qui y voit une réunion de confort.",
+      "question": "Pourquoi est-ce un signal d'alerte majeur, et que faites-vous ?",
+      "options": {
+        "A": "Vous rappelez que la Rétrospective est le moteur d'amélioration du système : la sauter, c'est décider que l'équipe ne progressera plus — et vous traitez la cause, la surcharge chronique",
+        "B": "Vous imposez la Rétrospective avec compte-rendu envoyé au management",
+        "C": "Ce n'est pas grave : la Rétrospective est l'événement le moins productif du cadre",
+        "D": "Vous la remplacez par un questionnaire trimestriel anonyme"
+      },
+      "correct": "A",
+      "feedback": "Une équipe qui n'a « pas le temps » de s'améliorer est une équipe qui a précisément besoin de s'améliorer : la surcharge qui tue la Rétrospective est la première chose qu'une Rétrospective traiterait. Le compte-rendu au management (B) transformerait un espace de sécurité en exercice de communication — les vrais problèmes cesseraient d'y remonter.",
+      "insight": "Supprimer l'inspection pour gagner du temps, c'est hypothéquer tous les Sprints futurs pour sauver le Sprint en cours.",
+      "reference": {
+        "label": "Scrum Guide — Sprint Retrospective",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "rétrospective",
+        "amélioration",
+        "surcharge"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM13",
+      "title": "Le refinement devenu cahier des charges",
+      "level": "confirme",
+      "skill": "Juste-assez de préparation",
+      "context": "Les séances de refinement de votre équipe durent désormais quatre heures par semaine et produisent des spécifications de quinze pages par élément, « pour que les développeurs n'aient plus de questions ».",
+      "question": "Quel est le vrai problème ?",
+      "options": {
+        "A": "Le refinement sur-spécifie : il remplace la conversation par du document et fige des décisions qui devraient se prendre au plus tard, avec la connaissance du moment",
+        "B": "Aucun : plus la spécification est complète, moins il y a de risque",
+        "C": "Le format est bon mais la durée doit être réduite à deux heures",
+        "D": "Le refinement devrait être fait par le Product Owner seul pour libérer les développeurs"
+      },
+      "correct": "A",
+      "feedback": "Un backlog n'est pas un cahier des charges découpé : sur-spécifier tôt, c'est décider au moment où l'on en sait le moins, et transformer les développeurs en exécutants d'un document — le retour du cycle en V sous vocabulaire agile. Le refinement vise le « juste assez » : compréhension partagée, taille raisonnable, critères clairs. Le reste se découvre en construisant.",
+      "insight": "Chaque page de spécification écrite trop tôt est une décision prise avec la pire information disponible.",
+      "reference": {
+        "label": "Scrum Guide — Product Backlog refinement",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "refinement",
+        "backlog",
+        "spécification"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM14",
+      "title": "Le Daily migré sur Slack",
+      "level": "confirme",
+      "skill": "Finalité des événements",
+      "context": "Une équipe distribuée sur trois fuseaux propose de remplacer le Daily Scrum par un fil Slack asynchrone où chacun poste son avancement. Le Scrum Master hésite et vous demande d'arbitrer.",
+      "question": "Quel arbitrage rendez-vous ?",
+      "options": {
+        "A": "Accord si le format préserve la finalité — inspecter la progression vers le Sprint Goal et adapter le plan ensemble — avec un point synchrone dès qu'un obstacle apparaît ; refus si le fil devient un simple registre d'activité",
+        "B": "Refus : le Scrum Guide impose une réunion synchrone de quinze minutes",
+        "C": "Accord total : l'asynchrone est toujours plus efficace pour une équipe distribuée",
+        "D": "Vous tranchez vous-même le format : c'est une décision de direction"
+      },
+      "correct": "A",
+      "feedback": "Le cadre définit une finalité, pas une liturgie : ce qui compte est que les Developers inspectent ensemble la trajectoire vers le Sprint Goal et adaptent leur plan. Un fil d'avancement individuel sans boucle d'adaptation n'est pas un Daily, c'est du reporting. Et l'arbitrage du format (D) appartient aux Developers — votre rôle est d'en garantir la finalité, pas la forme.",
+      "insight": "Jugez les rituels à ce qu'ils produisent, pas à ce qu'ils ressemblent : une réunion conforme peut être vide, un format hérétique peut être fidèle.",
+      "reference": {
+        "label": "Scrum Guide — Daily Scrum",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "daily",
+        "distribué",
+        "finalité"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM15",
+      "title": "La Review théâtrale",
+      "level": "debutant",
+      "skill": "Inspection & feedback produit",
+      "context": "Les Sprint Reviews de votre organisation sont devenues des démonstrations soignées, slides à l'appui, où les parties prenantes applaudissent poliment. Aucune décision sur le Product Backlog n'en est sortie depuis des mois.",
+      "question": "Quel est le dysfonctionnement ?",
+      "options": {
+        "A": "La Review a perdu sa nature de séance de travail : elle doit produire de l'inspection réelle du produit et des décisions d'adaptation du backlog, pas des applaudissements",
+        "B": "Il manque un compte-rendu formel diffusé après chaque Review",
+        "C": "Aucun : une démonstration réussie prouve que le produit avance",
+        "D": "Les parties prenantes devraient être moins nombreuses"
+      },
+      "correct": "A",
+      "feedback": "La Sprint Review est un événement d'inspection-adaptation, pas une cérémonie de validation sociale. Son livrable est une mise à jour du Product Backlog fondée sur ce que les parties prenantes ont vu, manipulé et contesté. Si personne ne touche le produit et si rien ne change dans le backlog, l'événement coûte sans produire — quelle que soit la qualité des slides.",
+      "insight": "Un comité qui applaudit ne pilote pas : le désaccord exprimé en Review vaut plus cher que l'approbation polie.",
+      "reference": {
+        "label": "Scrum Guide — Sprint Review",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "review",
+        "feedback",
+        "parties prenantes"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM16",
+      "title": "Le Planning qui déborde",
+      "level": "confirme",
+      "skill": "Timeboxes & préparation",
+      "context": "Le Sprint Planning de votre plus grosse équipe dépasse systématiquement une journée entière, dans une ambiance d'épuisement. Le Scrum Master propose « d'accepter que c'est le prix d'un gros périmètre ».",
+      "question": "Comment lisez-vous la situation ?",
+      "options": {
+        "A": "Il a raison : plus le produit est complexe, plus le Planning est long",
+        "B": "Il faut faire préparer le Sprint Backlog par le Product Owner avant la réunion",
+        "C": "Il faut couper la réunion à quatre heures et reporter le reste au lendemain",
+        "D": "Un timebox explosé est un symptôme : backlog insuffisamment affiné en amont, éléments trop gros, ou tentative de tout décider d'avance — c'est cela qu'il faut traiter, pas la durée"
+      },
+      "correct": "D",
+      "feedback": "Le timebox (huit heures maximum pour un Sprint d'un mois, moins pour un Sprint plus court) n'est pas une contrainte bureaucratique : c'est un détecteur. Quand il explose, la cause est en amont — refinement insuffisant, éléments trop gros, ou volonté de planifier ce qui devrait rester émergent. Couper arbitrairement (C) cache le symptôme ; préparer le Sprint Backlog à la place des Developers (B) leur retire leur plan.",
+      "insight": "Quand une réunion déborde chroniquement, le problème n'est presque jamais dans la réunion — il est dans ce qui aurait dû se passer avant elle.",
+      "reference": {
+        "label": "Scrum Guide — Sprint Planning (timebox)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "planning",
+        "timebox",
+        "refinement"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM17",
+      "title": "Les deux Product Owners",
+      "level": "confirme",
+      "skill": "Unicité de la décision produit",
+      "context": "Pour « équilibrer les pouvoirs », deux directions métier ont chacune nommé un Product Owner sur le même produit. Les développeurs reçoivent des priorités contradictoires chaque semaine.",
+      "question": "Quelle décision structurelle prenez-vous ?",
+      "options": {
+        "A": "Conserver les deux PO mais instaurer un comité d'arbitrage hebdomadaire",
+        "B": "Un seul Product Owner par produit, avec autorité réelle sur l'ordre du Product Backlog ; l'autre direction est représentée comme partie prenante active, pas comme co-décideur",
+        "C": "Fusionner les deux backlogs en alternant les priorités une semaine sur deux",
+        "D": "Laisser les développeurs arbitrer : ils sont les mieux placés pour juger"
+      },
+      "correct": "B",
+      "feedback": "Le Product Owner est une personne, pas un comité, précisément pour que la responsabilité de la valeur soit incarnée et que l'arbitrage soit rapide et traçable. Deux PO, un comité (A) ou une alternance (C) fabriquent de l'ambiguïté que l'équipe paiera en changements de cap ; faire arbitrer les développeurs (D) leur transfère un conflit politique qui n'est pas le leur.",
+      "insight": "Diluer une responsabilité pour ménager deux directions, c'est acheter la paix des chefs avec la productivité des équipes.",
+      "reference": {
+        "label": "Scrum Guide — Product Owner",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "product owner",
+        "gouvernance",
+        "arbitrage"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM18",
+      "title": "Le Product Owner de paille",
+      "level": "expert",
+      "skill": "Détection du pouvoir réel",
+      "context": "Votre PO valide les priorités en réunion, puis les inverse le lendemain « après en avoir parlé ». Vous découvrez que chaque décision remonte en réalité à un directeur métier qui ne participe à aucun événement Scrum.",
+      "question": "Comment traitez-vous ce PO proxy ?",
+      "options": {
+        "A": "Vous exigez du PO qu'il assume ses décisions sans en référer à quiconque",
+        "B": "Vous laissez faire : au moins les décisions sont prises quelque part",
+        "C": "Vous remplacez le PO par quelqu'un de plus ferme",
+        "D": "Vous mettez le vrai décideur devant l'alternative : déléguer un mandat réel et documenté au PO, ou tenir le rôle lui-même avec la présence que cela exige — mais le circuit fantôme s'arrête"
+      },
+      "correct": "D",
+      "feedback": "Le problème n'est pas la personne du PO mais l'architecture du pouvoir : tant que la décision réelle vit hors du cadre, aucun titulaire du poste ne pourra l'exercer. Exiger du proxy qu'il « s'affirme » (A) ou le remplacer (C), c'est traiter le pion au lieu du joueur. La seule intervention efficace force le décideur caché à choisir entre déléguer vraiment et s'exposer vraiment.",
+      "insight": "Quand un rôle ne fonctionne pas, cherchez d'abord qui détient réellement son pouvoir — c'est rarement son titulaire.",
+      "reference": {
+        "label": "Scrum Guide — Product Owner (mandat)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "product owner",
+        "pouvoir informel",
+        "mandat"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM19",
+      "title": "Le Scrum Master greffier",
+      "level": "confirme",
+      "skill": "Rôle du Scrum Master",
+      "context": "Votre Scrum Master passe ses journées à mettre à jour Jira, réserver des salles, compiler des indicateurs pour le PMO et relancer les développeurs sur leurs tickets. L'équipe le décrit comme « notre assistant de projet ».",
+      "question": "Quel repositionnement opérez-vous ?",
+      "options": {
+        "A": "Aucun : ces tâches sont utiles et quelqu'un doit les faire",
+        "B": "Vous lui ajoutez la responsabilité du delivery pour rentabiliser le poste",
+        "C": "Vous supprimez le poste : une équipe mature n'a pas besoin de Scrum Master",
+        "D": "Vous recentrez le rôle sur sa fonction réelle — améliorer le système : lever les obstacles structurels, coacher l'équipe et l'organisation, protéger le cadre — et vous rendez l'administratif à ceux qu'il concerne"
+      },
+      "correct": "D",
+      "feedback": "Un Scrum Master absorbé par l'intendance est un investissement gâché : sa valeur est dans le traitement des causes systémiques — dépendances chroniques, dette de process, interférences managériales — pas dans la tenue de l'outil. Lui confier le delivery (B) recrée un chef de projet et tue la fonction de contre-pouvoir méthodologique ; supprimer le poste (C) prive l'organisation de son mécanisme d'amélioration.",
+      "insight": "Le meilleur indicateur d'un Scrum Master efficace n'est pas ce qu'il fait, mais ce qui cesse de dysfonctionner autour de lui.",
+      "reference": {
+        "label": "Scrum Guide — Scrum Master",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "scrum master",
+        "rôle",
+        "système"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM20",
+      "title": "L'équipe de quinze",
+      "level": "confirme",
+      "skill": "Taille & scission d'équipe",
+      "context": "Portée par son succès, une équipe Scrum a grossi jusqu'à quinze développeurs. Les Daily durent quarante minutes, les décisions s'enlisent, et deux sous-groupes informels se sont formés.",
+      "question": "Quelle décision d'organisation prenez-vous ?",
+      "options": {
+        "A": "Conserver l'équipe : la scinder détruirait une dynamique qui gagne",
+        "B": "Nommer un lead par sous-groupe pour structurer les échanges",
+        "C": "Réduire les effectifs à dix par redéploiement autoritaire",
+        "D": "Scinder en deux équipes cohérentes autour du même produit, chacune avec un périmètre clair, en laissant l'équipe co-construire le découpage"
+      },
+      "correct": "D",
+      "feedback": "Au-delà d'une dizaine de personnes, les coûts de coordination explosent plus vite que la capacité : le cadre recommande des équipes de dix ou moins, et suggère la scission en équipes cohésives partageant produit, Product Owner et Definition of Done. Les leads intermédiaires (B) recréent de la hiérarchie dans l'équipe ; la scission co-construite préserve l'adhésion que le redéploiement autoritaire (C) détruirait.",
+      "insight": "Une équipe qui réussit finit toujours par devoir choisir entre grossir et rester efficace — l'anticiper est un acte de direction, le subir est une crise.",
+      "reference": {
+        "label": "Scrum Guide — The Scrum Team (taille)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "équipe",
+        "organisation",
+        "scaling"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM21",
+      "title": "Le backlog dans la tête du PO",
+      "level": "debutant",
+      "skill": "Transparence des artefacts",
+      "context": "Votre Product Owner, brillant et débordé, garde l'essentiel des priorités « dans sa tête ». Le Product Backlog visible contient trente lignes obsolètes ; les vraies décisions se prennent oralement, au fil de l'eau.",
+      "question": "Pourquoi est-ce un risque de direction, au-delà du désordre ?",
+      "options": {
+        "A": "Le backlog invisible détruit la transparence : personne ne peut inspecter ni contester les priorités, l'organisation dépend d'une seule mémoire, et le jour où ce PO part, le produit devient illisible",
+        "B": "Ce n'est pas un risque tant que le PO est disponible et compétent",
+        "C": "Le seul risque est réglementaire : l'auditabilité",
+        "D": "Le risque est outillage : il faut imposer un usage plus strict de Jira"
+      },
+      "correct": "A",
+      "feedback": "Les artefacts existent pour rendre le travail et sa valeur inspectables par tous. Un backlog mental est un backlog incontestable : ni les parties prenantes, ni l'équipe, ni vous ne pouvez challenger un ordre de priorités que personne ne voit — et vous avez construit un point de défaillance unique sur une personne. L'outil (D) n'est qu'un support ; le sujet est la transparence.",
+      "insight": "Ce qui n'est pas visible n'est pas discutable — et ce qui n'est pas discutable finit toujours par être arbitraire.",
+      "reference": {
+        "label": "Scrum Guide — Product Backlog & transparence",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "backlog",
+        "transparence",
+        "risque clé"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM22",
+      "title": "L'incrément Potemkine",
+      "level": "debutant",
+      "skill": "Increment & valeur utilisable",
+      "context": "En Sprint Review, l'équipe présente un parcours utilisateur « terminé » — qui s'avère être une maquette branchée sur des données factices, le vrai back-end n'étant « pas tout à fait prêt ».",
+      "question": "Quel principe vient d'être violé, et avec quelle conséquence ?",
+      "options": {
+        "A": "L'incrément doit être utilisable et conforme à la Definition of Done : présenter une façade comme du terminé fausse l'inspection, le feedback recueilli ne porte sur rien de réel, et la confiance des parties prenantes se paiera au centuple à la découverte",
+        "B": "Un problème de communication : il aurait fallu annoncer que c'était une maquette",
+        "C": "Aucun : montrer l'intention du produit suffit à recueillir du feedback",
+        "D": "Un problème de planification : l'élément était trop gros pour un Sprint"
+      },
+      "correct": "A",
+      "feedback": "Tout le système empirique repose sur l'inspection de quelque chose de réel : un incrément est du produit utilisable, pas une promesse illustrée. Le feedback obtenu sur une façade est du bruit, et la découverte ultérieure du décalage détruit précisément le capital que la Review devait construire. La transparence sur la nature de ce qui est montré (B) est le minimum ; la vraie correction est de ne compter comme incrément que du Done.",
+      "insight": "On peut tromper une Review, jamais une mise en production : la vérité du produit finit toujours par se livrer elle-même.",
+      "reference": {
+        "label": "Scrum Guide — Increment",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "increment",
+        "done",
+        "confiance"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM23",
+      "title": "Les trois objectifs du Sprint",
+      "level": "debutant",
+      "skill": "Focus & arbitrage",
+      "context": "Pour satisfaire trois directions métier, le Product Owner a formulé trois Sprint Goals « co-prioritaires ». À mi-Sprint, l'équipe est éclatée en trois fronts et aucun des objectifs n'est en voie d'être atteint.",
+      "question": "Quelle correction apportez-vous ?",
+      "options": {
+        "A": "Renforcer l'équipe pour tenir les trois fronts",
+        "B": "Un seul Sprint Goal : le PO assume l'arbitrage entre les trois directions, et les deux sujets restants attendent leur Sprint — c'est le prix du focus, et c'est un prix rentable",
+        "C": "Prolonger le Sprint d'une semaine",
+        "D": "Répartir formellement l'équipe en trois trinômes, un par objectif"
+      },
+      "correct": "B",
+      "feedback": "Trois priorités simultanées, c'est zéro priorité : le Sprint Goal existe pour créer la cohérence et le critère de décision quotidien, et sa singularité est ce qui le rend opérant. Renforcer (A), prolonger (C) ou fractionner (D) traitent la surcharge sans traiter le refus d'arbitrer — qui est le vrai sujet, et qui appartient au PO, quitte à déplaire à deux directions sur trois.",
+      "insight": "Le refus de choisir est un choix : celui de décevoir tout le monde un peu plus tard au lieu de décevoir quelqu'un franchement maintenant.",
+      "reference": {
+        "label": "Scrum Guide — Sprint Goal",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "sprint goal",
+        "focus",
+        "arbitrage"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM24",
+      "title": "La dette invisible",
+      "level": "confirme",
+      "skill": "Dette technique & backlog",
+      "context": "Vos équipes livrent vite, mais chaque évolution coûte de plus en plus cher. Les développeurs évoquent une dette technique lourde — dont aucune trace n'existe dans le Product Backlog, le PO refusant d'y « polluer la valeur métier ».",
+      "question": "Comment arbitrez-vous ce conflit structurel ?",
+      "options": {
+        "A": "Le PO a raison : le backlog porte la valeur métier, la dette relève du temps libre des développeurs",
+        "B": "Instaurer un quota fixe de 30 % de chaque Sprint dédié à la dette, hors backlog",
+        "C": "Créer une équipe séparée dédiée au remboursement de la dette",
+        "D": "La dette entre au Product Backlog comme tout travail : rendue visible et chiffrée en impact (vitesse, incidents, coût du retard), elle se priorise face au reste — et le PO arbitre en connaissance de cause au lieu d'arbitrer à l'aveugle"
+      },
+      "correct": "D",
+      "feedback": "Ce qui n'est pas dans le backlog n'existe pas pour la décision : une dette invisible est une dette qui ne sera jamais arbitrée, seulement subie. La rendre visible et l'exprimer en langage de dirigeant (vélocité perdue, incidents, coût du retard) permet un vrai arbitrage valeur contre valeur. Le quota aveugle (B) et l'équipe dédiée (C) traitent la dette comme une fatalité plutôt que comme un choix d'investissement.",
+      "insight": "Une organisation n'arbitre que ce qu'elle voit : rendre un coût visible est déjà la moitié de la décision.",
+      "reference": {
+        "label": "Scrum.org — Technical debt & Product Backlog",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "dette technique",
+        "backlog",
+        "investissement"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM25",
+      "title": "Le Sprint zéro permanent",
+      "level": "confirme",
+      "skill": "Livrer de la valeur dès le début",
+      "context": "Un programme stratégique a démarré depuis quatre mois : « Sprint 0 » d'architecture, puis « Sprints de cadrage », puis « Sprint de setup ». Aucun incrément utilisable n'existe. Le directeur de programme parle de « fondations indispensables ».",
+      "question": "Quelle exigence posez-vous ?",
+      "options": {
+        "A": "Exiger un incrément utilisable, même minuscule, dès le prochain Sprint : une tranche fine de bout en bout qui force l'architecture à se confronter au réel — les fondations se construisent en marchant, pas avant de marcher",
+        "B": "Laisser finir les fondations : on ne construit pas une maison sans dalle",
+        "C": "Fixer une date butoir de fin de cadrage à trois mois",
+        "D": "Auditer l'architecture avant d'autoriser le développement"
+      },
+      "correct": "A",
+      "feedback": "La métaphore du bâtiment est le piège : en logiciel, la seule validation d'une architecture est du code qui fonctionne en conditions réelles. Des mois de préparation sans incrément, c'est du risque accumulé sans aucune boucle de retour — exactement ce que le cadre existe pour empêcher. La tranche fine de bout en bout teste l'architecture, livre un début de valeur et donne enfin quelque chose à inspecter.",
+      "insight": "Chaque semaine sans incrément est une semaine où vous financez des hypothèses au prix de la certitude.",
+      "reference": {
+        "label": "Scrum Guide — un Increment par Sprint",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "sprint 0",
+        "architecture",
+        "risque"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM26",
+      "title": "Les points convertis en jours",
+      "level": "confirme",
+      "skill": "Estimations & anti-dérive",
+      "context": "Le PMO du groupe a publié une table de conversion officielle : « 1 story point = 0,8 jour-homme », afin de consolider les plans de charge de toutes les équipes.",
+      "question": "Pourquoi devez-vous bloquer cette initiative, et que proposez-vous à la place ?",
+      "options": {
+        "A": "Vous la bloquez : les points sont une monnaie relative propre à chaque équipe ; la conversion produira des plans faux et transformera l'estimation en négociation salariale déguisée — et vous offrez au PMO ce qu'il cherche vraiment : des prévisions fondées sur le débit réel constaté",
+        "B": "Vous ne la bloquez pas : le PMO a besoin de consolider, c'est légitime",
+        "C": "Vous acceptez mais avec un coefficient par équipe",
+        "D": "Vous supprimez les story points au profit d'estimations directes en jours"
+      },
+      "correct": "A",
+      "feedback": "Le besoin du PMO (prévoir) est légitime ; sa méthode le condamne : les points d'une équipe ne mesurent pas du temps mais un effort relatif dans son propre référentiel — la conversion universelle fabrique de la fausse précision, et dès que les points deviennent du temps facturable, les équipes gonflent leurs estimations. La bonne réponse redirige : des prévisions par débit réel (throughput) donnent au PMO mieux que ce qu'il demandait.",
+      "insight": "Quand une demande de reporting est mal posée, la refuser sèchement est une faute politique — la reformuler en mieux est un acte d'autorité.",
+      "reference": {
+        "label": "Scrum.org — estimation & forecasting",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "estimation",
+        "pmo",
+        "prévision"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM27",
+      "title": "Le burndown maquillé",
+      "level": "expert",
+      "skill": "Intégrité des données de pilotage",
+      "context": "Vous découvrez qu'un Scrum Master « lisse » les burndown charts avant de les diffuser au management, pour « éviter des questions inutiles sur les pics ». L'équipe est au courant et trouve cela protecteur.",
+      "question": "Comment traitez-vous cette falsification bienveillante ?",
+      "options": {
+        "A": "Vous rétablissez les données brutes et traitez la cause : si l'équipe se protège du management, c'est que les questions du management sont vécues comme des menaces — c'est cette relation qu'il faut réparer, sinon le maquillage reviendra ailleurs",
+        "B": "Vous sanctionnez publiquement pour l'exemple",
+        "C": "Vous fermez les yeux : l'intention est protectrice et les écarts sont mineurs",
+        "D": "Vous supprimez la diffusion des burndowns au management"
+      },
+      "correct": "A",
+      "feedback": "Un indicateur maquillé est plus dangereux qu'un indicateur absent : vous décidez sur du faux en croyant décider sur du vrai. Mais la falsification « protectrice » est un symptôme de peur, pas de malhonnêteté — sanctionner (B) confirmerait la menace et professionnaliserait la dissimulation. Rétablir la vérité des données ET rendre les questions du management non punitives sont les deux faces de la même correction.",
+      "insight": "Quand vos équipes embellissent les chiffres, le premier problème à corriger n'est pas leur honnêteté : c'est ce que votre organisation fait de la vérité.",
+      "reference": {
+        "label": "Scrum Guide — Transparence (pilier)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "transparence",
+        "peur",
+        "indicateurs"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM28",
+      "title": "La vélocité au contrat",
+      "level": "expert",
+      "skill": "Engagements contractuels",
+      "context": "Votre direction commerciale a signé avec un client majeur un avenant garantissant « une vélocité minimale de 60 points par Sprint », avec pénalités. L'équipe l'apprend et les estimations doublent en deux Sprints.",
+      "question": "Comment sortez-vous de ce piège contractuel ?",
+      "options": {
+        "A": "Vous exigez de l'équipe le respect des 60 points : un contrat est un contrat",
+        "B": "Vous imposez un référentiel d'estimation contrôlé par un tiers indépendant",
+        "C": "Vous laissez l'inflation des points faire son œuvre : le contrat sera respecté sur le papier",
+        "D": "Vous renégociez l'avenant sur des engagements observables par le client — cadence de livraison, jalons de valeur, taux de service — et vous expliquez au commerce pourquoi contractualiser une mesure interne auto-déclarée la détruit instantanément"
+      },
+      "correct": "D",
+      "feedback": "La loi de Goodhart a agi en deux Sprints : une mesure devenue cible cesse d'être une mesure. Exiger les 60 points (A) ou laisser l'inflation courir (C) revient au même — le chiffre sera atteint et ne signifiera rien, le client finira par le comprendre, et la crise sera contractuelle ET de confiance. Seul un engagement sur des réalités observables par le client (livraisons, valeur, service) est à la fois tenable et honnête.",
+      "insight": "Ne contractualisez jamais une mesure que la partie qui la déclare peut fabriquer : vous n'achetez pas de la performance, vous achetez de l'inflation.",
+      "reference": {
+        "label": "Scrum.org — vélocité, usages et mésusages",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "contrat",
+        "vélocité",
+        "goodhart"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM29",
+      "title": "La Definition of Ready forteresse",
+      "level": "confirme",
+      "skill": "Flux d'entrée du travail",
+      "context": "Pour « se protéger des demandes floues », l'équipe a instauré une Definition of Ready de quatorze critères. Résultat : presque rien n'est jamais « prêt », le PO passe ses semaines à documenter, et le Sprint Planning manque de matière.",
+      "question": "Quel est votre diagnostic ?",
+      "options": {
+        "A": "La DoR est devenue une barrière : conçue comme protection, elle a inversé le flux — l'équipe attend du parfait au lieu de collaborer sur du suffisant ; on la réduit à l'essentiel et on remet la conversation au centre du refinement",
+        "B": "Il faut ajouter un rédacteur fonctionnel pour absorber la charge documentaire",
+        "C": "La DoR est saine : elle force la rigueur en amont",
+        "D": "Il faut supprimer toute exigence d'entrée : l'agilité accepte le flou"
+      },
+      "correct": "A",
+      "feedback": "Une Definition of Ready n'est pas un artefact du cadre, et pour cause : poussée trop loin, elle recrée une passe de témoin documentaire entre « ceux qui spécifient » et « ceux qui codent ». Le remède au flou n'est pas plus de critères mais plus de conversation : un élément est prêt quand l'équipe le comprend assez pour démarrer, pas quand un formulaire est complet. L'excès inverse (D) est l'autre falaise.",
+      "insight": "Toute protection qu'une équipe érige contre son organisation finit par la couper de son organisation — surveillez ce que vos équipes construisent comme murs.",
+      "reference": {
+        "label": "Scrum.org — Definition of Ready (usage prudent)",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "definition of ready",
+        "flux",
+        "collaboration"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM30",
+      "title": "Le surengagement institutionnalisé",
+      "level": "confirme",
+      "skill": "Charge soutenable",
+      "context": "Votre directeur de département impose à chaque équipe un « stretch goal » : planifier systématiquement 20 % de plus que leur capacité constatée, « pour créer une saine tension ». Après un trimestre : Done en chute, bugs en hausse, deux départs.",
+      "question": "Que faites-vous de cette politique ?",
+      "options": {
+        "A": "Vous la supprimez et rétablissez la planification sur capacité réelle : le surengagement chronique ne crée pas de la tension mais du triage silencieux — la qualité et les gens partent en premier ; l'ambition se joue sur la valeur choisie, pas sur le volume imposé",
+        "B": "Vous la maintenez : sans tension, les équipes s'installent dans le confort",
+        "C": "Vous la réduisez à 10 % pour trouver un équilibre",
+        "D": "Vous compensez par une prime d'atteinte des stretch goals"
+      },
+      "correct": "A",
+      "feedback": "Un système chroniquement surchargé n'accélère pas : il choisit en silence ce qu'il sacrifie, et il sacrifie toujours l'invisible d'abord — tests, qualité, entraide, puis les personnes. Les chiffres du trimestre le prouvent. La « saine tension » durable vient d'un objectif de valeur exigeant sur un volume honnête ; la prime (D) ajouterait l'inflation d'estimations au tableau.",
+      "insight": "On reconnaît un système surchargé à ce qu'il ne dit pas : la qualité ne proteste jamais, elle disparaît.",
+      "reference": {
+        "label": "Scrum Guide — rythme soutenable (fondements)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "capacité",
+        "qualité",
+        "rétention"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM31",
+      "title": "Le sponsor en circuit direct",
+      "level": "expert",
+      "skill": "Protection du canal de décision",
+      "context": "Un sponsor influent a pris l'habitude d'appeler directement deux développeurs pour « accélérer ses sujets », en contournant le Product Owner. Les développeurs, flattés et prudents, s'exécutent. Le PO l'apprend et menace de démissionner.",
+      "question": "Quelle est votre séquence d'intervention ?",
+      "options": {
+        "A": "Vous interdisez aux développeurs de répondre au sponsor",
+        "B": "Vous traitez le sponsor, pas les développeurs : reconnaissance de la légitimité de ses besoins, canal unique réaffirmé via le PO avec un engagement de réactivité chiffré, et information à votre niveau qu'un contournement du canal est désormais un sujet entre lui et vous — puis vous restaurez publiquement l'autorité du PO",
+        "C": "Vous demandez au PO de faire preuve de souplesse : un sponsor de ce niveau a des privilèges",
+        "D": "Vous organisez une confrontation à trois pour crever l'abcès"
+      },
+      "correct": "B",
+      "feedback": "Punir les développeurs (A) frappe les plus faibles du triangle ; céder (C) officialise que le backlog s'achète en off ; la confrontation frontale (D) humilie sans structurer. La manœuvre gagnante donne au sponsor un chemin légitime plus efficace que son contournement — c'est la condition pour qu'il l'abandonne — tout en rendant le coût politique du contournement explicite et porté par vous, pas par le PO.",
+      "insight": "On ne ferme durablement un circuit parallèle qu'en rendant le circuit officiel plus rapide que lui — et son contournement plus coûteux.",
+      "reference": {
+        "label": "Scrum Guide — PO & parties prenantes",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "sponsor",
+        "canal de décision",
+        "politique"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM32",
+      "title": "Le client au Daily",
+      "level": "confirme",
+      "skill": "Frontières des événements",
+      "context": "Votre plus gros client, échaudé par un retard passé, exige d'assister chaque matin au Daily Scrum de l'équipe qui travaille pour lui, « pour garder la main sur l'avancement ».",
+      "question": "Comment répondez-vous à cette exigence ?",
+      "options": {
+        "A": "Vous acceptez : c'est le client, et la transparence est un pilier de Scrum",
+        "B": "Vous refusez sèchement au nom du Scrum Guide",
+        "C": "Vous acceptez en silencieux : il assiste sans parler",
+        "D": "Vous refusez le Daily — qui appartient aux Developers et changerait de nature sous observation — mais vous offrez mieux que ce qu'il demande : un point d'avancement dédié, l'accès aux indicateurs de flux, et la Sprint Review comme rendez-vous d'influence réel sur le produit"
+      },
+      "correct": "D",
+      "feedback": "La transparence est un pilier, mais elle porte sur les artefacts et la progression, pas sur l'ouverture des espaces de travail internes : un Daily observé par le client devient une audience — la parole s'y calibre, l'information s'y appauvrit, et le client obtiendra l'inverse de ce qu'il cherche. Le refus sec (B) est juste et perdant ; l'observateur « silencieux » (C) modifie la salle par sa seule présence. La contre-offre transforme une exigence de contrôle en dispositif de confiance.",
+      "insight": "La vraie transparence donne à voir les résultats et les trajectoires, pas les coulisses : confondre les deux détruit les deux.",
+      "reference": {
+        "label": "Scrum Guide — Daily Scrum (Developers)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "client",
+        "daily",
+        "transparence"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM33",
+      "title": "Le Gantt de douze mois",
+      "level": "expert",
+      "skill": "Prévision honnête en comité",
+      "context": "Le CODIR exige un planning détaillé à douze mois du produit, fonctionnalité par fonctionnalité, avec dates. « Nous devons pouvoir nous engager auprès du conseil d'administration. »",
+      "question": "Que présentez-vous ?",
+      "options": {
+        "A": "Le Gantt demandé : on ajustera plus tard, l'essentiel est de rassurer",
+        "B": "Un refus argumenté : l'agilité est incompatible avec la planification annuelle",
+        "C": "Une roadmap d'objectifs trimestriels ferme sur la direction et probabiliste sur les dates : jalons de valeur, fourchettes fondées sur le débit constaté, revue trimestrielle d'engagement — l'engagement porte sur les résultats, la précision croît avec la proximité",
+        "D": "Un Gantt sur six mois seulement, comme compromis"
+      },
+      "correct": "C",
+      "feedback": "Le besoin du CODIR est légitime : s'engager devant le conseil. Le Gantt détaillé (A, D) y répond par une fiction — chaque date à neuf mois est une invention qui se retournera contre vous nominalement. Le refus doctrinal (B) vous exclut de la conversation. La roadmap par horizons donne au CODIR un engagement défendable : direction ferme, chiffrage probabiliste, cadence de re-décision.",
+      "insight": "Un dirigeant ne doit jamais confondre rassurer et s'engager : la fausse précision rassure aujourd'hui et vous exécute à la date dite.",
+      "reference": {
+        "label": "Scrum.org — Evidence-Based Management",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "roadmap",
+        "codir",
+        "prévision"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM34",
+      "title": "La date annoncée avant l'estimation",
+      "level": "expert",
+      "skill": "Gestion d'une contrainte imposée",
+      "context": "Le marketing a annoncé publiquement la sortie d'une offre majeure pour le salon du secteur, dans quatre mois — sans consulter les équipes. L'estimation tombe : huit mois de travail au périmètre annoncé.",
+      "question": "Comment pilotez-vous cet écart de quatre mois ?",
+      "options": {
+        "A": "Vous mobilisez : heures supplémentaires, renforts, gel des congés — la parole publique de l'entreprise est en jeu",
+        "B": "Vous faites reporter l'annonce : le marketing assumera son erreur",
+        "C": "Vous fixez la date et faites du périmètre la variable : avec le PO, vous définissez le produit minimal crédible pour le salon, ordonnez le backlog sur cette cible, et rendez l'arbitrage visible au CODIR — ce qui sera montré, ce qui suivra, ce que coûterait l'entêtement",
+        "D": "Vous laissez l'équipe tenter, on avisera à mi-parcours"
+      },
+      "correct": "C",
+      "feedback": "Le triangle est implacable : date publique fixe et capacité réelle donnée, la seule variable honnête est le périmètre. La mobilisation forcée (A) livre huit mois de travail dégradé en quatre — le salon montrera un produit cassé ; le report (B) est rarement gagnable et fait de vous l'ennemi du marketing ; l'attentisme (D) transforme un arbitrage en accident. Rendre le choix visible protège tout le monde, y compris le marketing.",
+      "insight": "Quand la date et la capacité sont fixées par d'autres, votre pouvoir tient dans une seule variable : décider ce qui n'y sera pas.",
+      "reference": {
+        "label": "Scrum Guide — adaptation & empirisme",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "deadline",
+        "périmètre",
+        "arbitrage"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM35",
+      "title": "L'absent qui conteste",
+      "level": "confirme",
+      "skill": "Engagement des parties prenantes",
+      "context": "Un directeur métier n'a assisté à aucune Sprint Review du trimestre malgré les invitations. En comité de fin de trimestre, il conteste violemment les choix produit : « On ne m'a pas consulté. »",
+      "question": "Comment traitez-vous l'attaque — et la récidive ?",
+      "options": {
+        "A": "Vous vous excusez et promettez une consultation renforcée",
+        "B": "Vous produisez les faits sans agressivité — douze invitations, les décisions ouvertes à chaque Review — puis vous lui offrez une porte d'entrée honorable et coûteuse en assiduité : ses priorités pèseront à hauteur de sa présence dans les boucles prévues",
+        "C": "Vous contre-attaquez publiquement : son absentéisme est la cause du problème",
+        "D": "Vous créez un comité de consultation spécifique pour lui"
+      },
+      "correct": "B",
+      "feedback": "S'excuser (A) valide un récit faux et fait de l'absentéisme une stratégie gagnante ; l'humiliation publique (C) vous fait gagner la séance et perdre un allié potentiel ; le comité dédié (D) récompense le contournement des boucles communes. Le rappel factuel neutralise l'attaque sans agresser, et la règle d'avenir — l'influence indexée sur la participation — empêche la récidive.",
+      "insight": "Dans une organisation saine, l'influence se paie en présence : quiconque veut peser sur les décisions doit être là où elles se prennent.",
+      "reference": {
+        "label": "Scrum Guide — Sprint Review & parties prenantes",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "parties prenantes",
+        "conflit",
+        "règles du jeu"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM36",
+      "title": "L'audit qui exige des specs signées",
+      "level": "expert",
+      "skill": "Conformité & agilité",
+      "context": "Dans votre secteur régulé, l'audit qualité interne exige des spécifications complètes signées avant tout développement, au nom de la traçabilité. Vos équipes Scrum sont déclarées « non conformes ».",
+      "question": "Comment réconciliez-vous conformité et empirisme ?",
+      "options": {
+        "A": "Vous pliez : la conformité prime, retour au cycle en V",
+        "B": "Vous contournez : les équipes maintiendront une documentation de façade",
+        "C": "Vous obtenez une exemption dérogatoire pour les équipes agiles",
+        "D": "Vous travaillez l'exigence réelle avec l'audit : la traçabilité des décisions et des validations — que le backlog versionné, les critères d'acceptation, la Definition of Done et les incréments testés fournissent nativement, souvent mieux qu'une spec signée puis obsolète ; vous co-construisez le référentiel de preuve"
+      },
+      "correct": "D",
+      "feedback": "L'audit n'exige pas des documents : il exige des preuves — le document signé n'est que la forme historique de la preuve. Un backlog horodaté, des critères d'acceptation validés, des tests automatisés tracés constituent une piste d'audit plus fiable qu'une spécification signée qui diverge du produit dès la semaine deux. La façade (B) est une bombe à retardement réglementaire ; l'exemption (C) fait de vos équipes des parias.",
+      "insight": "Face à une exigence de conformité, ne négociez jamais la règle : négociez la forme de la preuve — c'est là que se trouve toute la marge.",
+      "reference": {
+        "label": "Scrum.org — Scrum en environnement régulé",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "conformité",
+        "audit",
+        "traçabilité"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM37",
+      "title": "Le budget projet contre le produit",
+      "level": "expert",
+      "skill": "Financement du produit",
+      "context": "Votre DAF finance par projets annuels : chaque initiative est budgétée, staffée, puis l'équipe est dissoute. Vos équipes produit sont démontées tous les dix mois, au moment exact où elles deviennent performantes.",
+      "question": "Quel changement de modèle défendez-vous ?",
+      "options": {
+        "A": "Aucun : le contrôle budgétaire annuel est non négociable dans un grand groupe",
+        "B": "L'externalisation : les prestataires absorbent la variabilité",
+        "C": "Des équipes projet plus longues : dix-huit mois au lieu de dix",
+        "D": "Le financement d'équipes stables par domaine produit, avec revue trimestrielle d'allocation : la DAF garde son contrôle — elle réalloue de la capacité entre produits selon les résultats — mais cesse de payer trois mois de reformation d'équipe par an"
+      },
+      "correct": "D",
+      "feedback": "Le coût caché du modèle projet est la destruction récurrente du capital le plus lent à construire : la performance collective. L'argument gagnant face à une DAF n'est pas idéologique mais financier : le modèle capacitaire lui rend un contrôle plus fin en supprimant un gaspillage mesurable. Allonger les projets (C) espace le problème sans le résoudre ; l'externalisation (B) le déplace en y ajoutant la perte de savoir.",
+      "insight": "On ne convainc pas une direction financière avec de la doctrine agile : on la convainc en chiffrant ce que son modèle actuel détruit.",
+      "reference": {
+        "label": "Scrum.org — équipes stables & flux de valeur",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "budget",
+        "daf",
+        "équipes stables"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM38",
+      "title": "La guerre des priorités",
+      "level": "expert",
+      "skill": "Arbitrage inter-directions",
+      "context": "Deux directions métier se disputent la capacité de votre unique équipe plateforme. Chacune escalade, fait pression sur le PO, et vous accuse alternativement de favoritisme. Le backlog change d'ordre chaque semaine.",
+      "question": "Comment sortez-vous durablement de la guerre ?",
+      "options": {
+        "A": "Vous partagez la capacité 50/50 : c'est inattaquable",
+        "B": "Vous tranchez vous-même chaque conflit au fil de l'eau",
+        "C": "Vous demandez une deuxième équipe plateforme au budget",
+        "D": "Vous installez un mécanisme d'arbitrage par la valeur : critères économiques explicites (coût du retard, impact), revue de priorisation commune à cadence fixe où les deux directions défendent leurs demandes dans le même référentiel — le PO ordonne selon ces règles, et l'escalade hors mécanisme n'a plus d'effet"
+      },
+      "correct": "D",
+      "feedback": "Le 50/50 (A) est équitable et absurde : il garantit que la moitié de la capacité travaille sur le moins important. Trancher vous-même chaque semaine (B) fait de vous le champ de bataille permanent. Le mécanisme par la valeur change la nature du jeu : les directions cessent de faire pression sur des personnes pour se mettre à documenter de la valeur — et l'ordre du backlog redevient stable parce qu'il est défendable.",
+      "insight": "Quand deux puissants se disputent votre ressource, ne choisissez pas un camp : imposez le référentiel dans lequel ils devront se départager.",
+      "reference": {
+        "label": "Scrum.org — priorisation par le coût du retard",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "priorisation",
+        "conflit",
+        "valeur"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM39",
+      "title": "Le middle management menacé",
+      "level": "expert",
+      "skill": "Transformation & résistances",
+      "context": "Depuis le passage à Scrum, vos chefs de projet historiques n'ont plus d'équipe à diriger. Officiellement reconvertis « facilitateurs », plusieurs sabotent discrètement : rétention d'information, réunions parallèles, nostalgie organisée de l'ancien monde.",
+      "question": "Comment traitez-vous cette résistance structurée ?",
+      "options": {
+        "A": "Vous les écartez : une transformation exige de trancher dans le vif",
+        "B": "Vous les laissez s'éteindre : le temps jouera pour vous",
+        "C": "Vous reconnaissez la perte réelle — statut, territoire, identité — et vous leur construisez des trajectoires à pouvoir équivalent mais de nature différente : gestion des dépendances transverses, développement des personnes, pilotage par la valeur ; le sabotage résiduel se traite alors individuellement, sur des faits",
+        "D": "Vous organisez une formation agile obligatoire pour aligner tout le monde"
+      },
+      "correct": "C",
+      "feedback": "Le sabotage du middle management n'est presque jamais idéologique : c'est une réponse rationnelle à une perte réelle que la transformation a infligée sans compensation. La purge (A) décapite la mémoire de l'organisation et terrorise le reste ; l'attentisme (B) laisse la résistance se professionnaliser ; la formation (D) traite un problème de pouvoir comme un problème de connaissance. Offrir un avenir de pouvoir reconverti est la seule stratégie qui retourne la digue en canal.",
+      "insight": "Dans toute transformation, identifiez qui perd quoi : les résistances les plus dures viennent des pertes que personne n'a osé nommer.",
+      "reference": {
+        "label": "Scrum.org — management dans une organisation agile",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "transformation",
+        "management",
+        "résistance"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM40",
+      "title": "Le forfait à périmètre figé",
+      "level": "expert",
+      "skill": "Contrats & agilité",
+      "context": "Votre direction des achats impose ses contrats standards aux prestataires : forfait, périmètre exhaustif en annexe, pénalités de retard. Le prestataire « fait du Scrum » en interne, mais chaque demande de changement déclenche un avenant de trois semaines.",
+      "question": "Quel modèle contractuel proposez-vous aux achats ?",
+      "options": {
+        "A": "Un contrat capacitaire à gouvernance agile : engagement sur une capacité et une qualité de service (Definition of Done contractuelle, cadence de livraison), périmètre piloté par la valeur avec droit de re-priorisation à chaque Sprint, et clause de sortie courte — le client est protégé par sa capacité à réorienter et à sortir, pas par une annexe figée",
+        "B": "La régie pure : on paie le temps, l'agilité fait le reste",
+        "C": "Aucun changement : le forfait protège l'entreprise",
+        "D": "Le forfait, mais avec une enveloppe d'avenants pré-approuvée de 15 %"
+      },
+      "correct": "A",
+      "feedback": "Le forfait à périmètre figé protège contre le seul risque qui n'existe pas — que le besoin ne change pas — et transforme chaque apprentissage en négociation d'avenant : le prestataire est payé pour livrer l'annexe, pas la valeur. La régie pure (B) transfère tout le risque au client sans engagement de résultat. Le contrat capacitaire déplace la protection là où elle opère : réversibilité, qualité contractuelle, droit de réorientation permanent.",
+      "insight": "Un bon contrat agile ne fige pas ce que vous obtiendrez : il garantit votre pouvoir de changer d'avis à faible coût — c'est la vraie protection.",
+      "reference": {
+        "label": "Scrum.org — agile contracting",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "contrat",
+        "achats",
+        "fournisseurs"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM41",
+      "title": "Le cycle en V déguisé",
+      "level": "confirme",
+      "skill": "Détection du Scrumfall",
+      "context": "Un programme se déclare « 100 % Scrum » : Sprint 1 d'analyse, Sprints 2-3 de conception, Sprints 4-8 de développement, Sprints 9-10 de tests. Chaque phase a ses propres spécialistes.",
+      "question": "Que diagnostiquez-vous ?",
+      "options": {
+        "A": "Un cycle en V découpé en tranches de deux semaines : les Sprints n'y produisent aucun incrément utilisable, les risques restent accumulés jusqu'aux « Sprints de tests », et les boucles de feedback n'existent pas — le vocabulaire est agile, le système ne l'est pas",
+        "B": "Une organisation pragmatique : chaque expertise travaille à son moment",
+        "C": "Un problème mineur de nommage des phases",
+        "D": "Un modèle valable si les phases se chevauchent légèrement"
+      },
+      "correct": "A",
+      "feedback": "Le test décisif n'est pas le vocabulaire mais la question : « qu'est-ce qui est utilisable à la fin de chaque Sprint ? » Ici, rien avant le Sprint 9 — tous les risques (intégration, qualité, pertinence) sont repoussés en fin de chaîne, exactement comme dans le cycle en V, avec en prime le coût des cérémonies. Chaque Sprint doit traverser toutes les disciplines et produire un incrément Done, si mince soit-il.",
+      "insight": "Ne jugez jamais une organisation à son vocabulaire : demandez ce qu'elle sait livrer et inspecter toutes les deux semaines — la réponse dit tout.",
+      "reference": {
+        "label": "Scrum Guide — Increment à chaque Sprint",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "scrumfall",
+        "anti-pattern",
+        "risque"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM42",
+      "title": "Les tests du Sprint suivant",
+      "level": "confirme",
+      "skill": "Qualité intégrée au flux",
+      "context": "Pour « fluidifier », une équipe a instauré un décalage permanent : le Sprint N développe, le Sprint N+1 teste ce qui a été développé en N. La vélocité affichée a augmenté de 30 %.",
+      "question": "Que révèle cette hausse de vélocité ?",
+      "options": {
+        "A": "Une illusion comptable : l'équipe compte comme terminé du travail qui ne l'est pas ; le stock de non-testé s'accumule, chaque bug se découvre avec deux semaines de retard sur un code déjà froid, et l'incrément du Sprint n'existe plus — la hausse mesure la dégradation, pas la performance",
+        "B": "Rien d'inquiétant tant que tout finit par être testé",
+        "C": "Une vraie optimisation : la spécialisation par Sprint réduit les changements de contexte",
+        "D": "Un progrès à condition d'ajouter une équipe de tests dédiée"
+      },
+      "correct": "A",
+      "feedback": "Décaler les tests d'un Sprint dissout la Definition of Done : le « terminé » du Sprint N est en réalité du travail en cours, et la vélocité gagnée est exactement le coût qualité repoussé — avec intérêts, car corriger un code refroidi coûte plus cher. L'équipe de tests dédiée (D) aggrave la passe de témoin. La qualité se construit dans le flux du Sprint, pas en aval.",
+      "insight": "Toute hausse soudaine d'un indicateur doit vous inquiéter avant de vous réjouir : demandez toujours quel coût est parti se cacher ailleurs.",
+      "reference": {
+        "label": "Scrum Guide — Definition of Done",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "tests",
+        "done",
+        "flux"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM43",
+      "title": "Le héros indispensable",
+      "level": "confirme",
+      "skill": "Risque de dépendance individuelle",
+      "context": "Un développeur brillant porte seul la connaissance du cœur du système. Il résout toutes les crises, refuse poliment de documenter (« pas le temps »), et l'équipe s'est organisée autour de sa disponibilité. Il vient de recevoir une offre externe.",
+      "question": "Au-delà de la contre-offre, quelle est la vraie décision ?",
+      "options": {
+        "A": "Le retenir à tout prix : il est irremplaçable, c'est un fait",
+        "B": "Découper le système pour réduire la zone critique",
+        "C": "Recruter en urgence un profil équivalent en doublure",
+        "D": "Traiter la dépendance elle-même, qu'il reste ou parte : binômage systématique sur ses zones, documentation adossée au travail réel, rotation des sujets critiques — et reconnaître son excellence en la redéfinissant : un senior se mesure désormais à ce qu'il rend possible chez les autres"
+      },
+      "correct": "D",
+      "feedback": "Le problème n'est pas le départ possible du héros : c'est que votre organisation ait laissé se construire un point de défaillance unique — et le héroïsme est souvent entretenu des deux côtés, car il paie en statut. Retenir sans transformer (A) reconduit le risque avec un salaire plus élevé ; la doublure clonée (C) est introuvable et reproduirait le schéma. Redéfinir la séniorité comme démultiplication est la seule sortie durable — et la plus flatteuse pour lui.",
+      "insight": "Chaque héros de votre organisation est une défaillance de votre organisation : admirez la personne, corrigez le système.",
+      "reference": {
+        "label": "Scrum.org — équipes cross-fonctionnelles",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "bus factor",
+        "savoir",
+        "risque"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM44",
+      "title": "Le Sprint dévoré par le run",
+      "level": "confirme",
+      "skill": "Capacité & travail non planifié",
+      "context": "Votre équipe produit assure aussi le support de niveau 3. Chaque Sprint, 40 à 60 % de la capacité part en incidents imprévus. Les Sprint Goals ne sont presque jamais atteints, et l'équipe a cessé d'y croire.",
+      "question": "Comment restaurez-vous la crédibilité des engagements ?",
+      "options": {
+        "A": "Vous interdisez les interruptions pendant le Sprint : le run attendra",
+        "B": "Vous doublez la taille de l'équipe",
+        "C": "Vous créez une équipe de maintenance séparée qui absorbe tout le run",
+        "D": "Vous planifiez sur la capacité réelle : mesure du poids historique du run, réservation explicite de cette part avec rotation d'un rôle de garde, Sprint Goal dimensionné sur ce qui reste — puis vous attaquez la cause : chaque pic d'incidents devient un investissement priorisé de fiabilisation au backlog"
+      },
+      "correct": "D",
+      "feedback": "Bloquer le run (A) est intenable — les incidents ne négocient pas — et l'équipe séparée (C) coupe les développeurs des conséquences de leur code, ce qui garantit que la source d'incidents ne se tarira jamais. La séquence honnête : rendre le run visible et budgété, promettre seulement sur le reste, puis réduire structurellement le run en le traitant comme un investissement. La crédibilité revient quand les promesses redeviennent tenables.",
+      "insight": "Une équipe qui promet sur une capacité qu'elle n'a pas apprend à ne plus rien promettre : la première réparation est de dire la vérité sur le temps.",
+      "reference": {
+        "label": "Scrum.org — travail non planifié & capacité",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "run",
+        "capacité",
+        "fiabilité"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM45",
+      "title": "Le périmètre qui gonfle en silence",
+      "level": "confirme",
+      "skill": "Protection du Sprint par le PO",
+      "context": "Votre Product Owner, soucieux de plaire, accepte « deux ou trois petites demandes » en cours de chaque Sprint. Les Sprint Goals sont atteints une fois sur trois, et l'équipe a renoncé à protester.",
+      "question": "Où se situe la faute, et comment la corrigez-vous ?",
+      "options": {
+        "A": "Chez l'équipe : elle devrait absorber les petites demandes sans compromettre l'objectif",
+        "B": "Dans le cadre : Scrum est trop rigide pour un environnement mouvant",
+        "C": "Chez les demandeurs : il faut leur interdire l'accès au PO",
+        "D": "Chez le PO : le gardien du périmètre est devenu sa principale brèche ; vous recadrez le rôle — toute demande entrante se prend contre quelque chose qui sort, arbitrage visible, et le Sprint Goal reste l'invariant — puis vous outillez le refus : un délai d'entrée moyen chiffré vaut mieux qu'un oui qui ment"
+      },
+      "correct": "D",
+      "feedback": "Le PO qui dit oui à tout ne protège personne : il transfère le conflit vers l'équipe, qui le paie en objectifs manqués et en cynisme. Le recadrage porte sur la mécanique, pas la personne : dans un Sprint, ce qui entre chasse ce qui sort — et cet échange doit être visible du demandeur, car c'est cette visibilité qui éduque l'organisation. Interdire l'accès (C) tue l'écoute ; blâmer le cadre (B) évite le vrai sujet.",
+      "insight": "Un oui qui n'a pas de prix apparent a toujours un prix caché — et c'est toujours l'équipe qui le paie.",
+      "reference": {
+        "label": "Scrum Guide — Sprint Backlog & Sprint Goal",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "scope creep",
+        "product owner",
+        "protection"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM46",
+      "title": "La rétro sans lendemain",
+      "level": "confirme",
+      "skill": "Amélioration actionnable",
+      "context": "Les Rétrospectives de votre équipe sont animées, cathartiques même — mais les mêmes irritants reviennent depuis six mois. Aucune amélioration décidée n'a jamais été suivie d'effet.",
+      "question": "Comment transformez-vous la catharsis en progrès ?",
+      "options": {
+        "A": "Vous espacez les Rétrospectives : à ce rythme, elles ont épuisé leur utilité",
+        "B": "Vous exigez un plan d'action de dix points par Rétrospective",
+        "C": "Vous participez vous-même aux Rétrospectives pour donner du poids aux décisions",
+        "D": "Vous imposez la règle du un : chaque Rétrospective sélectionne une seule amélioration, dotée d'un responsable et d'un critère observable, injectée dans le Sprint suivant comme du vrai travail — et la Rétrospective d'après commence par en vérifier l'effet"
+      },
+      "correct": "D",
+      "feedback": "Une Rétrospective qui ne change rien enseigne que parler ne sert à rien — c'est pire que de ne pas la tenir. Le levier n'est pas le volume (B — dix actions, c'est zéro action) mais le circuit : une amélioration unique, portée, mesurable, planifiée dans le Sprint comme n'importe quel travail, et inspectée au tour suivant. Votre présence (C) fermerait la parole qu'il s'agit précisément d'exploiter.",
+      "insight": "Le progrès continu ne se mesure pas à la qualité des discussions mais au sort de la première action décidée : suivez-la, tout le reste suivra.",
+      "reference": {
+        "label": "Scrum Guide — Sprint Retrospective (améliorations)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "rétrospective",
+        "action",
+        "suivi"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM47",
+      "title": "Le management invité aux rétros",
+      "level": "confirme",
+      "skill": "Sécurité psychologique",
+      "context": "Votre nouveau directeur de département souhaite assister à toutes les Rétrospectives « pour rester proche du terrain et montrer son soutien ». Les Scrum Masters n'osent pas refuser.",
+      "question": "Que lui répondez-vous ?",
+      "options": {
+        "A": "Vous acceptez : la proximité du management est une bonne pratique",
+        "B": "Vous laissez chaque équipe voter à chaque fois",
+        "C": "Vous acceptez une présence un Sprint sur deux",
+        "D": "Vous refusez et lui expliquez le mécanisme : la Rétrospective ne produit de la vérité que dans un espace sans enjeu hiérarchique — sa présence, même bienveillante, calibrerait la parole ; et vous lui offrez le bon canal : les améliorations qui requièrent le management lui sont escaladées, et c'est là que son soutien devient décisif"
+      },
+      "correct": "D",
+      "feedback": "L'intention est bonne, le mécanisme est destructeur : dès qu'un supérieur est dans la pièce, chacun optimise son image et la Rétrospective devient une réunion de communication. La fréquence réduite (C) ne change rien au calibrage ; le vote (B) transforme chaque séance en test de courage. La réponse gagnante honore l'intention en redirigeant l'énergie : le management est le destinataire des obstacles systémiques, pas le spectateur de leur expression.",
+      "insight": "Il y a des lieux où la meilleure contribution d'un dirigeant est son absence — et sa disponibilité à la sortie.",
+      "reference": {
+        "label": "Scrum Guide — Sprint Retrospective (équipe)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "rétrospective",
+        "management",
+        "sécurité psychologique"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM48",
+      "title": "Les consultants qui dictent la méthode",
+      "level": "expert",
+      "skill": "Souveraineté méthodologique",
+      "context": "Un grand cabinet, mandaté par la DG pour « accélérer la transformation », impose à vos équipes son framework maison : nouveaux rituels, nouveaux rôles, reporting quadruplé. Vos équipes Scrum, qui fonctionnaient, se désorganisent.",
+      "question": "Comment reprenez-vous la main sans guerre frontale avec la DG ?",
+      "options": {
+        "A": "Vous appliquez : la DG a mandaté, vous exécutez",
+        "B": "Vous résistez ouvertement et documentez chaque dégradation",
+        "C": "Vous négociez une exemption pour vos équipes historiques",
+        "D": "Vous déplacez le débat du dogme vers la mesure : accord avec le cabinet et la DG sur trois indicateurs de résultat (délai de mise en marché, qualité, valeur livrée), état zéro documenté, puis chaque pratique imposée est évaluée sur ces indicateurs — ce qui améliore reste, ce qui dégrade sort, quel qu'en soit l'auteur"
+      },
+      "correct": "D",
+      "feedback": "Contre un cabinet adoubé par la DG, l'affrontement doctrinal (B) est perdu d'avance — vous serez « le résistant au changement ». L'exemption (C) vous isole et se révoque. Le terrain gagnant est l'empirisme lui-même : personne ne peut refuser publiquement d'être mesuré sur les résultats. Vous ne combattez plus le framework, vous l'exposez au réel — et le réel arbitre pour vous, avec la DG comme témoin.",
+      "insight": "Ne disputez jamais la légitimité d'un acteur adoubé d'en haut : disputez le terrain de jeu — celui qui choisit la mesure choisit l'issue.",
+      "reference": {
+        "label": "Scrum Guide — empirisme (fondement)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "consultants",
+        "pouvoir",
+        "mesure"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM49",
+      "title": "Les développeurs partagés sur trois produits",
+      "level": "confirme",
+      "skill": "Coût du multitâche",
+      "context": "Pour « optimiser les compétences rares », votre organisation affecte chaque développeur à deux ou trois produits simultanément. Sur le papier, tout le monde est utilisé à 100 %. Dans les faits, tout est en retard.",
+      "question": "Comment expliquez-vous ce paradoxe au comité — et que changez-vous ?",
+      "options": {
+        "A": "Le paradoxe n'en est pas un : le multitâche maximise l'occupation des personnes et minimise l'avancement des produits — chaque bascule de contexte détruit du temps réel, chaque produit attend les autres ; vous réaffectez chacun à une équipe et un produit, et les compétences rares s'organisent en rotation planifiée plutôt qu'en partage permanent",
+        "B": "C'est un problème de discipline individuelle : il faut mieux cloisonner les agendas",
+        "C": "Il faut recruter : la charge dépasse la capacité",
+        "D": "Il faut un outil de gestion multi-projets plus performant"
+      },
+      "correct": "A",
+      "feedback": "L'occupation à 100 % est l'illusion comptable la plus coûteuse de l'entreprise : elle mesure des personnes occupées, pas du travail qui finit. Le coût de bascule (20 à 40 % du temps selon les études sur le context switching) est invisible dans les tableaux d'affectation et massif dans les délais. Affecter les gens en entier et faire circuler l'expertise par rotation ou mentorat rend visible ce que le partage permanent détruisait.",
+      "insight": "Cessez d'optimiser l'occupation des gens : optimisez l'achèvement des choses — ce sont deux mondes, et un seul rapporte.",
+      "reference": {
+        "label": "Scrum.org — focus & flux (multitasking)",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "multitâche",
+        "focus",
+        "organisation"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM50",
+      "title": "Le manager qui estime pour l'équipe",
+      "level": "confirme",
+      "skill": "Propriété des estimations",
+      "context": "Un manager technique, ancien développeur brillant, fournit lui-même les estimations « pour gagner du temps » : il connaît le système mieux que quiconque. L'équipe exécute — et dépasse systématiquement de 40 à 80 %.",
+      "question": "Pourquoi ses estimations, pourtant expertes, échouent-elles — et que changez-vous ?",
+      "options": {
+        "A": "Il estime mal : il faut le former aux techniques modernes d'estimation",
+        "B": "L'équipe est lente : les dépassements prouvent un problème de performance",
+        "C": "L'estimation n'est pas une prédiction mais un engagement : ceux qui font le travail doivent l'estimer — l'expert estime son propre fantôme d'il y a cinq ans, ignore les frictions actuelles, et son chiffre ne crée aucune appropriation ; vous rendez l'estimation aux Developers, l'expert devient consultant de leurs séances",
+        "D": "Il faut ajouter systématiquement 60 % de marge à ses chiffres"
+      },
+      "correct": "C",
+      "feedback": "Le dépassement chronique n'est ni une incompétence d'estimateur (A) ni une lenteur d'équipe (B) : c'est un problème de propriété. Une estimation imposée est un chiffre subi — personne ne se bat pour tenir le pari d'un autre — et l'expert projette un système et une équipe qui n'existent plus. Le coefficient correcteur (D) traite la conséquence en institutionnalisant la cause. Ceux qui font, estiment ; l'expertise du manager s'y injecte comme éclairage, pas comme verdict.",
+      "insight": "Un chiffre imposé n'engage que celui qui l'a prononcé : la fiabilité des prévisions commence par la propriété de ceux qui les tiendront.",
+      "reference": {
+        "label": "Scrum Guide — les Developers estiment",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "estimation",
+        "engagement",
+        "management"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM51",
+      "title": "Quatre équipes, un produit",
+      "level": "expert",
+      "skill": "Scrum à plusieurs équipes",
+      "context": "Quatre équipes Scrum travaillent sur le même produit — chacune avec son backlog, son PO et ses priorités. L'intégration de fin de trimestre est un chaos récurrent, et les clients reçoivent des fonctionnalités incohérentes.",
+      "question": "Quelle décision structurelle prenez-vous ?",
+      "options": {
+        "A": "Renforcer l'équipe d'intégration qui assemble le travail des quatre",
+        "B": "Un produit, un Product Backlog, un Product Owner : les quatre équipes tirent du même backlog ordonné, partagent une Definition of Done et intègrent en continu — la cohérence se construit à la source, pas à l'assemblage",
+        "C": "Espacer les livraisons : une intégration par semestre serait plus gérable",
+        "D": "Fusionner les quatre équipes en une seule de quarante personnes"
+      },
+      "correct": "B",
+      "feedback": "Quatre backlogs sur un produit, c'est quatre définitions de la priorité — l'incohérence client n'est pas un accident, c'est l'architecture. Le principe d'échelle le plus robuste (commun à Nexus et LeSS) tient en une phrase : l'unité d'organisation est le produit, pas l'équipe. L'équipe d'intégration (A) industrialise le symptôme ; espacer (C) grossit les collisions ; fusionner (D) crée un monstre ingérable. Un backlog, un PO, un Done, une intégration continue.",
+      "insight": "À l'échelle, la cohérence ne s'assemble pas en aval : elle se décide en amont, dans l'unicité du backlog et de la définition du terminé.",
+      "reference": {
+        "label": "Scrum.org — Nexus / Scrum à l'échelle",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "scaling",
+        "multi-équipes",
+        "intégration"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM52",
+      "title": "Équipes composants ou équipes features",
+      "level": "expert",
+      "skill": "Topologie des équipes",
+      "context": "Vos équipes sont organisées par couche technique : front, back, données, infra. La moindre fonctionnalité client traverse les quatre équipes, avec files d'attente et tickets inter-équipes. Le délai moyen d'une demande simple : onze semaines.",
+      "question": "Quelle réorganisation défendez-vous ?",
+      "options": {
+        "A": "Aucune : la spécialisation technique garantit l'excellence de chaque couche",
+        "B": "Un rôle de coordinateur inter-équipes par fonctionnalité",
+        "C": "Un outil de gestion des dépendances plus rigoureux",
+        "D": "Des équipes orientées fonctionnalité, cross-fonctionnelles de bout en bout, capables de livrer une demande client sans dépendre d'une autre équipe — la spécialisation profonde survit en communautés de pratique transverses"
+      },
+      "correct": "D",
+      "feedback": "Onze semaines pour une demande simple, c'est le coût des files d'attente entre équipes composants : chaque frontière technique est une frontière de planning. Le coordinateur (B) et l'outil (C) gèrent les dépendances au lieu de les supprimer. L'équipe feature élimine la file en internalisant la chaîne de valeur ; les communautés de pratique préservent la profondeur technique que la réorganisation semble menacer — c'est l'objection à anticiper.",
+      "insight": "Votre organigramme est votre délai de livraison : chaque frontière d'équipe sur le chemin d'une demande client lui ajoute une file d'attente.",
+      "reference": {
+        "label": "Scrum.org — feature teams & flux de valeur",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "organisation",
+        "dépendances",
+        "time-to-market"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM53",
+      "title": "La cadence commune",
+      "level": "confirme",
+      "skill": "Synchronisation multi-équipes",
+      "context": "Vos cinq équipes produit ont des Sprints de durées différentes — une, deux, trois semaines — « chacune son rythme ». Les dépendances inter-équipes sont devenues impossibles à planifier et les événements communs introuvables.",
+      "question": "Imposez-vous une cadence commune ?",
+      "options": {
+        "A": "Non : l'autonomie des équipes prime sur le confort de coordination",
+        "B": "Oui pour les équipes d'un même produit ou à fortes dépendances : une cadence partagée avec démarrages alignés crée des points de synchronisation naturels — c'est une contrainte légère qui achète une coordination massive ; les équipes réellement indépendantes gardent leur liberté",
+        "C": "Oui pour tout le monde, par principe d'uniformité",
+        "D": "Non, mais on ajoute un comité de synchronisation hebdomadaire"
+      },
+      "correct": "B",
+      "feedback": "L'autonomie porte sur le comment travailler, pas sur le tempo d'un système interdépendant : des cadences désalignées entre équipes couplées fabriquent des attentes structurelles qu'aucun comité (D) ne rattrape. Mais l'uniformité de principe (C) est l'excès inverse — imposer une cadence à des équipes sans dépendances est du contrôle gratuit. La règle : le couplage réel dicte la synchronisation nécessaire, rien de plus.",
+      "insight": "Standardisez ce qui connecte les équipes, libérez ce qui reste à l'intérieur : la bonne gouvernance se joue exactement à cette frontière.",
+      "reference": {
+        "label": "Scrum.org — synchronisation des Sprints",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "cadence",
+        "dépendances",
+        "gouvernance"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM54",
+      "title": "Un PO par équipe ou un PO produit",
+      "level": "expert",
+      "skill": "Gouvernance produit à l'échelle",
+      "context": "Votre produit unique est servi par trois équipes. Le débat fait rage : trois Product Owners « de proximité » (un par équipe) ou un seul PO produit ? Chaque camp cite des références.",
+      "question": "Quel modèle tranchez-vous, et comment le faites-vous tenir ?",
+      "options": {
+        "A": "Trois PO égaux qui se coordonnent en bonne intelligence",
+        "B": "Un Product Owner unique, responsable de la valeur et de l'ordre du Product Backlog du produit — épaulé si nécessaire par des relais délégués sur des zones, à condition que la délégation soit explicite et que l'arbitrage final reste à une seule voix",
+        "C": "Un PO tournant : la responsabilité change d'équipe chaque trimestre",
+        "D": "Pas de PO : un comité produit collégial"
+      },
+      "correct": "B",
+      "feedback": "La question n'est pas le nombre de personnes qui travaillent le backlog, mais le nombre de voix qui l'ordonnent : au-delà d'une, les priorités deviennent négociables et les équipes reçoivent des signaux contradictoires — le cas des trois PO « égaux » (A) recrée exactement le problème des deux PO, en pire. La délégation par zones fonctionne si elle est explicite et révocable ; le comité (D) et la rotation (C) dissolvent la responsabilité que le rôle existe pour incarner.",
+      "insight": "On peut distribuer le travail de la décision, jamais la décision elle-même : à l'échelle, la clarté d'une seule voix vaut plus que la proximité de trois.",
+      "reference": {
+        "label": "Scrum.org — un produit, un Product Owner",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "product owner",
+        "échelle",
+        "gouvernance"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM55",
+      "title": "L'offshore et le Done à deux vitesses",
+      "level": "expert",
+      "skill": "Distribution & standard commun",
+      "context": "La moitié de votre delivery est offshore, avec sept heures de décalage. Les équipes locales se plaignent de reprendre chaque livraison offshore ; les équipes offshore se sentent traitées en sous-traitants de seconde zone. La direction envisage de tout rapatrier.",
+      "question": "Avant la décision radicale, quel diagnostic posez-vous ?",
+      "options": {
+        "A": "Le modèle offshore est structurellement incompatible avec l'agilité",
+        "B": "C'est un problème de compétence : il faut monter le niveau offshore",
+        "C": "Le système a créé deux classes : Definition of Done différente de fait, cérémonies aux horaires du siège, décisions prises hors de leur présence — vous unifiez le standard (un seul Done, outillé et vérifiable), équilibrez les horaires des événements, et intégrez les équipes distantes aux mêmes boucles de décision ; ensuite seulement, vous jugez le modèle",
+        "D": "Il faut un chef de projet local qui contrôle chaque livraison offshore"
+      },
+      "correct": "C",
+      "feedback": "Les reprises de code sont le symptôme mesurable d'une asymétrie systémique : quand une équipe est exclue des conversations où le « bien fait » se définit, elle livre à sa définition — puis on l'accuse de l'écart. Le contrôle renforcé (D) et le procès en compétence (B) aggravent la relégation qui cause le problème. Unifier le standard et les boucles de décision est le préalable à tout jugement honnête sur le modèle ; rapatrier avant, c'est payer très cher pour ne pas apprendre.",
+      "insight": "Une équipe traitée en exécutante livrera un travail d'exécutant : le niveau de vos équipes distantes reflète d'abord la place que vous leur faites.",
+      "reference": {
+        "label": "Scrum Guide — Definition of Done partagée",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "offshore",
+        "done",
+        "distribution"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM56",
+      "title": "Le release train du groupe",
+      "level": "expert",
+      "skill": "Cohabiter avec un cadre imposé",
+      "context": "Votre groupe déploie SAFe : trains de release, PI Planning trimestriel, rôles normés. Vos équipes Scrum, performantes, redoutent d'y perdre leur fonctionnement. Refuser frontalement n'est pas une option politique.",
+      "question": "Quelle stratégie adoptez-vous ?",
+      "options": {
+        "A": "L'alignement complet : vous adoptez le référentiel groupe à la lettre",
+        "B": "La résistance passive : conformité de façade, pratiques réelles inchangées",
+        "C": "La conformité aux interfaces, la liberté à l'intérieur : vous honorez ce que le train exige de vous — participation au PI Planning, objectifs de trimestre, synchronisation des livraisons — et vous préservez à l'intérieur ce qui fait la performance de vos équipes : leurs Sprints, leur Done exigeant, leurs boucles courtes ; vous documentez les résultats pour peser sur l'évolution du cadre groupe",
+        "D": "L'escalade : vous demandez à la DG une exemption au nom de vos résultats"
+      },
+      "correct": "C",
+      "feedback": "Les grands cadres d'échelle se négocient rarement de front, mais ils spécifient surtout des interfaces : ce que les autres attendent de vous et quand. Y être irréprochable achète la liberté interne — personne n'audite le fonctionnement d'une équipe qui tient ses engagements de train. La façade (B) finit toujours par se voir ; l'exemption (D) fait de vous une cible permanente. Et vos résultats documentés deviennent votre levier d'influence sur la version suivante du cadre.",
+      "insight": "Face à un cadre imposé, jouez la conformité aux frontières et l'excellence à l'intérieur : on ne discute jamais les méthodes d'une équipe qui tient sa parole.",
+      "reference": {
+        "label": "Scrum.org — Scrum au sein de cadres d'échelle",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "safe",
+        "groupe",
+        "stratégie"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM57",
+      "title": "Beaucoup livré, rien changé",
+      "level": "expert",
+      "skill": "Outcome contre output",
+      "context": "Votre organisation a livré 340 fonctionnalités cette année — un record célébré en interne. Pourtant : satisfaction client stable, churn en légère hausse, revenus plats. Le CODIR demande « encore plus de delivery ».",
+      "question": "Que répondez-vous au CODIR ?",
+      "options": {
+        "A": "Vous acceptez l'objectif : plus de fonctionnalités finira par produire plus de résultats",
+        "B": "Vous retournez le constat : 340 sorties pour zéro résultat prouve que le problème n'est pas la quantité mais le choix — vous proposez de piloter par les résultats (usage réel, satisfaction, revenu par capacité investie) et de mesurer chaque initiative majeure sur l'effet obtenu, pas sur la livraison effectuée",
+        "C": "Vous demandez plus de moyens pour accélérer encore",
+        "D": "Vous proposez de réduire le rythme pour améliorer la qualité"
+      },
+      "correct": "B",
+      "feedback": "L'output rassure parce qu'il se compte facilement ; l'outcome dérange parce qu'il juge les choix. 340 fonctionnalités sans effet mesurable signifient qu'une grande partie de la capacité a produit du volume sans produire de valeur — accélérer (A, C) amplifierait le gaspillage avec entrain. Le pivot du pilotage par les résultats est le geste de dirigeant : il déplace la question de « combien avons-nous fait » vers « qu'est-ce que cela a changé ».",
+      "insight": "Une organisation qui célèbre ses livraisons sans mesurer leurs effets applaudit sa propre dépense.",
+      "reference": {
+        "label": "Evidence-Based Management Guide",
+        "url": "https://www.scrum.org/resources/evidence-based-management-guide"
+      },
+      "tags": [
+        "outcome",
+        "valeur",
+        "pilotage"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM58",
+      "title": "Les OKR contre les Sprint Goals",
+      "level": "expert",
+      "skill": "Alignement stratégie-exécution",
+      "context": "Votre entreprise déploie les OKR. Sur le terrain, les équipes jonglent entre leurs Sprint Goals et des Key Results trimestriels déconnectés, vécus comme « une deuxième liste de devoirs ».",
+      "question": "Comment articulez-vous les deux systèmes ?",
+      "options": {
+        "A": "Vous supprimez les Sprint Goals : les OKR suffisent à donner la direction",
+        "B": "Vous laissez les deux coexister : les équipes arbitreront",
+        "C": "Vous les emboîtez en cascade d'horizon : l'objectif produit trimestriel (OKR) devient la référence dont chaque Sprint Goal est une marche — au Sprint Planning, la première question devient « quel pas vers l'objectif du trimestre ce Sprint fait-il ? » ; un Sprint Goal qui ne sert aucun Key Result exige une justification explicite",
+        "D": "Vous traduisez chaque Key Result en éléments de backlog imposés aux équipes"
+      },
+      "correct": "C",
+      "feedback": "Les deux systèmes répondent à des horizons différents : l'OKR fixe le résultat visé du trimestre, le Sprint Goal l'étape des deux semaines. Non articulés (B), ils se concurrencent et les équipes tranchent au hasard ; l'imposition descendante (D) transforme les OKR en cahier des charges, tuant l'autonomie de moyen qui fait leur intérêt. L'emboîtement rend la stratégie exécutable sans confisquer le comment.",
+      "insight": "La stratégie ne descend pas dans les équipes par des listes de tâches : elle descend par des objectifs emboîtés dont chacun choisit ses moyens.",
+      "reference": {
+        "label": "Scrum.org — objectifs & alignement",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "okr",
+        "sprint goal",
+        "stratégie"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM59",
+      "title": "Le tableau de bord du CODIR",
+      "level": "expert",
+      "skill": "Choix des indicateurs de direction",
+      "context": "On vous demande de concevoir le tableau de bord trimestriel « Produit & Delivery » du CODIR. Le brouillon actuel : vélocité par équipe, taux d'occupation, nombre de tickets fermés, respect du planning.",
+      "question": "Que proposez-vous à la place ?",
+      "options": {
+        "A": "Quatre familles tournées vers le marché et le flux : valeur courante (satisfaction, revenu, usage), délai de mise en marché (lead time, fréquence de livraison), capacité à innover (part de capacité libérée de la dette et du run), et qualité en production (incidents, stabilité) — chaque indicateur répond à une décision que le CODIR doit prendre",
+        "B": "Le brouillon convient : ces indicateurs sont disponibles et compris de tous",
+        "C": "Un indicateur unique et synthétique : le pourcentage d'avancement global",
+        "D": "Le brouillon, complété par les quatre familles"
+      },
+      "correct": "A",
+      "feedback": "Les indicateurs du brouillon mesurent l'agitation interne : la vélocité ne se compare pas, l'occupation pénalise le flux, les tickets comptent l'activité. Un tableau de bord de direction ne montre que ce qui éclaire une décision de direction — investir, arrêter, réallouer. Les quatre familles (héritées d'Evidence-Based Management) regardent le marché et le système, pas l'agitation. Les additionner au brouillon (D) noierait le signal dans le bruit, et le bruit gagne toujours l'attention d'un comité.",
+      "insight": "Chaque indicateur montré à un CODIR façonne un comportement en dessous : choisissez-les pour ce qu'ils feront faire, pas pour ce qu'ils sont faciles à produire.",
+      "reference": {
+        "label": "Evidence-Based Management — Key Value Areas",
+        "url": "https://www.scrum.org/resources/evidence-based-management-guide"
+      },
+      "tags": [
+        "indicateurs",
+        "codir",
+        "ebm"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM60",
+      "title": "Les 100 % d'occupation de la DAF",
+      "level": "expert",
+      "skill": "Flux contre utilisation",
+      "context": "La DAF exige un taux d'occupation de 100 % sur toutes les équipes : « chaque heure payée doit être une heure produite ». Depuis l'application de la règle, les délais de livraison ont doublé.",
+      "question": "Comment expliquez-vous ce paradoxe à la DAF — avec ses mots ?",
+      "options": {
+        "A": "Vous ne l'expliquez pas : vous appliquez, la règle est comptablement saine",
+        "B": "Par l'analogie du système saturé : une autoroute à 100 % d'occupation est un embouteillage — au-delà d'un certain taux, chaque unité de charge ajoutée fait exploser les temps de traversée ; vous proposez de piloter le coût du délai (valeur immobilisée dans l'en-cours) plutôt que le coût de l'inactivité apparente",
+        "C": "Par l'argument du bien-être : les équipes ont besoin de respirer",
+        "D": "Vous négociez 90 % comme compromis politique"
+      },
+      "correct": "B",
+      "feedback": "La règle de la DAF optimise le coût visible (des heures payées non « produites ») en maximisant un coût invisible et bien supérieur : la valeur immobilisée dans les files d'attente — les délais doublés en sont la facture. L'argument du bien-être (C) est vrai et inaudible en comité financier ; le pourcentage négocié (D) marchande sans convaincre. L'analogie du flux, chiffrée en coût du retard, parle la langue de la DAF : c'est un arbitrage entre deux coûts, et elle a choisi le mauvais.",
+      "insight": "Pour changer la décision d'un financier, ne contestez pas son objectif : montrez-lui le coût qu'il ne comptait pas.",
+      "reference": {
+        "label": "Scrum.org — flux & théorie des files d'attente",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "occupation",
+        "flux",
+        "daf"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM61",
+      "title": "L'engagement de prédictibilité",
+      "level": "expert",
+      "skill": "Prévision probabiliste",
+      "context": "Un client stratégique exige un « engagement ferme de prédictibilité » : savoir, à la commande, quand chaque demande sera livrée. Votre commerce est prêt à promettre n'importe quoi pour signer.",
+      "question": "Quel engagement construisez-vous ?",
+      "options": {
+        "A": "Des dates fermes par demande, avec une marge secrète de 50 % dans les estimations",
+        "B": "Aucun engagement de délai : l'agilité ne promet pas de dates",
+        "C": "Un engagement de service fondé sur vos données de flux : « 85 % des demandes de ce type livrées en moins de N jours », mesuré et publié en continu — le client obtient une prédictibilité vérifiable, vous promettez une distribution que vous savez tenir plutôt que des dates que vous inventez",
+        "D": "Un comité mensuel de re-priorisation avec le client, sans engagement chiffré"
+      },
+      "correct": "C",
+      "feedback": "La marge secrète (A) est une double faute : elle gonfle les prix et sera un jour découverte ; le refus doctrinal (B) perd le contrat. L'engagement de niveau de service par percentile — la prévision probabiliste fondée sur le débit réel — est le seul qui soit à la fois commercialement ferme et opérationnellement honnête : le client peut le vérifier chaque mois, et cette vérifiabilité vaut plus qu'une date au contrat.",
+      "insight": "La prédictibilité qui se vend n'est pas celle qui promet une date : c'est celle qui tient une distribution, mois après mois, sous les yeux du client.",
+      "reference": {
+        "label": "Scrum.org — forecasting probabiliste",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "prédictibilité",
+        "client",
+        "flux"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM62",
+      "title": "Le bonus individuel contre l'équipe",
+      "level": "expert",
+      "skill": "Systèmes d'incitation",
+      "context": "Votre politique RH attribue des bonus individuels sur objectifs personnels. Résultat observable dans les équipes Scrum : rétention d'information, refus d'aider (« ce n'est pas mon objectif »), et compétition là où le cadre exige de la coopération.",
+      "question": "Que défendez-vous auprès de la DRH ?",
+      "options": {
+        "A": "Le statu quo : la performance individuelle doit rester récompensée, c'est un principe de justice",
+        "B": "Un système à dominante collective : la part variable principale indexée sur les résultats de l'équipe et du produit, la reconnaissance individuelle déplacée vers la progression et les contributions au collectif — parce qu'un système qui paie des comportements individuels dans un travail interdépendant achète exactement les comportements que vous observez",
+        "C": "La suppression de toute part variable",
+        "D": "Des objectifs individuels mieux rédigés, incluant « l'esprit d'équipe »"
+      },
+      "correct": "B",
+      "feedback": "Les gens ne lisent pas les valeurs affichées : ils lisent ce qui est payé. Dans un travail interdépendant, le bonus individuel rémunère la défection — aider un collègue devient un coût d'opportunité personnel. Le critère « esprit d'équipe » (D) est cosmétique tant que l'argent réel pointe ailleurs ; la suppression totale (C) est une bataille perdue d'avance. Aligner la part principale sur le collectif aligne enfin l'intérêt de chacun avec le fonctionnement que vous exigez.",
+      "insight": "Ne demandez jamais à la culture de compenser votre système d'incitation : entre les deux, c'est toujours le système qui gagne.",
+      "reference": {
+        "label": "Scrum.org — équipes & incitations",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "bonus",
+        "rh",
+        "coopération"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM63",
+      "title": "Recruter le bon Scrum Master",
+      "level": "confirme",
+      "skill": "Recrutement des rôles clés",
+      "context": "Vous recrutez un Scrum Master senior. Deux finalistes : l'un maîtrise remarquablement Jira, les métriques et l'administration du cadre ; l'autre a fait évoluer des organisations difficiles mais « ne touche pas aux outils ».",
+      "question": "Quel critère fait pencher la balance ?",
+      "options": {
+        "A": "La maîtrise de l'outillage : c'est le quotidien concret du poste",
+        "B": "La capacité à changer un système : le Scrum Master crée de la valeur en transformant l'organisation autour de l'équipe — obstacles structurels, relations avec le management, maturité collective ; l'outillage s'apprend en semaines, l'art de faire bouger une organisation en années",
+        "C": "Le coût : à compétences proches, le moins cher",
+        "D": "Un mix : recruter l'administrateur et le former au coaching"
+      },
+      "correct": "B",
+      "feedback": "Le poste que vous décrivez par l'outil (A) est un poste d'assistant que vous surpayez au tarif d'un senior. La valeur d'un Scrum Master expérimenté se mesure à ce qu'il change dans le système — c'est la compétence rare, longue à construire, impossible à improviser. L'inverse du plan D est le bon : un transformateur apprendra Jira en un mois ; un administrateur n'apprendra pas à confronter un CODIR en un an.",
+      "insight": "Recrutez toujours la compétence longue à construire et formez la courte — jamais l'inverse.",
+      "reference": {
+        "label": "Scrum Guide — Scrum Master (service à l'organisation)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "recrutement",
+        "scrum master",
+        "compétences"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM64",
+      "title": "Lire la maturité d'une équipe",
+      "level": "confirme",
+      "skill": "Diagnostic sans tableau de bord",
+      "context": "Vous visitez une équipe que vous connaissez mal. Vous avez une heure, l'accès à leurs événements et à leur espace de travail — et aucune confiance dans les indicateurs Jira qu'on vous a préparés.",
+      "question": "Quels signaux observez-vous en priorité ?",
+      "options": {
+        "A": "Le respect formel du cadre : durée des événements, présence des rôles, tenue de l'outil",
+        "B": "Les signaux de fonctionnement réel : qui parle au Daily et à qui, comment un désaccord se traite, ce qui s'est passé lors du dernier échec, si l'équipe peut dire son objectif de Sprint sans regarder l'écran, et ce qu'elle a changé suite à sa dernière Rétrospective",
+        "C": "La vélocité des six derniers Sprints et sa stabilité",
+        "D": "L'avis du manager de proximité, qui les côtoie chaque jour"
+      },
+      "correct": "B",
+      "feedback": "La conformité formelle (A) et les métriques (C) se fabriquent — c'est précisément pourquoi on vous les a préparées. La maturité se lit dans les comportements sous tension : la direction des regards au Daily révèle où vit l'autorité, le récit du dernier échec révèle la sécurité psychologique, la dernière amélioration réellement appliquée révèle si l'équipe apprend. L'avis du manager (D) est une donnée, pas un diagnostic : il décrit aussi sa propre relation à l'équipe.",
+      "insight": "Une équipe se juge à ce qu'elle fait de ses désaccords et de ses échecs — tout le reste peut se mettre en scène pour votre visite.",
+      "reference": {
+        "label": "Scrum.org — maturité d'équipe",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "diagnostic",
+        "maturité",
+        "observation"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM65",
+      "title": "Quand l'outil devient le process",
+      "level": "confirme",
+      "skill": "Outil au service du cadre",
+      "context": "Dans votre organisation, « faire du Scrum » signifie désormais « suivre le workflow Jira » : 14 statuts obligatoires, champs bloquants, et des équipes qui adaptent leur façon de travailler aux écrans plutôt que l'inverse. L'administrateur Jira est devenu un personnage central.",
+      "question": "Comment remettez-vous l'outil à sa place ?",
+      "options": {
+        "A": "Vous ne touchez à rien : la standardisation outillée garantit la cohérence du reporting groupe",
+        "B": "Vous changez d'outil pour un concurrent plus flexible",
+        "C": "Vous inversez la hiérarchie : les équipes définissent leur façon de travailler dans le cadre, l'outil est configuré pour la refléter — audit des statuts et champs (chacun doit servir une décision réelle, sinon suppression), et le reporting groupe se nourrit de quelques données de flux simples plutôt que de la bureaucratie des écrans",
+        "D": "Vous formez les équipes à mieux utiliser le workflow existant"
+      },
+      "correct": "C",
+      "feedback": "Changer d'outil (B) transporterait la bureaucratie dans un décor neuf, et la formation (D) apprendrait aux équipes à mieux subir. Le problème est la hiérarchie inversée : quand le process vit dans l'outil, l'administrateur devient le vrai propriétaire de la méthode. L'audit par la question « quelle décision ce champ sert-il ? » est redoutable : la majorité des statuts ne survivent pas, et le reporting réel tient en trois mesures de flux.",
+      "insight": "Le jour où vos équipes travaillent pour l'outil, votre méthode a changé de propriétaire sans que personne n'ait signé le transfert.",
+      "reference": {
+        "label": "Scrum Guide — le cadre prime sur l'outillage",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "outils",
+        "jira",
+        "process"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM66",
+      "title": "Le legacy et l'empirisme",
+      "level": "expert",
+      "skill": "Choisir l'approche selon la nature du travail",
+      "context": "Votre DSI veut « tout passer en Scrum », y compris la migration d'un système comptable legacy : périmètre réglementaire figé, technologie connue, gros volume répétitif. L'équipe concernée trouve les Sprints artificiels.",
+      "question": "Quelle doctrine d'emploi posez-vous ?",
+      "options": {
+        "A": "L'approche suit la nature du travail : Scrum excelle dans le complexe — là où l'on apprend en faisant ; un travail réellement compliqué mais prévisible se pilote mieux en flux ou en plan classique ; pour cette migration, un pilotage en flux avec jalons réglementaires est plus honnête que des Sprints de façade — et vous le dites explicitement pour protéger la crédibilité de Scrum là où il s'impose",
+        "B": "Scrum nulle part sur le legacy : retour au cycle en V pour tout l'existant",
+        "C": "Scrum partout : l'uniformité méthodologique simplifie la gouvernance",
+        "D": "Scrum sur la migration, mais avec des Sprints de six semaines"
+      },
+      "correct": "A",
+      "feedback": "L'empirisme est fait pour les problèmes où la connaissance émerge du travail ; l'appliquer rituellement à du prévisible produit des cérémonies vides — et chaque Sprint artificiel érode la crédibilité de la méthode pour les cas où elle est irremplaçable. La doctrine du « bon outil selon la nature du problème » est aussi un acte politique : elle prouve que votre agilité est un choix raisonné, pas une religion — ce qui la rend inattaquable.",
+      "insight": "Défendre une méthode partout, c'est la discréditer là où elle compte : la crédibilité d'un dirigeant tient à sa capacité à dire où son outil ne sert pas.",
+      "reference": {
+        "label": "Scrum.org — complexité & empirisme",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "complexité",
+        "legacy",
+        "doctrine"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM67",
+      "title": "La crise de prod en plein Sprint",
+      "level": "expert",
+      "skill": "Gestion de crise dans le cadre",
+      "context": "Une panne majeure frappe la production : votre plus gros client est à l'arrêt. L'équipe la mieux placée est à mi-Sprint, sur un Sprint Goal engageant la roadmap. Le CODIR exige « tout le monde sur le pont, on verra la méthode après ».",
+      "question": "Comment gérez-vous la crise sans détruire le cadre ?",
+      "options": {
+        "A": "Vous suspendez tout formalisme : en crise, la méthode est un luxe",
+        "B": "Vous protégez le Sprint : une cellule de deux personnes traite la panne, le reste continue",
+        "C": "Vous traitez la crise dans le cadre, pas contre lui : bascule assumée et explicite de l'équipe sur la panne, Sprint Goal officiellement compromis — dit au CODIR, pas subi —, et une fois la production rétablie, décision propre avec le PO (reprise ou replanification) plus une analyse à froid qui transforme la panne en investissement de fiabilisation au backlog",
+        "D": "Vous laissez le Scrum Master décider : c'est son périmètre"
+      },
+      "correct": "C",
+      "feedback": "La question n'est pas « le cadre ou la crise » : un cadre qui ne survit pas aux crises ne vaut rien, et une crise gérée dans le chaos coûte deux fois. La bascule explicite préserve l'essentiel — la transparence sur ce qui est sacrifié et la décision consciente plutôt que l'abandon par panique. La demi-mesure (B) risque de perdre sur les deux fronts si la panne dépasse deux personnes ; le « on verra après » (A) signifie toujours qu'on ne verra jamais.",
+      "insight": "On juge une méthode de travail à sa tenue en crise : si la vôtre doit être suspendue dès que c'est grave, c'est qu'elle n'existait pas vraiment.",
+      "reference": {
+        "label": "Scrum Guide — adaptation & Sprint Goal",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "crise",
+        "production",
+        "décision"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM68",
+      "title": "La fusion de deux équipes",
+      "level": "expert",
+      "skill": "Réorganisation & capital collectif",
+      "context": "Suite à une réorganisation, vous devez fusionner deux équipes Scrum aux cultures opposées : l'une très outillée et process, l'autre artisanale et soudée. Chacune est convaincue que « sa » façon de travailler doit s'imposer.",
+      "question": "Comment conduisez-vous la fusion ?",
+      "options": {
+        "A": "Vous imposez les pratiques de l'équipe la plus performante : le mérite tranche",
+        "B": "Vous laissez les pratiques s'hybrider naturellement avec le temps",
+        "C": "Vous traitez la fusion comme la naissance d'une troisième équipe : reconstruction explicite des accords de travail — Definition of Done commune, façon de décider, rituels — lors d'un atelier fondateur où chaque héritage est mis sur la table et arbitré par la nouvelle équipe elle-même, avec quelques invariants non négociables que vous posez (transparence, un seul Done)",
+        "D": "Vous gardez deux sous-équipes distinctes sous un même nom pour éviter le conflit"
+      },
+      "correct": "C",
+      "feedback": "Imposer le modèle du « vainqueur » (A) fabrique des vaincus qui saboteront en silence ; l'hybridation spontanée (B) laisse le conflit se régler par rapports de force souterrains ; les deux sous-équipes (D) reportent la fusion en la niant. Une équipe n'est pas une addition de personnes mais un système d'accords : les reconstruire explicitement, ensemble, dans un périmètre que vous bornez par quelques invariants, est le seul chemin qui fasse de la fusion un début plutôt qu'une défaite pour la moitié de la salle.",
+      "insight": "Dans une fusion, le vrai livrable n'est pas l'organigramme : ce sont les accords de travail que les gens ont construits ensemble — tout ce qui n'est pas reconstruit explicitement sera disputé silencieusement.",
+      "reference": {
+        "label": "Scrum.org — accords de travail d'équipe",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "fusion",
+        "équipe",
+        "accords"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM69",
+      "title": "Le véto du CTO sur le backlog",
+      "level": "expert",
+      "skill": "Défense de l'autorité produit",
+      "context": "Votre CTO, cofondateur respecté, s'est arrogé un droit de véto informel sur l'ordre du Product Backlog : il « descend » régulièrement des priorités du PO au profit de chantiers techniques qui le passionnent. Le PO, plus jeune, n'ose pas s'opposer.",
+      "question": "Comment restaurez-vous l'autorité du PO face à un cofondateur ?",
+      "options": {
+        "A": "Vous n'y touchez pas : un cofondateur CTO a une légitimité qu'aucun rôle ne surpasse",
+        "B": "Vous canalisez sa légitimité au lieu de la nier : ses chantiers techniques entrent au backlog comme toute demande, défendus en critères de valeur (risque, coût du retard, capacité future) dans la même arène que le reste — sa voix pèse par ses arguments, plus par son statut ; et vous couvrez explicitement le PO : ses arbitrages rendus dans les règles ont votre soutien, y compris face au CTO",
+        "C": "Vous demandez au CODIR de rappeler formellement le CTO à l'ordre",
+        "D": "Vous nommez un PO plus senior, capable de tenir tête"
+      },
+      "correct": "B",
+      "feedback": "L'affrontement statutaire (C) est perdant contre un cofondateur, et le PO « plus costaud » (D) déplacerait le duel sans changer la règle du jeu. La manœuvre efficace ne conteste pas la légitimité du CTO — souvent réelle sur le fond — mais son canal : ses sujets passent par la porte commune, où ils gagnent s'ils sont bons. Votre couverture explicite du PO est la pièce décisive : sans elle, aucune règle ne tiendra face au différentiel de statut.",
+      "insight": "On ne neutralise pas un puissant en lui fermant la porte : on l'oblige à passer par la même porte que tout le monde — et on tient la porte.",
+      "reference": {
+        "label": "Scrum Guide — Product Owner (respect des décisions)",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "cto",
+        "autorité",
+        "backlog"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM70",
+      "title": "Sprints plus courts ou passage au flux",
+      "level": "expert",
+      "skill": "Évolution du système de delivery",
+      "context": "Vos équipes livrent techniquement en continu ; les Sprints de deux semaines semblent désormais un emballage administratif. Une partie de l'organisation pousse pour des Sprints d'une semaine, l'autre pour abandonner les Sprints au profit d'un pilotage en flux type Kanban.",
+      "question": "Comment tranchez-vous ?",
+      "options": {
+        "A": "Sprints d'une semaine partout : on garde le cadre en l'accélérant",
+        "B": "Vous partez de ce que la cadence produit encore : si les boucles de Sprint (objectif commun, inspection produit, rétrospective) créent toujours de l'alignement et de l'apprentissage, on les garde en découplant simplement la livraison — livrer en continu dans des Sprints est parfaitement sain ; si elles ne produisent plus que du rituel, une bascule en flux avec cadences de revue explicites se pilote comme une expérimentation mesurée, équipe par équipe",
+        "C": "Kanban partout : la livraison continue a rendu les Sprints obsolètes",
+        "D": "Vous laissez chaque équipe choisir librement son modèle"
+      },
+      "correct": "B",
+      "feedback": "Le faux débat oppose cadence et flux : le Sprint n'a jamais été un rythme de livraison mais un rythme de décision et d'apprentissage — livrer dix fois par Sprint est prévu par le cadre. La vraie question est empirique : que produisent encore vos boucles ? L'uniformité dans un sens (A) ou l'autre (C) décide par doctrine ; la liberté totale (D) fait exploser la coordination inter-équipes. Décider par l'usage réel, expérimenter par périmètre, mesurer : c'est le geste même que la méthode enseigne.",
+      "insight": "Ne confondez jamais le rythme auquel vous livrez et le rythme auquel vous décidez : le premier peut être continu, le second a besoin de rendez-vous.",
+      "reference": {
+        "label": "Scrum.org — Scrum avec Kanban",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "kanban",
+        "cadence",
+        "évolution"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM71",
+      "title": "L'équipe agile fatiguée",
+      "level": "expert",
+      "skill": "Synthèse — reprise d'un système usé",
+      "context": "Vous héritez d'une organisation « agile depuis six ans » : tous les rituels sont en place et parfaitement vides. Les équipes font du Scrum comme on pointe. Votre prédécesseur a multiplié les re-formations, sans effet. Vous avez quatre-vingt-dix jours pour inverser la dynamique.",
+      "question": "Par où commencez-vous ?",
+      "options": {
+        "A": "Par un nouveau programme de formation, plus moderne : SAFe, discipline, certification",
+        "B": "Par la suppression des rituels : repartir de zéro créera un électrochoc salutaire",
+        "C": "Par le diagnostic du système réel avant tout geste : où meurent les décisions, quels obstacles remontés en Rétrospective n'ont jamais été traités, ce que l'organisation a fait de la dernière vérité dérangeante — puis vous rendez au cadre son enjeu en traitant visiblement, vite, deux ou trois obstacles systémiques que tout le monde connaît : la méthode reprend vie quand elle recommence à changer des choses réelles",
+        "D": "Par le remplacement des Scrum Masters : ils ont laissé les rituels se vider"
+      },
+      "correct": "C",
+      "feedback": "Les rituels vides sont un symptôme d'apprentissage : l'organisation a appris que parler ne change rien — souvent parce que des années d'obstacles remontés sont restés sans réponse. Reformer (A) réenseigne ce que les gens savent déjà ; tout casser (B) détruit le squelette sur lequel reconstruire ; purger les SM (D) punit les thermomètres. Le geste fondateur est de rendre à la parole ses conséquences : deux obstacles réels, traités vite et visiblement, valent tous les programmes de transformation.",
+      "insight": "Une méthode ne meurt jamais de ses rituels : elle meurt le jour où l'organisation cesse de donner des suites à ce qu'ils révèlent — et elle renaît le jour où les suites reviennent.",
+      "reference": {
+        "label": "Scrum Guide — inspection sans adaptation est vaine",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "reprise",
+        "transformation",
+        "synthèse"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM72",
+      "title": "Le faux vert",
+      "level": "expert",
+      "skill": "Synthèse — vérité du pilotage",
+      "context": "Tous vos tableaux de bord sont au vert : vélocités stables, Sprints « réussis », burndowns impeccables. Pourtant rien n'a atteint la production depuis quatre mois — tout attend une « release de consolidation » sans date. Le CODIR découvre l'écart et vous demande des comptes.",
+      "question": "Que corrigez-vous en premier ?",
+      "options": {
+        "A": "La release : un plan d'urgence pour livrer, le reste attendra",
+        "B": "La définition même du vert : le système mesure l'activité des Sprints et pas l'arrivée de la valeur — vous redéfinissez « terminé » jusqu'à la production (ou au déployable vérifié), faites du délai jusqu'à la prod l'indicateur central, et traitez l'obstacle structurel qui a créé le goulet ; la release d'urgence se fait, mais comme premier acte du nouveau système, pas comme fin de l'histoire",
+        "C": "La communication : un plan pour restaurer la confiance du CODIR",
+        "D": "Les responsables : identifier qui a laissé l'écart se creuser"
+      },
+      "correct": "B",
+      "feedback": "Le plan d'urgence seul (A) purge le stock et reconstitue le même stock — dans six mois, même réunion. La crise n'est pas la release : c'est un système de pilotage qui peut être au vert pendant que rien n'arrive au client, parce que « Done » s'arrête avant la production. Étendre le Done, mesurer le délai jusqu'à la prod, supprimer le goulet : voilà ce qui rend le faux vert impossible. La chasse aux responsables (D) garantit que le prochain écart sera mieux caché.",
+      "insight": "Quand tous vos indicateurs sont au vert et que le client ne voit rien venir, ce ne sont pas les équipes qui mentent : c'est votre définition du vert.",
+      "reference": {
+        "label": "Scrum Guide — Increment utilisable & Done",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "done",
+        "production",
+        "pilotage"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM73",
+      "title": "Trois VIP, une capacité",
+      "level": "expert",
+      "skill": "Synthèse — arbitrage sous pression",
+      "context": "Dernière semaine du trimestre. Trois demandes « absolument prioritaires » arrivent le même jour : du PDG, du plus gros client, et du directeur commercial (une promesse déjà signée). Votre capacité disponible permet d'en tenir une.",
+      "question": "Comment décidez-vous — et comment annoncez-vous ?",
+      "options": {
+        "A": "Vous prenez celle du PDG : la hiérarchie est le critère le plus sûr",
+        "B": "Vous découpez la capacité en trois : chacun aura un début de réponse",
+        "C": "Vous instruisez les trois en quelques heures sur les mêmes critères — coût du retard, risque réel, réversibilité —, vous décidez, puis vous annoncez aux trois en même temps : la retenue avec sa date, les deux autres avec leur position, leur échéance estimée et la raison du classement ; vous portez la décision vous-même plutôt que de la laisser filtrer",
+        "D": "Vous escaladez l'arbitrage au CODIR : à ce niveau d'enjeux, ce n'est plus votre décision"
+      },
+      "correct": "C",
+      "feedback": "Le tiers de réponse pour chacun (B) est la pire issue : trois déceptions et zéro résultat. Le critère hiérarchique (A) est un réflexe, pas un raisonnement — la demande du PDG peut être la moins urgente des trois. L'escalade (D) annonce à l'organisation que vous ne décidez pas sous pression. Le cœur de la réponse C n'est pas seulement le critère de valeur : c'est l'annonce simultanée, motivée et portée — les deux perdants acceptent un classement transparent bien mieux qu'un silence, et votre autorité sort grandie de la semaine.",
+      "insight": "Sous pression maximale, ce qui se juge n'est pas seulement votre choix : c'est votre façon de l'assumer devant ceux qu'il déçoit.",
+      "reference": {
+        "label": "Scrum.org — coût du retard & arbitrage",
+        "url": "https://www.scrum.org"
+      },
+      "tags": [
+        "arbitrage",
+        "pression",
+        "communication"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM74",
+      "title": "Le CODIR veut abandonner",
+      "level": "expert",
+      "skill": "Synthèse — défendre le système après un échec",
+      "context": "Une release majeure vient d'échouer publiquement. Au CODIR, un directeur influent conclut : « Deux ans d'agilité pour ça. Revenons à un vrai pilotage projet, avec un vrai chef et un vrai planning. » Plusieurs têtes acquiescent. On vous donne la parole.",
+      "question": "Que dites-vous ?",
+      "options": {
+        "A": "Vous défendez la méthode : l'échec vient des équipes, pas du cadre",
+        "B": "Vous concédez le retour au pilotage classique : le vent a tourné, mieux vaut plier",
+        "C": "Vous séparez le verdict du réflexe : l'échec est réel et son analyse factuelle dira ce qui a failli — vous la présentez (les causes précédaient la méthode ou l'ont contournée : décisions retardées, alertes ignorées, Done contourné sous pression) ; puis vous retournez la proposition : le pilotage classique aurait-il vu cet échec plus tôt ? Vous proposez des corrections nommées et mesurables à quatre-vingt-dix jours plutôt qu'un changement de religion",
+        "D": "Vous demandez un audit externe pour gagner du temps"
+      },
+      "correct": "C",
+      "feedback": "Défendre la méthode contre les faits (A) vous décrédibilise ; plier (B) enseigne au CODIR que vos convictions durent un orage ; l'audit dilatoire (D) se voit. La seule position tenable est l'empirisme appliqué à soi-même : analyse honnête — qui, presque toujours, montre des alertes du système ignorées plutôt qu'un défaut du système —, contre-question qui déplace la charge (« l'ancien monde aurait-il fait mieux ? »), et engagement daté sur des corrections précises. Vous transformez un procès en révision, et un revers en preuve de votre solidité.",
+      "insight": "Après un échec public, ne défendez ni la méthode ni votre personne : défendez la qualité de l'analyse — c'est elle qui distingue les dirigeants des porte-drapeaux.",
+      "reference": {
+        "label": "Scrum Guide — inspection & adaptation",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "codir",
+        "échec",
+        "leadership"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    },
+    {
+      "id": "SCRUM75",
+      "title": "Vos trois engagements de dirigeant",
+      "level": "expert",
+      "skill": "Synthèse — l'empirisme comme contrat de direction",
+      "context": "Examen final. Vous prenez la direction d'une organisation produit de deux cents personnes. Devant vos équipes réunies, vous voulez prendre trois engagements personnels — un par pilier de l'empirisme — qui rendront Scrum réel plutôt que rituel, et sur lesquels vous accepterez d'être jugé.",
+      "question": "Quel triptyque choisissez-vous ?",
+      "options": {
+        "A": "Financer les meilleures formations, recruter les meilleurs coachs, équiper les meilleures plateformes",
+        "B": "Transparence : aucune mauvaise nouvelle remontée ne sera jamais punie — et je publierai les miennes. Inspection : je serai présent aux revues de résultats et j'y poserai des questions pour comprendre, pas pour juger. Adaptation : tout obstacle systémique remonté recevra une décision datée — traiter, planifier ou refuser motivé — sous quinze jours",
+        "C": "Doubler la vélocité en un an, réduire les coûts de 20 %, zéro incident majeur",
+        "D": "Laisser les équipes entièrement libres : le meilleur engagement d'un dirigeant est de ne pas s'en mêler"
+      },
+      "correct": "B",
+      "feedback": "Les moyens (A) et les cibles chiffrées (C) sont des politiques, pas des engagements de comportement — et le non-interventionnisme (D) confond soutien et absence. Le triptyque B est le seul qui engage votre propre conduite sur chaque pilier : la transparence ne survit que si dire la vérité est sans danger, l'inspection ne vaut que si le dirigeant regarde vraiment, l'adaptation n'existe que si remonter un problème déclenche une décision. Trois promesses observables, jugeables, et qui suffisent — tout le reste de la méthode tient debout sur elles.",
+      "insight": "L'empirisme n'est pas une méthode d'équipe que le dirigeant observe : c'est un contrat de direction que le dirigeant honore — transparence protégée, inspection incarnée, adaptation garantie.",
+      "reference": {
+        "label": "Scrum Guide — Transparence, Inspection, Adaptation",
+        "url": "https://scrumguides.org"
+      },
+      "tags": [
+        "empirisme",
+        "leadership",
+        "engagements"
+      ],
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published"
+    }
+  ],
+  "published": true,
+  "archived": false
+}

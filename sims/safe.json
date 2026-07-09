@@ -1,0 +1,80 @@
+{
+  "id": "safe",
+  "icon": "🏗️",
+  "title": "SAFe",
+  "domain": "Agilité à l'échelle",
+  "category": "agile",
+  "level": "expert",
+  "description": "Piloter des trains de release, arbitrer les dépendances et gouverner l'agilité multi-équipes au niveau portefeuille.",
+  "references": [{ "label": "Scaled Agile Framework", "url": "https://scaledagileframework.com" }],
+  "published": true,
+  "archived": false,
+  "simulations": [
+    {
+      "id": "SAFE1",
+      "title": "Le PI Planning sans les décideurs",
+      "context": "Votre premier PI Planning réunit 90 personnes pendant deux jours. Les équipes planifient — mais les trois directeurs métier dont dépendent les arbitrages majeurs ont envoyé des représentants sans mandat.",
+      "question": "Quelle est la conséquence structurelle, et votre correction ?",
+      "options": {
+        "A": "Aucune : les arbitrages remonteront après l'événement, comme d'habitude",
+        "B": "L'événement perd sa fonction : le PI Planning existe pour prendre les décisions d'alignement en temps réel — sans décideurs, on planifie des hypothèses ; vous conditionnez le prochain PI à la présence de décideurs mandatés, quitte à réduire la durée pour l'obtenir",
+        "C": "Vous annulez le PI Planning : trop coûteux pour ce résultat",
+        "D": "Vous faites signer les plans par les représentants présents"
+      },
+      "correct": "B",
+      "feedback": "Le coût d'un PI Planning (90 personnes × 2 jours) ne se justifie que par sa contrepartie : des engagements pris séance tenante par ceux qui peuvent engager. Des représentants sans mandat transforment l'événement en théâtre de planification dont chaque hypothèse sera renégociée ensuite — le pire des deux mondes. La présence de décideurs se négocie en amont, au besoin contre une réduction du format.",
+      "insight": "Le prix d'un événement d'alignement n'est pas son coût salarial : c'est la valeur des décisions qui n'y sont pas prises.",
+      "reference": { "label": "SAFe — PI Planning", "url": "https://scaledagileframework.com" },
+      "skill": "Gouvernance des événements d'échelle",
+      "level": "expert",
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published",
+      "tags": ["pi planning", "décision", "alignement"]
+    },
+    {
+      "id": "SAFE2",
+      "title": "Le train qui n'embarque jamais",
+      "context": "Votre Agile Release Train affiche 85 % de prédictibilité sur ses objectifs de PI. Pourtant, la dernière mise en production remonte à cinq mois : tout attend une « fenêtre de release » que l'exploitation repousse sans cesse.",
+      "question": "Où portez-vous l'effort en priorité ?",
+      "options": {
+        "A": "Sur la planification : des objectifs de PI plus réalistes",
+        "B": "Sur la relation avec l'exploitation : négocier des fenêtres de release fermes au calendrier",
+        "C": "Sur le pipeline de livraison continue : la capacité à déployer à la demande est le prérequis que le train masque — tant qu'elle n'existe pas, la prédictibilité du PI mesure une production de stock, pas de valeur",
+        "D": "Sur la communication : valoriser les 85 % auprès du portefeuille"
+      },
+      "correct": "C",
+      "feedback": "Un train prédictible qui ne livre pas est un convoi qui empile des wagons en gare : la valeur n'existe qu'à l'arrivée en production. Négocier des fenêtres (B) institutionnalise la rareté au lieu de la supprimer. Le principe cardinal du cadre — découpler cadence de développement et livraison à la demande — exige un pipeline de déploiement continu : c'est l'investissement qui rend toutes les autres métriques signifiantes.",
+      "insight": "À l'échelle, la première question d'un dirigeant n'est pas « les équipes tiennent-elles leurs plans ? » mais « à quelle vitesse la valeur atteint-elle la production ? »",
+      "reference": { "label": "SAFe — Release on Demand", "url": "https://scaledagileframework.com" },
+      "skill": "Flux de valeur de bout en bout",
+      "level": "expert",
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published",
+      "tags": ["release", "pipeline", "valeur"]
+    },
+    {
+      "id": "SAFE3",
+      "title": "Le portefeuille qui dit oui à tout",
+      "context": "Votre comité de portefeuille approuve 95 % des initiatives présentées : « elles sont toutes stratégiques ». Les trains croulent sous les epics en cours, et rien ne se termine dans les délais annoncés.",
+      "question": "Quelle discipline installez-vous ?",
+      "options": {
+        "A": "Un filtre par la capacité : le portefeuille limite le travail en cours au débit réel des trains — approuver une initiative signifie en différer ou en arrêter une autre, l'arbitrage devient explicite et le mot « stratégique » retrouve un prix",
+        "B": "Une accélération des trains : recrutements massifs pour absorber le portefeuille",
+        "C": "Un raccourcissement des epics : des initiatives plus petites passeront mieux",
+        "D": "Un comité moins fréquent : moins de réunions, moins d'approbations"
+      },
+      "correct": "A",
+      "feedback": "Un portefeuille qui approuve tout ne décide rien : il transfère l'arbitrage aux files d'attente, où il se fait par ancienneté et par hasard plutôt que par valeur. La limite de travail en cours au niveau portefeuille est le mécanisme qui force le vrai geste stratégique — renoncer. Recruter (B) poursuit la demande sans jamais la rattraper ; réduire la taille (C) aide le flux mais ne crée pas la discipline de choix.",
+      "insight": "La stratégie ne se lit pas dans ce qu'un comité approuve : elle se lit dans ce qu'il refuse — un portefeuille sans « non » n'est qu'un guichet.",
+      "reference": { "label": "SAFe — Lean Portfolio Management", "url": "https://scaledagileframework.com" },
+      "skill": "Discipline de portefeuille",
+      "level": "expert",
+      "durationMinutes": 2,
+      "status": "published",
+      "workflow": "published",
+      "tags": ["portefeuille", "wip", "stratégie"]
+    }
+  ]
+}
